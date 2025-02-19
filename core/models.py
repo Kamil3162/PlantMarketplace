@@ -22,3 +22,14 @@ class Address(TimeStampedModel):
         ('billing', 'Billing'),
         ('shipping', 'Shipping')
     ])
+
+class AccessToken(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    access_token = models.TextField()
+    refresh_token = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_blacklisted = models.BooleanField(default=False)

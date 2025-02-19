@@ -1,0 +1,10 @@
+# Python bytecode files
+__pycache__/
+
+# Python env files
+.env
+
+# IDE files
+.idea/
+.vscode/
+.DS_Store

@@ -1,6 +1,10 @@
-from django.conf.urls import patterns, include, url
-from oauth2_provider import url as oauth2_provider_url
+from django.urls import path
+from . import views
 
-# urlpatterns = [
-#     url('/o', include(oauth2_provider_url)),
-# ]
+urlpatterns = [
+    path('', views.sign_in, name='sign_in'),
+    path('sign-out', views.sign_out, name='sign_out'),
+    path('auth-receiver', views.auth_receiver, name='auth_receiver'),
+    path('test', views.url_test, name='url_test'),
+    path('register', views.register, name='register'),
+]
