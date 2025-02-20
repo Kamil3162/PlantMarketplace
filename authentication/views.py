@@ -7,18 +7,33 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ValidationError
 from django.forms.models import model_to_dict
+from django.contrib.auth import authenticate, login, logout
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
 from .utils import auth_decorator
-from account.forms import RegisterForm
+from account.forms import RegisterForm, LoginForm
+from account.scheme import UserScheme
+from core.redis_manager import RedisManager
+from core.jwt_manager import JWTManager
 
 load_dotenv()
+redis_manager = RedisManager()
 
 @csrf_exempt
 def sign_in(request):
     print(request.session.get('user_data'))
-    return render(request, 'sign_in.html')
+    form = LoginForm()
+    return render(request, 'sign_in.html', {'form': form})
+
+def login(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, email=email, password=password)
+        token = redis_manager.assign_user(user)
+
+        return HttpResponse(token)
 
 @csrf_exempt
 def auth_receiver(request):

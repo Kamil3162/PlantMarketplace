@@ -102,4 +102,3 @@ class User(AbstractBaseUser, PermissionsMixin):
         ordering = ('email',)
 
     objects = UserManager()
-

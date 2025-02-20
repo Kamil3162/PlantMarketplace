@@ -1,4 +1,5 @@
 from django import forms
+
 from django.forms.models import model_to_dict
 from account.models import User
 
@@ -14,3 +15,7 @@ class RegisterForm(forms.ModelForm):
             user.save()
         return user
 
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('email', 'password')

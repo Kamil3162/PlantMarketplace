@@ -7,4 +7,5 @@ urlpatterns = [
     path('auth-receiver', views.auth_receiver, name='auth_receiver'),
     path('test', views.url_test, name='url_test'),
     path('register', views.register, name='register'),
+    path('login', views.login, name='login'),
 ]

@@ -1,4 +1,4 @@
-
+from dataclasses import dataclass
 
 @dataclass
 class UserScheme:
@@ -14,18 +14,18 @@ class UserScheme:
     is_confirmed: bool = False
 
     @classmethod
-    def from_django_user(cls, user):
+    def by_django_user(cls, user):
         """
             Generate a user scheme using django user model.
         """
         return cls(
             id=user.id,
             first_name=user.first_name,
-            last_name=user.first_name,
-            email=user.first_name,
-            is_staff=user.first_name,
-            is_confirmed=user.first_name,
-        )
+            last_name=user.last_name,
+            email=user.email,
+            is_staff=user.is_staff,
+            is_confirmed=user.is_confirmed,
+        ).to_dict()
 
     def to_dict(self) -> dict:
         """

@@ -54,6 +54,11 @@
 
   <body>
     <div class="container">
+      <form action="/login" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Submit">
+      </form>
       {% if request.session.user_data %}
       <div>
         <p>Hi {{ request.session.user_data.given_name }} 🙂</p>
