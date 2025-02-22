@@ -8,4 +8,5 @@ urlpatterns = [
     path('test', views.url_test, name='url_test'),
     path('register', views.register, name='register'),
     path('login', views.login, name='login'),
+    path('test', views.get_cookie_value, name='test'),
 ]

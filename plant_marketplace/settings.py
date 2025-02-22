@@ -121,6 +121,18 @@ DATABASES = {
             'connect_timeout': 5,
             'client_encoding': 'UTF8',
         },
+    },
+    'test':{
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_DB', 'testdatabase'),
+        'USER': os.environ.get('POSTGRES_USER', 'testuser'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'testpassword'),
+        'HOST': os.environ.get('POSTGRES_HOST', 'postgres_test'),
+        'PORT': os.environ.get('POSTGRES_PORT', '5435'),
+        'OPTIONS': {
+            'connect_timeout': 5,
+            'client_encoding': 'UTF8',
+        },
     }
 }
 

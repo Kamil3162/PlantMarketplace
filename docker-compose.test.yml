@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  web_test:
+    build: .
+    command: >
+      sh -c "python manage.py test"
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    environment:
+      - POSTGRES_DB=testdatabase
+      - POSTGRES_USER=testuser
+      - POSTGRES_PASSWORD=testpassword
+      - POSTGRES_HOST=postgres_test
+      - POSTGRES_PORT=5435
+    depends_on:
+      - postgres_test
+    networks:
+      - test-network
+
+  postgres_test:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=testdatabase
+      - POSTGRES_USER=testuser
+      - POSTGRES_PASSWORD=testpassword
+    ports:
+      - "5435:5435"  # Different port for test db
+    networks:
+      - test-network
+
+  redis_test:
+    image: redis:7-alpine
+    command: redis-server --appendonly no
+    ports:
+      - "6381:6381"  # Different port for test redis
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge

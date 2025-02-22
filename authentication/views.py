@@ -28,12 +28,21 @@ def sign_in(request):
 
 def login(request):
     if request.method == 'POST':
+        response = HttpResponse('Cookie Set')
         email = request.POST.get('email')
         password = request.POST.get('password')
         user = authenticate(request, email=email, password=password)
         token = redis_manager.assign_user(user)
 
-        return HttpResponse(token)
+        # set a cookie named access_token with a value 'access_token
+        response.set_cookie(
+            'access_token',
+            token,
+            max_age=3600,
+            httponly=True
+        )
+
+        return response
 
 @csrf_exempt
 def auth_receiver(request):
@@ -56,8 +65,13 @@ def auth_receiver(request):
     return redirect('sign_in')
 
 def sign_out(request):
-    del request.session['user_data']
-    return redirect('sign_in')
+    try:
+        del request.session['user_data']
+    except KeyError:
+        print('request doesnt have field user_data')
+    response = redirect('sign_in')
+    response.delete_cookie('access_token')
+    return response
 
 def register(request):
     """
@@ -99,3 +113,5 @@ def url_test(request):
         'status': 'authenticated'
     })
 
+def get_cookie_value(request):
+    print(request.COOKIES.get('access_token', 'Cookie not found'))
