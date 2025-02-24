@@ -99,6 +99,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['first_name', 'last_name']  # Required for createsuperuser
 
     class Meta:
+        app_label = 'account'
         ordering = ('email',)
 
     objects = UserManager()

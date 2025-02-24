@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 from plant_marketplace import settings
 
 class TimeStampedModel(models.Model):

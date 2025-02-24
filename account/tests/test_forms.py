@@ -1,8 +1,10 @@
 import pytest
 from django.test import TestCase
 from ..forms import RegisterForm, LoginForm
-from ..models import User
 from faker import Faker
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 fake = Faker()
 class TestRegisterForm(TestCase):
