@@ -1,11 +1,9 @@
-
 import pytest
 from django.core.exceptions import ValidationError
 from ..models import User, UserManager
 from faker import Faker
 
 fake = Faker()
-
 
 @pytest.mark.django_db
 class TestUserModel:
