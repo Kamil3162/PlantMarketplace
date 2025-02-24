@@ -1,8 +1,9 @@
 from django import forms
 
 from django.forms.models import model_to_dict
-from .models import User
+from .models import CustomUser
 
+User = CustomUser
 class RegisterForm(forms.ModelForm):
     class Meta:
         model = User

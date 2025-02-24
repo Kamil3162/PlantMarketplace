@@ -23,7 +23,7 @@ from phonenumber_field.modelfields import PhoneNumberField, PhoneNumber
 #     house_number = models.CharField(max_length=6, blank=True)
 #     mobile_phone = PhoneNumberField(blank=True)
 
-class UserManager(BaseUserManager["User"]):
+class UserManager(BaseUserManager["CustomUser"]):
     def create_user(
         self,
             #username,
@@ -85,7 +85,7 @@ class UserManager(BaseUserManager["User"]):
     def __call__(self, *args, **kwargs):
         print("test message")
 
-class User(AbstractBaseUser, PermissionsMixin):
+class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(null=False, unique=True)

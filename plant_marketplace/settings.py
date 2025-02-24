@@ -52,7 +52,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'oauth2_provider',
+    'account',
     'phonenumber_field',
     'authentication',
     'bargain',
@@ -136,7 +136,7 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = "account.User"
+AUTH_USER_MODEL = "account.CustomUser"
 
 AUTH_PASSWORD_VALIDATORS = [
     {}

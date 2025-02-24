@@ -1,5 +1,5 @@
 from django.db import models
-from account.models import User
+from account.models import CustomUser
 from products.models import Product
 
 # Create your models here.
@@ -9,7 +9,7 @@ class Order(models.Model):
         ('pending', 'Pending'),
     )
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     status = models.CharField(
         max_length=10,
         choices=ORDER_STATUS_CHOICES,

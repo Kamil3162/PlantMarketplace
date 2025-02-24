@@ -8,9 +8,9 @@ import random
 from django.core.management.base import BaseCommand
 from faker import Faker
 
-from account.models import User
+from account.models import CustomUser
 
-
+User = CustomUser
 class Command(BaseCommand):
     def handle(self, *args, **options):
         fake = Faker()
