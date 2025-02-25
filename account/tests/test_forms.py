@@ -5,8 +5,8 @@ from faker import Faker
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
-
 fake = Faker()
+
 class TestRegisterForm(TestCase):
     def setUp(self):
         '''
@@ -37,11 +37,14 @@ class TestRegisterForm(TestCase):
 
 
 class TestLoginForm(TestCase):
+
     @classmethod
     def setUpClass(cls):
         '''
             Prepare user data from login form test
         '''
+        super(TestLoginForm, cls).setUpClass()
+
         cls.valid_data = {
             'first_name': fake.first_name(),
             'last_name': fake.last_name(),
@@ -62,11 +65,7 @@ class TestLoginForm(TestCase):
 
     def test_user_create_by_invalid_form(self):
         form = LoginForm(self.invalid_data)
-        self.assertEqual(form.is_valid(), True)
-
-    @classmethod
-    def tearDownClass(cls):
-        pass
+        self.assertEqual(form.is_valid(), False)
 
     def test_form_login_based_on(self):
         self.assertEqual(LoginForm.Meta.model, User)

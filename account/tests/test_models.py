@@ -10,12 +10,22 @@ User = get_user_model()
 
 @pytest.mark.django_db
 class TestUserModel:
+
+    @pytest.fixture
+    def valid_user_data(self):
+        return {
+            'first_name': fake.first_name(),
+            'last_name': fake.last_name(),
+            'email': fake.email(),
+            'password': 'test_password123'
+        }
+
     @pytest.fixture
     def user(self, valid_user_data):
         return User.objects.create_user(**valid_user_data)
 
     def test_email_uniqueness(self, valid_user_data):
-        User.objects.create_user(**valid_user_data)
+        User.objects.create_user(self.valid_user_data)
 
         # Try to create another user with the same email
         with pytest.raises(Exception):  # Could be IntegrityError or ValidationError depending on your implementation
@@ -57,7 +67,7 @@ class TestUserManager:
             'password': 'test_password123'
         }
 
-    def test_user_create(self):
+    def test_user_create(self, user_data):
         user = User.objects.create_user(**user_data)
 
         # in this section i will check does fields and privilages are fine
@@ -68,7 +78,7 @@ class TestUserManager:
         assert user.is_staff == False
         assert user.is_active == True
 
-    def test_admin_user_create(self):
+    def test_admin_user_create(self, user_data):
         user = User.objects.create_superuser(**user_data)
 
         # in this section i will check does fields and privilages are fine
@@ -111,3 +121,5 @@ class TestUserManager:
                 email=None,
                 password=None
             )
+
+

@@ -21,6 +21,8 @@ RUN apt-get update \
 COPY req.txt /app/
 RUN pip install --no-cache-dir -r req.txt
 
+ENV DJANGO_SETTINGS_MODULE=plant_marketplace.settings
+
 # Copy project
 COPY . /app/
 
