@@ -14,7 +14,7 @@ services:
       - POSTGRES_USER=testuser
       - POSTGRES_PASSWORD=testpassword
       - POSTGRES_HOST=postgres_test
-      - POSTGRES_PORT=5435
+      - POSTGRES_PORT=5432
     depends_on:
       - postgres_test
     networks:
