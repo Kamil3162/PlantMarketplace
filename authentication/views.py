@@ -16,6 +16,7 @@ from account.forms import RegisterForm, LoginForm
 from account.scheme import UserScheme
 from core.redis_manager import RedisManager
 from core.jwt_manager import JWTManager
+from core.utils import remove_access_token, black_token_validation
 
 load_dotenv()
 redis_manager = RedisManager()
@@ -35,6 +36,9 @@ def login(request):
         token = redis_manager.assign_user(user)
 
         # set a cookie named access_token with a value 'access_token
+        response.headers['Authorization'] = f'Bearer {token}'
+
+
         response.set_cookie(
             'access_token',
             token,
@@ -64,13 +68,17 @@ def auth_receiver(request):
 
     return redirect('sign_in')
 
+@remove_access_token
 def sign_out(request):
+    print('sign out request')
     try:
+        request.session.flush()
         del request.session['user_data']
     except KeyError:
         print('request doesnt have field user_data')
     response = redirect('sign_in')
     response.delete_cookie('access_token')
+
     return response
 
 def register(request):
@@ -113,5 +121,14 @@ def url_test(request):
         'status': 'authenticated'
     })
 
+@black_token_validation
 def get_cookie_value(request):
-    print(request.COOKIES.get('access_token', 'Cookie not found'))
+    request_headers = request.headers
+    print('HTTP_AUTHORIZATION'.upper() in request.META.keys())
+    print(request_headers.get('Authorization', None))
+    access_token = request.COOKIES.get('access_token', 'Cookie not found')
+
+    redis_client = redis_manager.get_user_data(access_token)
+    print(redis_client)
+    token_decoded = JWTManager.decode_token(access_token)
+    return HttpResponse(json.dumps(token_decoded))

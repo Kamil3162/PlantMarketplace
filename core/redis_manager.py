@@ -6,7 +6,6 @@ from account.scheme import UserScheme
 from redis import RedisError
 
 from .jwt_manager import JWTManager
-from .exceptions import TokenValidationError
 
 class RedisManager(object):
     def __init__(self):
@@ -95,11 +94,11 @@ class RedisManager(object):
             # Handle potential decode errors or invalid tokens
             return False
 
-    def is_blocked_token(self, token):
+    def is_blocked(self, token):
         """
             Check does user token can be used for future authentication
         """
-        blocked_key = f"{self.blocked_tokens_prefix}{token}"
+        blocked_key = f"{self.blocked_token_prefix}{token}"
         return bool(self.redInst.exists(blocked_key))
 
     def block_token(self, token):
@@ -108,15 +107,13 @@ class RedisManager(object):
 
         """
         try:
-            blocked_key = f"{self.blocked_tokens_prefix}{token}"
+            block_expiry = 1200
+            blocked_key = f"{self.blocked_token_prefix}{token}"
             self.redInst.set(
                 blocked_key,
-                True
+                '1',
+                ex=block_expiry
             )
-
-            # delete all user data with key
-            user_key = f'{self.user_prefix}{token}'
-            self.redInst.delete(user_key)
         except RedisError as e:
             raise RedisError(f"Failed to store user data: {str(e)}")
 
@@ -128,3 +125,30 @@ class RedisManager(object):
         user_data = self.redInst.hgetall(key)
         return user_data
 
+    def remove_access_token(self, token):
+        """
+            Remove record from Redis storage to prevent unexpected auth behavior
+        Args:
+            token:
+
+        Returns:
+        """
+        try:
+            key = f'{self.user_prefix}{token}'
+            print(key)
+            self.redInst.delete(key)
+        except RedisError as e:
+            raise RedisError(f"Failed to store user data: {str(e)}")
+
+    def get_blocked_token(self, token):
+        """
+            Function use to test does connection and block token works fine
+        Returns:
+
+        """
+        try:
+            blocked_token_val = self.redInst.get(
+                f'{self.blocked_token_prefix}{token}'
+            )
+        except RedisError as e:
+            raise RedisError(f'Failed to store user data: {str(e)}')
