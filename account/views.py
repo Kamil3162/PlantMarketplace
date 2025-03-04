@@ -1,7 +1,8 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.core import serializers
 
 from .models import CustomUser
+from core.utils import check_access_token
 
 def users_list(request):
     print(request.method)
@@ -9,11 +10,12 @@ def users_list(request):
     return JsonResponse({'users':users})
 
 def user_modify(request):
+    # TODO document why this method is empty
     pass
 
+@check_access_token
 def user_detail(request):
-    # get user detail and display this
-    pass
+    return HttpResponse('Access token detected')
 
 
 
