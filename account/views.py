@@ -15,7 +15,7 @@ def user_modify(request):
 
 @check_access_token
 def user_detail(request):
-    return HttpResponse('Access token detected')
+    pass
 
 
 
