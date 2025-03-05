@@ -88,5 +88,5 @@ def check_access_token(function):
             raise KeyError('user data doesnt have key email')
         except Exception as e:
             raise BaseError(str(e))
-        return function(request, *args, **kwargs)
+        return function(request, user_data=user_data, *args, **kwargs)
     return wrapper

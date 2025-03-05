@@ -13,7 +13,6 @@ from google.auth.transport import requests
 
 from .utils import auth_decorator
 from account.forms import RegisterForm, LoginForm
-from account.scheme import UserScheme
 from core.redis_manager import RedisManager
 from core.jwt_manager import JWTManager
 from core.utils import remove_access_token, black_token_validation

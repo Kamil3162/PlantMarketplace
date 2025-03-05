@@ -8,7 +8,6 @@ class TimeStampedModel(models.Model):
     class Meta:
         abstract = True
 
-
 class Address(TimeStampedModel):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     street = models.CharField(max_length=255)

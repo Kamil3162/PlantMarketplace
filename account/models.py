@@ -103,3 +103,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         ordering = ('email',)
 
     objects = UserManager()
+
+    def __str__(self):
+        return f'CustomUser email={self.email}'
