@@ -2,10 +2,16 @@ from functools import wraps
 
 from .redis_manager import RedisManager
 from .jwt_manager import JWTManager
-from .exceptions import UnauthorizedAccess, MissingTokenError, BaseError
+from .exceptions import (
+    UnauthorizedAccess,
+    MissingTokenError,
+    BaseError,
+    InvalidTokenError
+)
 
 from account.utils import get_user
 from account.exceptions import UserNotFound
+from django.forms.models import model_to_dict
 
 redis_instance = RedisManager()
 
@@ -34,10 +40,8 @@ def black_token_validation(func):
             if redis_instance.is_blocked(access_token):
                 raise UnauthorizedAccess('Token has been revoked')
 
-            user_data = JWTManager.decode(access_token)
-            if user_data:
-                request.user_data = user_data
-
+            user_data = JWTManager.decode_token(access_token)
+            request.user_id = user_data['user_id']
             return func(request, *args, **kwargs)
         except Exception as e:
             raise BaseError(str(e))
@@ -78,15 +82,54 @@ def check_access_token(function):
             if not access_token:
                 raise MissingTokenError('No access token provided')
 
-            user_data = JWTManager.decode_token(access_token)
-            user_email = user_data['email']
-            user = get_user(user_email)
+            decoded_token = JWTManager.decode_token(access_token)
+            user_id = decoded_token['user_id']
 
+            if not user_id:
+                raise InvalidTokenError('Token missing user_id claim')
+
+            user = get_user(user_id)
+            user_data = user
             if user is None:
-                raise UserNotFound('Following user doesnt exists')
-        except KeyError:
-            raise KeyError('user data doesnt have key email')
+                raise UserNotFound('Following user does not exists exists')
+        except InvalidTokenError as e:
+            raise InvalidTokenError(str(e))
+        except UserNotFound as e:
+            raise UserNotFound(str(e))
         except Exception as e:
             raise BaseError(str(e))
         return function(request, user_data=user_data, *args, **kwargs)
+    return wrapper
+
+def admin_access_required(function):
+    """
+    Combined decorator that validates token and checks admin status.
+    Args:
+        function:
+    Returns:
+    """
+    @wraps(function)
+    def wrapper(request, *args, **kwargs):
+        try:
+            access_token = get_token_from_request(request)
+            if not access_token:
+                raise MissingTokenError('No access token provided')
+
+            user_data = JWTManager.decode_token(access_token)
+            user_id = user_data['user_id']
+            # user not found will be caught by default django work flow
+            user = get_user(user_id)
+
+            if not user.is_staff:
+                raise UnauthorizedAccess(
+                    'Access denied. Insufficient permissions'
+                )
+
+            return function(request, *args, **kwargs)
+        except MissingTokenError as e:
+            raise MissingTokenError(str(e))
+        except UnauthorizedAccess as e:
+            raise UnauthorizedAccess(str(e))
+        except Exception as e:
+            raise BaseError(str(e))
     return wrapper

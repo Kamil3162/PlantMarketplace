@@ -1,5 +1,8 @@
 from .models import CustomUser
+from django.core.exceptions import ObjectDoesNotExist
 
-
-def get_user(email):
-    return CustomUser.objects.get(email=email)
+def get_user(user_id):
+    """
+        Retrieve a user by email with custom error message.
+    """
+    return CustomUser.objects.get(id=user_id)

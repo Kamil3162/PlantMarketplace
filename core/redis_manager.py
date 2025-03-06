@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import time, datetime, timezone
 
 import redis
 
@@ -36,10 +36,12 @@ class RedisManager(object):
         user_dict['is_staff'] = 'false'
         user_dict['is_confirmed'] = 'false'
 
+        print(user_dict)
+
         access_token = JWTManager.create_access_token(
-            data=user_dict,
-            expires_delta=1800
+            user_id=user_dict['user_id']
         )
+
         return user_dict, access_token
 
     def assign_user(self, user_instance):
@@ -75,16 +77,14 @@ class RedisManager(object):
 
     def check_token_validation(self, token):
         try:
-            decoded_token = JWTManager.decode(token)
+            decoded_token = JWTManager.decode_token(token)
             exp_token = decoded_token.get('exp')
 
             # Check if expiration time exists
             if not exp_token:
                 return False
-
             # Compare expiration timestamp with current time
-            current_time = datetime.datetime.now(
-                datetime.timezone.utc).timestamp()
+            current_time = datetime.now(timezone.utc).timestamp()
             if current_time > exp_token:
                 return False
 

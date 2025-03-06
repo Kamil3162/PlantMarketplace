@@ -1,42 +1,44 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+import uuid
+import jwt
 from dataclasses import dataclass
 
-import jwt
 from django.conf import settings
 
 from .models import AccessToken
 from account.scheme import UserScheme
 
 class JWTManager(object):
-    def __init__(self):
-        pass
+    ALGORITHM = 'HS256'
+    DEFAULT_EXPIRY_SECONDS = 900
 
-    @staticmethod
-    def create_access_token(data: dict, expires_delta=None):
+    @classmethod
+    def create_access_token(cls, user_id: int):
         """
             Encodes user data to JWT token
 
             Args:
-                data: dict - django User model in dict format
+                user_id: int
                 expires_delta - timedelta - timedelta
 
             Returns:
                 Dictionary access_token
         """
-        payload = data.copy()
-        expire = datetime.utcnow() + timedelta(seconds=900)
-        if expires_delta:
-            expire = datetime.utcnow() + timedelta(seconds=expires_delta)
+        now = datetime.now(timezone.utc)
+        expire_time = now + timedelta(seconds=cls.DEFAULT_EXPIRY_SECONDS)
 
-        payload.update({
-            'exp': expire,
-            'iat': datetime.utcnow(),   # creation token time
-        })
+        payload = {
+            "token_type": "access",
+            "exp": int(expire_time.timestamp()),
+            "iat": int(now.timestamp()),
+            "jti": str(uuid.uuid4().hex),  # Unique token identifier
+            "user_id": user_id
+        }
 
         access_token = jwt.encode(
-            data,
+            payload,
             settings.SECRET_KEY,
-            algorithm='HS256'
+            algorithm=cls.ALGORITHM,
         )
         return access_token
 

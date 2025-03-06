@@ -15,3 +15,6 @@ class UnauthorizedAccess(BaseError):
 class MissingTokenError(BaseError):
     """Custom exception for missing token"""
     pass
+
+class InvalidTokenError(BaseError):
+    """Custom exception for invalid token"""

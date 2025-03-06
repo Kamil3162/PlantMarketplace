@@ -3,14 +3,14 @@ from django.core import serializers
 from django.shortcuts import render
 from django.forms.models import model_to_dict
 from django.core.exceptions import ValidationError
-from core.utils import check_access_token
+from core.utils import check_access_token, admin_access_required
 
 from .models import CustomUser
 from .forms import UserModify
 from .utils import get_user
 
+@admin_access_required
 def users_list(request):
-    print(request.method)
     users = serializers.serialize('json', CustomUser.objects.all())
     return JsonResponse({'users':users})
 
@@ -19,15 +19,11 @@ def user_modify(request, user_data=None):
     if request.method == 'POST':
         user_email = user_data['email']
         user_obj = get_user(user_email)
-        print(isinstance(user_obj, CustomUser))
-        print(user_obj)
         form = UserModify(request.POST, instance=user_obj)
         try:
             if form.is_valid():
-                cleaned = form.clean()
-                print(cleaned)
                 user = form.save()
-                user_dict = model_to_dict(user, fields=[
+                user_dict = model_to_dict(user_obj, fields=[
                     'email',
                     'first_name',
                     'last_name',
@@ -47,10 +43,13 @@ def user_detail(request, user_data=None):
     return render(
         request,
         'user_detail.html',
-        {'user_form': user_form}
+        {
+            'user_form': user_form,
+            'user_data': user_data
+        },
     )
 
-# url fors admin data modify
+# url for admin data modify
 def admin_user_modify(request):
     pass
 
