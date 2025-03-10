@@ -8,10 +8,12 @@ from .exceptions import (
     BaseError,
     InvalidTokenError
 )
-
-from account.utils import get_user
-from account.exceptions import UserNotFound
 from django.forms.models import model_to_dict
+
+from account.utils import get_user, check_group_permission
+from account.exceptions import UserNotFound
+from .exceptions import PermissionDenied
+
 
 redis_instance = RedisManager()
 
@@ -69,37 +71,45 @@ def remove_access_token(func):
     return wrapper
 
 
-def check_access_token(function):
+def check_access_token(required_group=None):
     """
         Function use to user valid token exists in user-tokens, during each operation
     Returns:
     """
-    @wraps(function)
-    def wrapper(request, *args, **kwargs):
-        try:
-            access_token = get_token_from_request(request)
+    def decorator(function):
+        @wraps(function)
+        def wrapper(request, *args, **kwargs):
+            try:
+                access_token = get_token_from_request(request)
 
-            if not access_token:
-                raise MissingTokenError('No access token provided')
+                if not access_token:
+                    raise MissingTokenError('No access token provided')
 
-            decoded_token = JWTManager.decode_token(access_token)
-            user_id = decoded_token['user_id']
+                decoded_token = JWTManager.decode_token(access_token)
+                user_id = decoded_token['user_id']
 
-            if not user_id:
-                raise InvalidTokenError('Token missing user_id claim')
+                if not user_id:
+                    raise InvalidTokenError('Token missing user_id claim')
 
-            user = get_user(user_id)
-            user_data = user
-            if user is None:
-                raise UserNotFound('Following user does not exists exists')
-        except InvalidTokenError as e:
-            raise InvalidTokenError(str(e))
-        except UserNotFound as e:
-            raise UserNotFound(str(e))
-        except Exception as e:
-            raise BaseError(str(e))
-        return function(request, user_data=user_data, *args, **kwargs)
-    return wrapper
+                user = get_user(user_id)
+                user_data = user
+                if user is None:
+                    raise UserNotFound('Following user does not exists exists')
+
+                if required_group:
+                    has_permissions = check_group_permission(user, required_group)
+                    if not has_permissions:
+                        raise PermissionDenied('User has no permissions')
+
+            except InvalidTokenError as e:
+                raise InvalidTokenError(str(e))
+            except UserNotFound as e:
+                raise UserNotFound(str(e))
+            except Exception as e:
+                raise BaseError(str(e))
+            return function(request, user_data=user_data, *args, **kwargs)
+        return wrapper
+    return decorator
 
 def admin_access_required(function):
     """

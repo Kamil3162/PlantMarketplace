@@ -17,4 +17,11 @@ class MissingTokenError(BaseError):
     pass
 
 class InvalidTokenError(BaseError):
-    """Custom exception for invalid token"""
+    """
+        Custom exception for invalid token
+    """
+
+class PermissionDenied(BaseError):
+    """
+        Custom exception for permission denied
+    """

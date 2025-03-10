@@ -3,18 +3,30 @@ from django.core import serializers
 from django.shortcuts import render
 from django.forms.models import model_to_dict
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import Permission, Group
+from django.contrib.contenttypes.models import ContentType
 from core.utils import check_access_token, admin_access_required
 
-from .models import CustomUser
+from .models import CustomUser, PermissionGroupAssigment
 from .forms import UserModify
 from .utils import get_user
 
 @admin_access_required
 def users_list(request):
-    users = serializers.serialize('json', CustomUser.objects.all())
+    # test group s and permissions for user
+    user = CustomUser.objects.get(id=2)
+    # print(PermissionGroupAssigment.objects.create_object())
+    # print(PermissionGroupAssigment.objects.all())
+    # print(user.get_user_permissions())
+    # print(Permission.objects.all())
+    # print(ContentType.objects.all())
+    # print(Group.objects.all())
+    # print(PermissionGroupAssigment.objects.filter(user=user)[0].group.permissions)
+
+    users = serializers.serialize('json', [user])
     return JsonResponse({'users':users})
 
-@check_access_token
+@check_access_token(required_group=None)
 def user_modify(request, user_data=None):
     if request.method == 'POST':
         user_email = user_data['email']
@@ -37,7 +49,7 @@ def user_modify(request, user_data=None):
             raise ValidationError(str(e))
         return HttpResponse('esa')
 
-@check_access_token
+@check_access_token(required_group='account_modify')
 def user_detail(request, user_data=None):
     user_form = UserModify()
     return render(
@@ -48,6 +60,7 @@ def user_detail(request, user_data=None):
             'user_data': user_data
         },
     )
+
 
 # url for admin data modify
 def admin_user_modify(request):
