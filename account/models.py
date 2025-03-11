@@ -11,20 +11,32 @@ from .exceptions import PermissionGroupError, PermissionGroupExists, \
     UserNotFound, PermissionGroupDenied
 
 
-# # Create your models here.
-# class Address(models.Model):
-#     """
-#         Model reponsible for input detail delivery address for bought flowers
-#         etc.
-#     """
-#     first_name = models.CharField(max_length=30)
-#     last_name = models.CharField(max_length=30)
-#     postal_code = models.CharField(max_length=10)
-#     city = models.CharField(max_length=20)
-#     street = models.CharField(max_length=50)
-#     apartment_number = models.CharField(max_length=10, blank=True)
-#     house_number = models.CharField(max_length=6, blank=True)
-#     mobile_phone = PhoneNumberField(blank=True)
+# Create your models here.
+class Address(models.Model):
+    """
+        Model reponsible for input detail delivery address for bought flowers
+        etc.
+    """
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    postal_code = models.CharField(max_length=10)
+    city = models.CharField(max_length=20)
+    street = models.CharField(max_length=50)
+    apartment_number = models.CharField(max_length=10, blank=True)
+    house_number = models.CharField(max_length=6, blank=True)
+    mobile_phone = PhoneNumberField(blank=True)
+
+    def __str__(self):
+        return (f'Address '
+                f'{self.first_name}'
+                f'{self.last_name} '
+                f'{self.postal_code} '
+                f'{self.city}'
+                f'{self.street}'
+                f'{self.apartment_number}'
+        )
+
+
 
 class UserManager(BaseUserManager["CustomUser"]):
     def create_user(
@@ -139,10 +151,19 @@ class PermissionGroupManager(models.Manager):
             role_type=permission_role
         )
 
-    def fetch_user_group_permissions(self, user):
+    def fetch_permission_group(self, user):
         return self.model.objects.get(user=user)
 
-    def create_permission_group(self, use_id=None):
+
+    def create_permission_group(self, user_id=None):
+        """
+            Function responsible for creating a new permission group and assigning
+            user for specific new created permission group
+        Args:
+            user_id: int - user id
+        Returns:
+            PermissionGroupAssigment - new assigned permission group for user
+        """
         # get_or_create returns a tuple of (object, created), so we need to access the first element
         permission, _ = Permission.objects.get_or_create(
             codename='modify_account',
@@ -163,7 +184,7 @@ class PermissionGroupManager(models.Manager):
         # The saves aren't necessary after add() operations as Django handles this automatically
 
         # Assuming the field is correctly named role_type in your model, not content_type
-        perm_group_assignment = PermissionGroupAssigment.objects.create(
+        perm_group_assignment = PermissionGroupAssigment.objects.get_or_create(
             group=group,
             user=user,
             role_type='CUSTOMER',
@@ -181,7 +202,7 @@ class PermissionGroupManager(models.Manager):
             if not permission_group:
                 raise PermissionGroupError('Permission group does not exist')
 
-            user_group_assigned = self.fetch_permission_group()
+            user_group_assigned = self.fetch_permission_group(user)
 
             if group_codename is user_group_assigned.role_type:
                 raise PermissionGroupExists('User already have a this permission group')

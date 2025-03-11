@@ -20,3 +20,9 @@ class PermissionGroupDenied(Exception):
     """
         Exception raised when a permission group denied
     """
+
+class PermissionIntegrityError(Exception):
+    """
+        Exception raised when a permission group already exists
+    """
+

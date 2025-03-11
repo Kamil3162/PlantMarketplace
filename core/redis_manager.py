@@ -36,8 +36,6 @@ class RedisManager(object):
         user_dict['is_staff'] = 'false'
         user_dict['is_confirmed'] = 'false'
 
-        print(user_dict)
-
         access_token = JWTManager.create_access_token(
             user_id=user_dict['user_id']
         )
@@ -60,9 +58,6 @@ class RedisManager(object):
             user_data, token = self.generate_user_data(user_instance)
             key = f'{self.user_prefix}{token}'
 
-            print(key)
-            print(user_data)
-
             # Store in Redis
             self.redInst.hset(
                 name=key,  # Using 'name' instead of 'key' for clarity
@@ -83,6 +78,7 @@ class RedisManager(object):
             # Check if expiration time exists
             if not exp_token:
                 return False
+
             # Compare expiration timestamp with current time
             current_time = datetime.now(timezone.utc).timestamp()
             if current_time > exp_token:

@@ -5,16 +5,27 @@ from django.forms.models import model_to_dict
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import Permission, Group
 from django.contrib.contenttypes.models import ContentType
+from django.core.paginator import Paginator
 from core.utils import check_access_token, admin_access_required
 
 from .models import CustomUser, PermissionGroupAssigment
 from .forms import UserModify
 from .utils import get_user
 
-@admin_access_required
+# @admin_access_required
 def users_list(request):
     # test group s and permissions for user
-    user = CustomUser.objects.get(id=2)
+    users = CustomUser.objects.all()
+    paginator = Paginator(users, 15)
+    page = request.GET.get('page', default=1)
+
+    print(paginator.num_pages)
+    print(paginator.count)
+    print(paginator.page_range)
+    print(paginator.get_page(1))
+    page_objects = paginator.get_page(1)
+    print(page_objects.object_list)
+
     # print(PermissionGroupAssigment.objects.create_object())
     # print(PermissionGroupAssigment.objects.all())
     # print(user.get_user_permissions())
@@ -23,8 +34,10 @@ def users_list(request):
     # print(Group.objects.all())
     # print(PermissionGroupAssigment.objects.filter(user=user)[0].group.permissions)
 
-    users = serializers.serialize('json', [user])
-    return JsonResponse({'users':users})
+    users = CustomUser.objects.all()
+
+    users = serializers.serialize('json', users, indent=2)
+    return HttpResponse(users, content_type="application/json")
 
 @check_access_token(required_group=None)
 def user_modify(request, user_data=None):

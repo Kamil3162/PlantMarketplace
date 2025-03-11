@@ -10,6 +10,7 @@ from faker import Faker
 from account.models import CustomUser
 
 User = CustomUser
+
 class Command(BaseCommand):
     def handle(self, *args, **options):
         fake = Faker()
