@@ -10,7 +10,8 @@ from .exceptions import (
 )
 from django.forms.models import model_to_dict
 
-from account.utils import get_user, check_group_permission
+from account.utils import get_user
+from permissions.models import PermissionGroupAssigment
 from account.exceptions import UserNotFound
 from .exceptions import PermissionDenied
 
@@ -97,7 +98,11 @@ def check_access_token(required_group=None):
                     raise UserNotFound('Following user does not exists exists')
 
                 if required_group:
-                    has_permissions = check_group_permission(user, required_group)
+                    has_permissions = (
+                        PermissionGroupAssigment.objects.
+                        check_group_permission(user, required_group)
+                    )
+
                     if not has_permissions:
                         raise PermissionDenied('User has no permissions')
 

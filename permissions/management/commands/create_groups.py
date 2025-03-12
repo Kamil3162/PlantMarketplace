@@ -1,20 +1,6 @@
 from django.core.management import BaseCommand
 from django.contrib.auth.models import Group
 
-class Admin:
-    pass
-
-class Manager:
-    pass
-
-class User:
-    pass
-
-class Moderator:
-    pass
-
-
-
 class Command(BaseCommand):
     help = 'Create groups for builtin Group model'
 

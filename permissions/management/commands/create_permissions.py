@@ -2,8 +2,7 @@ import sys
 
 from django.core.management import BaseCommand
 from django.contrib.auth.models import Permission, ContentType
-from ...models import CustomUser
-from ...exceptions import PermissionIntegrityError
+from account.models import CustomUser
 
 class Command(BaseCommand):
     help = 'Creates permissions for CustomerUser model'

@@ -8,11 +8,11 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator
 from core.utils import check_access_token, admin_access_required
 
-from .models import CustomUser, PermissionGroupAssigment
+from .models import CustomUser
 from .forms import UserModify
 from .utils import get_user
 
-# @admin_access_required
+@admin_access_required
 def users_list(request):
     # test group s and permissions for user
     users = CustomUser.objects.all()
@@ -25,6 +25,8 @@ def users_list(request):
     print(paginator.get_page(1))
     page_objects = paginator.get_page(1)
     print(page_objects.object_list)
+
+
 
     # print(PermissionGroupAssigment.objects.create_object())
     # print(PermissionGroupAssigment.objects.all())
