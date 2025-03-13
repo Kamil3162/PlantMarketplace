@@ -1,45 +1,27 @@
-import base64
 import os.path
+import ssl
+from email.message import EmailMessage
 import smtplib
-from email.mime.multipart import MIMEMultipart
+import dotenv
 
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
-from email.mime.text import MIMEText
+dotenv.load_dotenv()
 
-from requests import HTTPError
+email_sender = 'kamilholb@gmail.com'
+email_receiver = 'kamilholb@gmail.com'
+email_password = os.getenv('APP_PASSWORD')
 
+subject = 'PlantMarketplace Email Test'
+body = """I've test my email appi"""
 
-subject =  'Test message'
-body = 'Test message'
-sender = 'kamilholb@gmail.com'
-to = 'kamilholb@gmail.com'
+em = EmailMessage()
+em['From'] = email_sender
+em['To'] = email_receiver
+em['Subject'] = subject
+em.set_content(body)
 
-scopes = ['https://www.googleapis.com/auth/gmail.send']
+context = ssl.create_default_context()
 
-flow = InstalledAppFlow.from_client_secrets_file(
-    client_secrets_file='googleapi.json',
-    scopes=scopes,
-)
-
-creds = flow.run_local_server(
-    port=8000,
-    redirect_uri_trailing_slash=False
-)
-
-service = build('gmail', 'v1', credentials=creds)
-
-message = MIMEText(body, 'plain')
-message['to'] = to
-message['from'] = sender
-message['subject'] = subject
-create_message = {'raw': base64.urlsafe_b64encode(message.as_bytes()).decode()}
-
-try:
-    message = (service.users().messages().send(userId='me', body=create_message).execute())
-    print('Emial sended')
-except HttpError as error:
-    print('error occured')
+def send_email_reset():
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.send_message(em)

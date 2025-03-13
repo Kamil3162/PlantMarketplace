@@ -1,11 +1,12 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from core.utils import check_access_token
 
-from .models import PermissionGroupAssigment
 # Create your views here.
 
 def get_permissions(request):
-    # in this line on code i wanna generate permission following my scheme
-    permission = PermissionGroupAssigment.objects._create_permissions()
-    groups = PermissionGroupAssigment.objects._generate_base_groups()
+
     return HttpResponse('success')
+
+@check_access_token
+def change_user_permission(request):
+    pass

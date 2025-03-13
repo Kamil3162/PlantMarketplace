@@ -7,4 +7,3 @@ class UserAdmin(admin.ModelAdmin):
 
 admin.site.register(CustomUser, UserAdmin)
 
-# preceding - poprzedzajacym

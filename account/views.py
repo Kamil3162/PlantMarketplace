@@ -3,14 +3,15 @@ from django.core import serializers
 from django.shortcuts import render
 from django.forms.models import model_to_dict
 from django.core.exceptions import ValidationError
-from django.contrib.auth.models import Permission, Group
-from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator
 from core.utils import check_access_token, admin_access_required
+from django.apps import apps
 
 from .models import CustomUser
 from .forms import UserModify
 from .utils import get_user
+from send_email import send_email_reset
+from permissions.models import PermissionGroupAssigment
 
 @admin_access_required
 def users_list(request):
@@ -26,15 +27,6 @@ def users_list(request):
     page_objects = paginator.get_page(1)
     print(page_objects.object_list)
 
-
-
-    # print(PermissionGroupAssigment.objects.create_object())
-    # print(PermissionGroupAssigment.objects.all())
-    # print(user.get_user_permissions())
-    # print(Permission.objects.all())
-    # print(ContentType.objects.all())
-    # print(Group.objects.all())
-    # print(PermissionGroupAssigment.objects.filter(user=user)[0].group.permissions)
 
     users = CustomUser.objects.all()
 
@@ -75,6 +67,11 @@ def user_detail(request, user_data=None):
             'user_data': user_data
         },
     )
+
+def reset_password(request):
+    send_email_reset()
+
+    return HttpResponse('Reset password sent')
 
 
 # url for admin data modify

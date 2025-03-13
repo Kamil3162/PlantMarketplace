@@ -20,16 +20,18 @@ class PermissionGroupManager(models.Manager):
 
     def assign_group(self, user, permission_role, group_name=None):
         permission_groups = self.model.GROUPS
+
         if permission_role not in [group[0] for group in permission_groups]:
             raise PermissionGroupError('Permission role does not exist')
 
-        try:
-            user_group_assigned = self.fetch_permission_group(user)
-            if user_group_assigned.role_type == permission_role:
-                raise PermissionGroupExists(
-                    'User already has this permission role')
-        except self.model.DoesNotExist:
-            raise UserNotFound('User does not exist')
+        user_group_assigned = self.fetch_permission_group(user)
+
+        if len(user_group_assigned):
+            for permission_group in user_group_assigned:
+                if permission_group.role_type == permission_role:
+                    raise PermissionGroupExists(
+                        'User already has this permission role'
+                    )
 
         # Create or get the group
         group, _ = Group.objects.get_or_create(
@@ -43,7 +45,7 @@ class PermissionGroupManager(models.Manager):
         )
 
     def fetch_permission_group(self, user):
-        return self.model.objects.get(user=user)
+        return self.model.objects.filter(user=user)
 
     def create_permission_group(self, user_id=None):
         """
@@ -129,8 +131,7 @@ class PermissionGroupManager(models.Manager):
     def _create_permissions(self):
         try:
             content_type = ContentType.objects.get_for_model(CustomUser)
-            print(content_type)
-
+            permissions = []
             for permission_group in PERMISSIONS:
                 for permission in permission_group:
 
@@ -146,6 +147,9 @@ class PermissionGroupManager(models.Manager):
                         content_type=content_type,
                         codename=permission_codename
                     )
+                    permissions.append(permission)
+            return permissions
+
         except CustomUser.DoesNotExists:
             raise ModelDoesNotExists('CustomUser model does not exist')
 
@@ -156,6 +160,7 @@ class PermissionGroupManager(models.Manager):
     def _generate_base_groups(self):
         try:
             group_names = ROLE_PERMISSIONS.keys()
+            group_list = []
             for group_name in group_names:
                 role_permissions = get_permission_codenames(
                     ROLE_PERMISSIONS,
@@ -176,7 +181,9 @@ class PermissionGroupManager(models.Manager):
                     'Successfully generated base permissions for group',
                     group_name
                 )
+                group_list.append(group)
 
+            return group_list
         except Exception as e:
             raise Exception(str(e))
 
@@ -197,9 +204,10 @@ class PermissionGroupAssigment(models.Model):
     GROUPS = (
         ('ADMIN', 'Administrator'),
         ('MANAGER', 'Managers'),
+        ('CUSTOMER_SERVICE', 'Customer Service'),
+        ('CONTENT_EDITOR', 'Content Editor'),
         ('CUSTOMER', 'Customer'),
-        ('ADMINISTRATOR', 'Administrator'),
-        ('EDITOR', 'Content Editor'),
+        ('ANONYMOUS', 'Anonymous user'),
     )
 
     group = models.ForeignKey(Group, on_delete=models.CASCADE, null=False)
@@ -219,6 +227,8 @@ class PermissionGroupAssigment(models.Model):
 
     def __str__(self):
         return f"{self.user.get_username()} - {self.role_type}"
+
+
 
 
 

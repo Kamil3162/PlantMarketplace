@@ -1,5 +1,6 @@
 import json
 import os
+
 from dotenv import load_dotenv
 
 from django.http import HttpResponse, JsonResponse
@@ -16,6 +17,8 @@ from account.forms import RegisterForm, LoginForm
 from core.redis_manager import RedisManager
 from core.jwt_manager import JWTManager
 from core.utils import remove_access_token, black_token_validation
+from permissions.models import PermissionGroupAssigment
+
 
 load_dotenv()
 redis_manager = RedisManager()
@@ -100,6 +103,13 @@ def register(request):
                     'email',
                     'is_active'
                 ])
+
+                user_group = PermissionGroupAssigment.objects.assign_group(
+                    user,
+                    'CUSTOMER',
+                    'CUSTOMER'
+                )
+
                 return JsonResponse({
                     'status': 'success',
                     'user_data': user_dict
@@ -128,6 +138,6 @@ def get_cookie_value(request):
     access_token = request.COOKIES.get('access_token', 'Cookie not found')
 
     redis_client = redis_manager.get_user_data(access_token)
-    print(redis_client)
     token_decoded = JWTManager.decode_token(access_token)
     return HttpResponse(json.dumps(token_decoded))
+
