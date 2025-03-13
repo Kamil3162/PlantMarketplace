@@ -25,7 +25,7 @@ def black_token_validation(func):
     """
         Function use to validate does token exists in blacklisted tokens.
         We wanna prevent to reuse one more time during steal token unautorized acceess
-    Args:s
+    Args:ssss
         func:
         token: jwt token
     Returns:
