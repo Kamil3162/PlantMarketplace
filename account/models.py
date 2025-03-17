@@ -35,8 +35,6 @@ class Address(models.Model):
                 f'{self.apartment_number}'
         )
 
-
-
 class UserManager(BaseUserManager["CustomUser"]):
     def create_user(
         self,

@@ -13,20 +13,13 @@ from .utils import get_user
 from send_email import send_email_reset
 from permissions.models import PermissionGroupAssigment
 
-@admin_access_required
+
 def users_list(request):
     # test group s and permissions for user
     users = CustomUser.objects.all()
     paginator = Paginator(users, 15)
     page = request.GET.get('page', default=1)
-
-    print(paginator.num_pages)
-    print(paginator.count)
-    print(paginator.page_range)
-    print(paginator.get_page(1))
     page_objects = paginator.get_page(1)
-    print(page_objects.object_list)
-
 
     users = CustomUser.objects.all()
 

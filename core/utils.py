@@ -19,7 +19,10 @@ from .exceptions import PermissionDenied
 redis_instance = RedisManager()
 
 def get_token_from_request(request):
-    return request.COOKIES.get('access_token', False)
+    try:
+        return request.COOKIES.get('access_token', False)
+    except KeyError:
+        raise UnauthorizedAccess('Request token is missing')
 
 def black_token_validation(func):
     """

@@ -1,4 +1,3 @@
-# roles.py
 from .permisions import (
     AccountPermissions,
     AppPermission,
