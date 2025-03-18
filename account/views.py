@@ -13,7 +13,6 @@ from .utils import get_user
 from send_email import send_email_reset
 from permissions.models import PermissionGroupAssigment
 
-
 def users_list(request):
     # test group s and permissions for user
     users = CustomUser.objects.all()

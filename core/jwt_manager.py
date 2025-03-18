@@ -18,6 +18,7 @@ class JWTManager(object):
             Encodes user data to JWT token
 
             Args:
+                secret_key:
                 user_id: int
                 expires_delta - timedelta - timedelta
 
@@ -40,6 +41,7 @@ class JWTManager(object):
             settings.SECRET_KEY,
             algorithm=cls.ALGORITHM,
         )
+
         return access_token
 
     @staticmethod
@@ -48,6 +50,7 @@ class JWTManager(object):
         Decodes and validates a JWT token.
 
         Args:
+            secret_key:
             token: The JWT token string to decode
 
         Returns:
