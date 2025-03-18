@@ -133,9 +133,21 @@ class TestJWTManager:
 
 
     def test_exp_time(self, user_token, jwt_manager, create_user):
+        """
+            Test check does manager properly create jwt token with exp time
+        Args:
+            user_token: fixture - create access token for create_user
+            jwt_manager: fixture - manager for operations related with jwt
+            create_user: fixture - create object data model
+
+        Returns:
+
+        """
         decoded_token =  jwt_manager.decode_token(user_token)
         base_time = jwt_manager.DEFAULT_EXPIRY_SECONDS
+        current_time = datetime.now(timezone.utc) + timedelta(seconds=base_time)
+        cur_time = current_time.timestamp()
 
-        assert decoded_token['exp'] == base_time
+        assert decoded_token['exp'] - cur_time < 5
 
 
