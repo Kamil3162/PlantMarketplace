@@ -1,8 +1,13 @@
 aio-pika
+aiohappyeyeballs
+aiohttp
+aiohttp-retry
 aiormq
+aiosignal
 amqp
 asgiref
 asyncio
+attrs
 billiard
 black
 cachetools
@@ -21,6 +26,7 @@ django-oauth-toolkit
 django-phonenumber-field
 exceptiongroup
 Faker
+frozenlist
 google-api-core
 google-api-python-client
 google-auth
@@ -66,6 +72,7 @@ requests-oauthlib
 rsa
 six
 sqlparse
+twilio
 typing_extensions
 tzdata
 uritemplate
