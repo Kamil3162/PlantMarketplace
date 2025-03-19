@@ -19,6 +19,26 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    product = models.UUIDField
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     final_price = models.FloatField()
+
+    @property
+    def calculated_price(self):
+        return self.quantity * self.product.price
+
+
+class OrderEvent(models.Model):
+    EVENTS = (
+        ('created', 'Created'),
+        ('updated', 'Updated'),
+        ('fullfilled', 'Fullfilled'),
+        ('refunded', 'Refunded'),
+    )
+
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    event = models.CharField(max_length=30, choices=EVENTS, default='created')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('event',)
