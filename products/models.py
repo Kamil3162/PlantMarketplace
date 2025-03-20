@@ -9,6 +9,7 @@ from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 import uuid
+
 class Product(models.Model):
     SUNLIGHT_CHOICES = [
         ('full', 'Full Sun'),
@@ -58,6 +59,8 @@ class Product(models.Model):
 
     # Optional Image field (requires Pillow package)
     image = models.ImageField(upload_to='flowers/', blank=True, null=True)
+
+    objects = models.Manager()
 
     class Meta:
         ordering = ['name']
@@ -168,7 +171,9 @@ class Inventory(models.Model):
         'Product',  # Using string to avoid circular imports
         on_delete=models.CASCADE,
         related_name='inventories',
-        verbose_name=_("Product")
+        verbose_name=_("Product"),
+        null=True,
+        default=None
     )
     quantity = models.PositiveIntegerField(
         default=0,
@@ -184,11 +189,13 @@ class Inventory(models.Model):
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
-        verbose_name=_("Created At")
+        verbose_name=_("Created At"),
+        null=True,
     )
     updated_at = models.DateTimeField(
         auto_now=True,
-        verbose_name=_("Updated At")
+        verbose_name=_("Updated At"),
+        null=True,
     )
 
     # Assign custom manager
@@ -365,7 +372,7 @@ class InventoryEvent(models.Model):
         verbose_name=_("Inventory")
     )
     user = models.ForeignKey(
-        'CustomUser',  # Using string to avoid circular imports
+        CustomUser,  # Using string to avoid circular imports
         on_delete=models.CASCADE,
         verbose_name=_("User")
     )

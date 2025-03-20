@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for object in object_list %}
+        <a href="{% url 'product_detail' object.id %}">
+            <li>
+
+            {{ object.id }}
+        </li>
+        </a>
+    {% endfor %}
+    <div style="
+    display: flex;
+    gap: 30px;
+">
+        {% if previous_page %}
+            <a href="{% url 'product_list' %}?page={{ previous_page }}">
+                <p>
+                    {{ previous_page }}
+                </p>
+            </a>
+        {% endif %}
+        <p>
+            current page
+        </p>
+        {% if next_page %}
+            <a href="{% url 'product_list' %}?page={{ next_page }}">
+                <p>
+                    {{ next_page }}
+                </p>
+            </a>
+        {% endif %}
+    </div>
+</ul>
+</body>
+</html>

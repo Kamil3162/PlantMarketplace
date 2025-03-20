@@ -1,5 +1,5 @@
+import os
 import pika
-
 
 class RabbitMQService:
     def __init__(self):

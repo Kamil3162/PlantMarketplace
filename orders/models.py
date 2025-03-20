@@ -1,3 +1,5 @@
+from enum import nonmember
+
 from django.db import models
 from account.models import CustomUser
 from products.models import Product
@@ -19,7 +21,7 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, default=True)
     quantity = models.IntegerField(default=1)
     final_price = models.FloatField()
 

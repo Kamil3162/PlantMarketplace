@@ -20,10 +20,12 @@ from oauth2_provider import urls as oauth2_provider_urls
 from authentication import urls as auth_urls
 from account import urls as user_urls
 from permissions import urls as permission_urls
+from products import urls as product_urls
 urlpatterns = [
+    path('', include(auth_urls)),
     path('admin/', admin.site.urls),
     path('o/', include(oauth2_provider_urls)),
-    path('', include(auth_urls)),
     path('users/', include(user_urls)),
     path('perm/', include(permission_urls)),
+    path('product/', include(product_urls)),
 ]

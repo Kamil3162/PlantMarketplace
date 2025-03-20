@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if not submitted %}
+        <form method="post" action={% url 'product_create' %}>
+            {% csrf_token %}
+            {{ create_product_form }}
+            <button>Send</button>
+        </form>
+    {% else %}
+        <p>esa</p>
+        {% for field, value in test_data.items %}
+            {{ value }}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
