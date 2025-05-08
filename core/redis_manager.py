@@ -10,7 +10,7 @@ from .jwt_manager import JWTManager
 class RedisManager(object):
     def __init__(self):
         self.redInst = redis.Redis(
-            host='redis',
+            host='redis_microservices',
             port=6379,
             db=0,
             # decode_responses=True

@@ -3,6 +3,7 @@ from django.forms.models import model_to_dict
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db import utils as django_db_exceptions
 
 from products.models import Product
 from .forms import CreateProductForm
@@ -12,10 +13,11 @@ def product_create(request):
     if request.method == "POST":
         submitted = True
         create_product = CreateProductForm(request.POST)
-
+        print(Product._meta)
         if create_product.is_valid():
             product = create_product.save()
             product_dict = model_to_dict(product)
+
             return render(request, 'create_product.html', {
                 'test_data': product_dict,
                 'submitted': submitted,
@@ -56,11 +58,21 @@ def product_list(request):
 
 def product_detail(request, product_uuid):
     # we have to get particular product details
-    print(product_uuid)
     product = get_object_or_404(Product, pk=product_uuid)
     return render(request, 'product_detail.html', {
         'product': product,
     })
 
 
+# def delete_product(request, product_uuid):
+    # try:
+    #
+    #     product = get_object_or_404(Product, pk=product_uuid)
+    #     product.delete()
+    #     return JsonResponse(
+    #         data={
+    #             'status': 'success',
+    #             'message': 'Product deleted'
+    #         }
+    #     )
 

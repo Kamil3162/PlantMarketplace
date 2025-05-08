@@ -11,6 +11,7 @@ from django.forms.models import model_to_dict
 from django.contrib.auth import authenticate, login, logout
 from google.oauth2 import id_token
 from google.auth.transport import requests
+from django.core.serializers import serialize
 
 from .utils import auth_decorator
 from account.forms import RegisterForm, LoginForm
@@ -96,6 +97,7 @@ def register(request):
         try:
             if form.is_valid():
                 user = form.save()
+
                 user_dict = model_to_dict(user, fields=[
                     'id',
                     'first_name',
@@ -112,7 +114,7 @@ def register(request):
 
                 return JsonResponse({
                     'status': 'success',
-                    'user_data': user_dict
+                    'user_data': user_dict,
                 })
         except ValidationError as e:
             raise ValidationError(str(e))

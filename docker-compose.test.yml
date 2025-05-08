@@ -36,9 +36,9 @@ services:
 
   redis_test:
     image: redis:7-alpine
-    command: redis-server --appendonly no
+    command: redis_microservices-server --appendonly no
     ports:
-      - "6381:6381"  # Different port for test redis
+      - "6381:6381"  # Different port for test redis_microservices
     networks:
       - test-network
 
