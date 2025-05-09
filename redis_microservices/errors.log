@@ -1,0 +1,9 @@
+2025-05-09 19:46:42,775 - redis_microservices.config - ERROR - Unexpected error storing products: 'RedisProductOperations' object has no attribute '_prepare_product_for_redis'
+2025-05-09 19:47:02,775 - redis_microservices.config - ERROR - Unexpected error storing products: name 'datetime' is not defined
+2025-05-09 19:47:02,805 - redis_microservices.config - ERROR - Unexpected error storing products: name 'datetime' is not defined
+2025-05-09 19:47:04,093 - redis_microservices.config - ERROR - Unexpected error storing products: name 'datetime' is not defined
+2025-05-09 19:47:04,701 - redis_microservices.config - ERROR - Unexpected error storing products: name 'datetime' is not defined
+2025-05-09 19:47:53,551 - redis_microservices.config - ERROR - Unexpected error storing products: The 'image' attribute has no file associated with it.
+2025-05-09 19:54:06,701 - redis_microservices.config - ERROR - Unexpected error storing products: HashCommands.hget() missing 1 required positional argument: 'key'
+2025-05-09 19:54:18,373 - redis_microservices.config - ERROR - Unexpected error storing products: HashCommands.hget() missing 1 required positional argument: 'name'
+2025-05-09 19:54:54,001 - redis_microservices.config - ERROR - Unexpected error storing products: HashCommands.hgetall() got an unexpected keyword argument 'key'

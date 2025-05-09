@@ -1,0 +1,490 @@
+2025-05-09 19:21:50,723 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:22:04,910 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:33:05,050 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:33:33,381 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:34:15,536 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:34:47,250 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:34:47,912 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:35:20,411 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:35:37,504 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:35:38,258 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:35:48,392 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:35:48,871 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:36:23,379 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:36:39,822 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:36:56,004 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:36:57,163 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:37:13,557 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:37:14,428 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:37:15,659 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:37:30,771 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:37:50,525 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:38:34,328 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:38:45,196 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:39:00,091 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:39:02,971 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:39:23,045 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:39:41,299 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:39:54,442 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:40:28,937 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:41:23,487 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:41:24,658 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:41:50,830 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:43:56,599 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:44:24,700 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:44:25,312 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:44:44,627 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:44:45,422 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:46:42,758 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:46:42,759 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:46:42,772 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:46:42,775 - redis_microservices.config - ERROR - Unexpected error storing products: 'RedisProductOperations' object has no attribute '_prepare_product_for_redis'
+2025-05-09 19:47:02,762 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:47:02,763 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:47:02,772 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:47:02,775 - redis_microservices.config - ERROR - Unexpected error storing products: name 'datetime' is not defined
+2025-05-09 19:47:02,791 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:47:02,792 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:47:02,802 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:47:02,805 - redis_microservices.config - ERROR - Unexpected error storing products: name 'datetime' is not defined
+2025-05-09 19:47:04,081 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:47:04,082 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:47:04,091 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:47:04,093 - redis_microservices.config - ERROR - Unexpected error storing products: name 'datetime' is not defined
+2025-05-09 19:47:04,689 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:47:04,690 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:47:04,698 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:47:04,701 - redis_microservices.config - ERROR - Unexpected error storing products: name 'datetime' is not defined
+2025-05-09 19:47:53,534 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:47:53,535 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:47:53,547 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:47:53,551 - redis_microservices.config - ERROR - Unexpected error storing products: The 'image' attribute has no file associated with it.
+2025-05-09 19:48:12,490 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:48:12,491 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:48:12,499 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:48:12,505 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 19:48:12,855 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:48:12,856 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:48:12,870 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:48:12,874 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 19:54:06,687 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:54:06,688 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:54:06,697 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:54:06,701 - redis_microservices.config - ERROR - Unexpected error storing products: HashCommands.hget() missing 1 required positional argument: 'key'
+2025-05-09 19:54:18,359 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:54:18,360 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:54:18,369 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:54:18,373 - redis_microservices.config - ERROR - Unexpected error storing products: HashCommands.hget() missing 1 required positional argument: 'name'
+2025-05-09 19:54:41,299 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:54:41,299 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:54:41,307 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:54:41,313 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 19:54:42,654 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:54:42,655 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:54:42,664 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:54:42,669 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 19:54:53,988 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:54:53,989 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:54:53,997 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:54:54,001 - redis_microservices.config - ERROR - Unexpected error storing products: HashCommands.hgetall() got an unexpected keyword argument 'key'
+2025-05-09 19:55:08,274 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 19:55:08,274 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 19:55:08,282 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 19:55:08,287 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:02:31,879 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:02:31,879 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:02:31,889 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:02:31,894 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:02:59,606 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:02:59,607 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:02:59,615 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:02:59,620 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:03:09,586 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:03:09,587 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:03:09,596 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:03:09,600 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:03:25,518 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:03:25,518 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:03:25,528 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:03:25,532 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:03:36,604 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:03:36,604 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:03:36,614 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:03:36,618 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:28:55,864 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:28:55,865 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:28:55,881 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:28:55,889 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:28:56,966 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:28:56,967 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:28:56,977 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:28:56,981 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:28:57,422 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:28:57,423 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:28:57,433 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:28:57,437 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:28:57,900 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:28:57,901 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:28:57,910 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:28:57,914 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:00,419 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:00,419 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:00,437 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:00,443 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:00,880 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:00,880 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:00,890 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:00,894 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:01,212 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:01,212 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:01,221 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:01,225 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:01,478 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:01,479 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:01,488 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:01,492 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:01,673 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:01,674 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:01,687 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:01,699 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:01,872 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:01,872 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:01,884 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:01,888 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:26,483 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:26,483 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:26,492 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:26,498 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:27,245 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:27,246 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:27,272 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:27,281 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:27,651 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:27,651 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:27,661 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:27,666 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:27,918 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:27,918 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:27,927 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:27,931 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:28,143 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:28,144 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:28,154 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:28,158 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:29:28,353 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:29:28,354 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:29:28,365 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:29:28,368 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:30:10,705 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:30:10,705 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:30:10,715 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:30:10,721 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:30:11,116 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:30:11,117 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:30:11,129 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:30:11,134 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:30:11,412 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:30:11,413 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:30:11,423 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:30:11,426 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:30:25,269 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:30:25,269 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:30:25,279 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:30:25,284 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:30:25,652 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:30:25,653 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:30:25,663 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:30:25,668 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:30:26,033 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:30:26,034 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:30:26,045 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:30:26,049 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:30:26,340 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:30:26,341 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:30:26,352 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:30:26,356 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:48:25,455 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:48:25,456 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:48:25,466 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:48:25,471 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:50:21,807 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:50:21,808 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:50:21,817 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:50:21,821 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:50:22,647 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:50:22,647 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:50:22,657 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:50:22,661 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 20:50:22,826 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 20:50:22,826 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 20:50:22,836 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 20:50:22,840 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:00:24,619 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:00:24,619 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:00:24,628 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:00:24,635 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:00:52,522 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:00:52,522 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:00:52,531 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:00:52,536 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:00:53,248 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:00:53,248 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:00:53,257 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:00:53,261 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:00:54,065 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:00:54,066 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:00:54,076 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:00:54,080 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:00:54,847 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:00:54,848 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:00:54,856 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:00:54,860 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:00:55,694 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:00:55,695 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:00:55,704 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:00:55,707 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:01:06,319 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:01:06,320 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:01:06,329 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:01:06,333 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:01:14,319 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:01:14,319 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:01:14,329 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:01:14,332 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:01:25,518 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:01:25,518 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:01:25,530 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:01:25,534 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:02:16,499 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:02:16,499 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:02:16,509 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:02:16,514 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:23:48,613 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:25:25,794 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:25:25,794 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:25:25,806 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:25:25,819 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:27:42,950 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:27:42,951 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:27:42,961 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:27:42,967 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:27:43,709 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:27:43,710 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:27:43,720 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:27:43,725 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:27:55,147 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:27:55,147 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:27:55,157 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:27:55,162 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:28:09,455 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:28:09,455 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:28:09,464 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:28:09,469 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:28:49,548 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:28:49,548 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:28:49,557 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:28:49,561 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:28:50,440 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:28:50,441 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:28:50,449 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:28:50,454 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:28:51,035 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:28:51,036 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:28:51,046 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:28:51,051 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:28:51,226 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:28:51,227 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:28:51,239 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:28:51,242 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:30:21,631 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:30:21,632 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:30:21,642 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:30:21,648 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:30:22,764 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:30:22,765 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:30:22,774 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:30:22,778 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:30:24,244 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:30:24,244 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:30:24,254 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:30:24,258 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:30:24,446 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:30:24,447 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:30:24,471 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:30:24,475 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:30:24,638 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:30:24,639 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:30:24,648 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:30:24,652 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:30:24,811 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:30:24,812 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:30:24,821 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:30:24,825 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:30:35,293 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:30:35,293 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:30:35,305 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:30:35,310 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:05,048 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:05,049 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:05,059 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:05,065 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:05,928 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:05,929 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:05,939 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:05,944 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:06,929 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:06,930 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:06,940 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:06,945 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:07,276 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:07,276 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:07,285 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:07,290 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:07,511 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:07,511 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:07,520 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:07,523 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:07,694 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:07,695 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:07,703 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:07,707 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:07,885 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:07,885 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:07,895 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:07,898 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:08,096 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:08,096 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:08,104 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:08,109 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:08,280 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:08,280 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:08,289 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:08,293 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:08,451 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:08,451 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:08,461 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:08,465 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:31:09,127 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:31:09,127 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:31:09,136 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:31:09,140 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:33:48,129 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:33:48,130 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:33:48,142 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:33:48,148 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 21:34:46,062 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 21:34:46,063 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 21:34:46,071 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 21:34:46,076 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:20:00,729 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:20:00,729 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:20:00,741 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:20:00,749 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:20:02,029 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:20:02,030 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:20:02,038 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:20:02,041 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:20:02,470 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:20:02,470 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:20:02,479 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:20:02,483 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:21:34,851 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:21:35,583 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:21:35,651 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:21:35,656 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:14,939 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:14,940 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:14,949 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:14,954 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:15,603 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:15,604 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:15,613 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:15,617 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:16,075 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:16,076 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:16,085 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:16,089 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:16,556 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:16,556 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:16,565 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:16,568 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:16,756 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:16,757 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:16,766 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:16,770 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:16,940 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:16,941 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:16,951 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:16,954 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:17,139 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:17,140 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:17,150 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:17,153 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:30,890 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:30,890 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:30,898 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:30,903 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:36,105 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:36,106 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:36,117 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:36,121 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:36,325 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:36,326 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:36,335 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:36,339 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:36,525 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:36,526 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:36,535 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:36,538 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:36,717 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:36,718 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:36,727 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:36,730 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:36,910 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:36,911 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:36,920 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:36,924 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:37,074 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:37,074 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:37,084 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:37,088 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:38,826 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:38,827 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:38,838 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:38,843 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:42,438 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:42,439 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:42,448 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:42,452 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:44,571 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:44,572 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:44,586 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:44,593 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:59,328 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:59,329 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:59,338 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:59,343 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:59,522 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:59,522 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:59,532 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:59,535 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:59,713 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:59,714 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:59,724 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:59,727 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:31:59,885 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:31:59,886 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:31:59,894 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:31:59,898 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:32:00,060 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:32:00,061 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:32:00,070 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:32:00,074 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:32:00,202 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:32:00,203 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:32:00,213 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:32:00,216 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-09 22:32:04,009 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-09 22:32:04,009 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-09 22:32:04,020 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-09 22:32:04,024 - redis_microservices.config - INFO - Successfully stored 1 products in Redis

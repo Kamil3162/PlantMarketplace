@@ -68,11 +68,11 @@ class Product(models.Model):
         verbose_name_plural = 'Flowers'
 
     def __str__(self):
-        return self.name
+        return f"Product-{self.name}:{self.id}"
 
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse('flower-detail', args=[str(self.id)])
+        return reverse('product_detail', args=[str(self.id)])
 
     def modify_object(self, **kwargs):
         """
@@ -81,7 +81,6 @@ class Product(models.Model):
             **kwargs:
         Returns:
             self: Updated product instance
-
         Raises:
             KeyError: If any field doesn't exist on the model
         """

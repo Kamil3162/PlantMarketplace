@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db import utils as django_db_exceptions
+from django.db.models import ProtectedError
 
 from products.models import Product
 from .forms import CreateProductForm
@@ -13,10 +14,12 @@ def product_create(request):
     if request.method == "POST":
         submitted = True
         create_product = CreateProductForm(request.POST)
-        print(Product._meta)
         if create_product.is_valid():
             product = create_product.save()
             product_dict = model_to_dict(product)
+
+            print(product)
+            print(product_dict)
 
             return render(request, 'create_product.html', {
                 'test_data': product_dict,
@@ -56,6 +59,7 @@ def product_list(request):
         'product_list.html',
         page_information)
 
+# first part we should try to render data using redis so lets go on
 def product_detail(request, product_uuid):
     # we have to get particular product details
     product = get_object_or_404(Product, pk=product_uuid)
@@ -64,15 +68,37 @@ def product_detail(request, product_uuid):
     })
 
 
-# def delete_product(request, product_uuid):
-    # try:
-    #
-    #     product = get_object_or_404(Product, pk=product_uuid)
-    #     product.delete()
-    #     return JsonResponse(
-    #         data={
-    #             'status': 'success',
-    #             'message': 'Product deleted'
-    #         }
-    #     )
+def delete_product(request, product_uuid):
+    try:
+        product = get_object_or_404(Product, pk=product_uuid)
+        product.delete()
+        return JsonResponse(
+            data={
+                'status': 'success',
+                'message': 'Product deleted'
+            }
+        )
+    except ValueError:
+        return JsonResponse(
+            data={
+                'status': 'error',
+                'message': 'Invalid UUID number'
+            }
+        )
+    except Product.DoesNotExist:
+        return JsonResponse(
+            data={
+                'status': 'error',
+                'message': f'Product:{product_uuid} does not exist'
+            }
+        )
+    except ProtectedError:
+        return JsonResponse(
+            data={
+                'status': 'error',
+                'message': 'Delete object is not aviaible'
+            }
+        )
+
+
 

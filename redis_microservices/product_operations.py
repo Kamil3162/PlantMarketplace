@@ -1,11 +1,27 @@
+import json
+import os
+import time
+from decimal import Decimal
+
 import redis
 import redis.exceptions as exceptions
 from redis import Redis
 import cachetools
 
+from django.forms.models import model_to_dict
+from django.core.files import File
+
 from products.models import Product
 from .config import RedisConfig, Logs
-from .utils import get_products_fields, redis_operations_handler
+from .utils import (
+    get_products_fields,
+    redis_operations_handler,
+    CustomProductEncoder,
+    PerformanceLogger,
+    examine_exec_data,
+    RedisCache
+)
+
 
 
 class RedisProductOperations:
@@ -15,13 +31,15 @@ class RedisProductOperations:
     This class implements robust Redis operations with proper error handling,
     retry logic, and performance optimizations for managing product data.
     """
+    _performance_log = PerformanceLogger()
 
     def __init__(self):
         self.config = RedisConfig()
-        self.logger = Logs()
+        self._logger = Logs()
         self.connection = self._establish_connection()
         self._key_prefix = "product"
         self._cache_data = None
+        self._cache = RedisCache()
 
     def _establish_connection(self):
         """Establish a connection to Redis with retry logic and backoff."""
@@ -29,39 +47,36 @@ class RedisProductOperations:
 
         for retry in range(self.config.retry_attempts):
             try:
+                print(self.config.host)
+                print(self.config.port)
                 connection = redis.Redis(
-                    host=self.config.host,
+                    host="redis",
                     port=self.config.port,
-                    db=self.config.db,
                     socket_timeout=self.config.socket_timeout,
                     decode_responses=True
                     # Auto-decode byte responses for convenience
                 )
                 connection.ping()
-                logger.info(
-                    f"Successfully connected to Redis at {self.config.host}:{self.config.port}")
+                self._logger.add_info("Succesfull create and connect with redis")
                 return connection
             except (exceptions.ConnectionError, exceptions.TimeoutError) as e:
                 last_error = e
                 # Implement exponential backoff
                 backoff_time = 0.1 * (2 ** retry)
-                logger.warning(
-                    f"Redis connection attempt {retry + 1}/{self.config.retry_attempts} "
-                    f"failed: {e}. Retrying in {backoff_time:.2f}s"
-                )
+                self._logger.add_error("Connection unsucessful: {}".format(e))
                 time.sleep(backoff_time)
 
         # All connection attempts failed
         if isinstance(last_error, exceptions.ConnectionError):
-            logger.error(f"Failed to connect to Redis: all attempts exhausted")
+            self._logger.add_error(f"Failed to connect to Redis: all attempts exhausted")
             raise exceptions.ConnectionError(
                 f"Failed to establish connection: {last_error}")
         elif isinstance(last_error, exceptions.TimeoutError):
-            logger.error(f"Redis connection timeout: all attempts exhausted")
+            self._logger.add_error(f"Redis connection timeout: all attempts exhausted")
             raise exceptions.TimeoutError(
                 f"Connection timed out: {last_error}")
         else:
-            logger.error(f"Unknown Redis connection error: {last_error}")
+            self._logger.add_error(f"Unknown Redis connection error: {last_error}")
             raise exceptions.RedisError(f"Connection failed: {last_error}")
 
     def format_key(self, product_key):
@@ -223,6 +238,7 @@ class RedisProductOperations:
 
         # Check if product exists
         exists = self.connection.exists(key)
+
         if not exists:
             logger.warning(
                 f"Attempted to delete non-existent product: {product_key}")
@@ -387,4 +403,122 @@ class RedisProductOperations:
 
         return products
 
+
+    @redis_operations_handler
+    def insert_db_products(self):
+        """
+    Load all products from PostgreSQL database into Redis.
+
+    This method is typically called during application startup or when
+    refreshing the cache. It iterates through all products in the database,
+    converts them to a Redis-friendly format, and stores each as a separate
+    Redis hash.
+
+    Returns:
+        dict: Dictionary of all products with product IDs as keys
+
+    Raises:
+        RedisError: If connection to Redis fails
+        DatabaseError: If database retrieval fails
+    """
+        self._logger.add_info("Starting to load products from database into Redis")
+
+        try:
+            # Verify Redis connection is active
+            if not self.connection.ping():
+                raise redis.exceptions.ConnectionError("Redis connection test failed")
+
+            # Get all products from database
+            products = Product.objects.all()
+            self._logger.add_info(f"Retrieved {products.count()} products from database")
+
+            # Prepare result container
+            products_data = {}
+
+            # Use pipeline for better performance with multiple operations
+            pipeline = self.connection.pipeline()
+
+            # Process each product
+            for product in products:
+                product_id = str(product.id)
+                redis_key = f"product:{product_id}"
+
+                # Convert model to dictionary
+                product_dict = model_to_dict(product)
+
+                # Convert non-serializable types to Redis-compatible formats
+                serializable_dict = self._prepare_product_for_redis(product_dict)
+
+                # Add to our return data
+                products_data[product_id] = serializable_dict
+
+                # Queue Redis hash creation in pipeline
+                pipeline.hset(
+                    name=redis_key,  # The Redis key for this product
+                    mapping=serializable_dict  # Fields and values for this product
+                )
+
+                # Set TTL if configured
+                if hasattr(self.config, 'ttl') and self.config.ttl > 0:
+                    pipeline.expire(redis_key, self.config.ttl)
+
+            # Execute all Redis commands in a single network operation
+            pipeline.execute()
+
+            pipeline.hgetall(name='product:621e73fe-07cd-432e-812d-09460944934d')
+
+            result = pipeline.execute()
+            result = pipeline.execute()
+            print(result)
+
+            self._logger.add_info(f"Successfully stored {len(products_data)} products in Redis")
+            return products_data
+
+        except redis.exceptions.RedisError as e:
+            error_msg = f"Redis error while storing products: {str(e)}"
+            self._logger.add_error(error_msg)
+            raise redis.exceptions.RedisError(error_msg)
+
+        except Exception as e:
+            error_msg = f"Unexpected error storing products: {str(e)}"
+            self._logger.add_error(error_msg)
+            raise
+
+    @redis_operations_handler
+    @examine_exec_data(retry=5, performanceLogger=_performance_log)
+    def fetch_all(self):
+        result = self.connection.get(name='test')
+        existing_keys = set(self.connection.keys('*'))
+        self._cache.add_data()
+
+    @examine_exec_data(retry=None, performanceLogger=_performance_log)
+    def check_time_cache(self):
+        cache_data = self._cache.get_data('test')
+        print(cache_data, 'esa')
+
+    def _prepare_product_for_redis(self, product_dict):
+        """
+        Convert a product dictionary to Redis-compatible format.
+
+        Args:
+            product_dict (dict): Original product dictionary from model_to_dict
+
+        Returns:
+            dict: Product dictionary with all values in Redis-compatible format
+        """
+        serializable_dict = {}
+
+        for key, value in product_dict.items():
+            if value is None:
+                serializable_dict[key] = ""
+            elif isinstance(value, Decimal):
+                serializable_dict[key] = str(float(value))  # Store as string to preserve precision
+            elif isinstance(value, (dict, list)):
+                serializable_dict[key] = json.dumps(value)
+            elif isinstance(value, (int, float, str, bool)):
+                serializable_dict[key] = value
+            else:
+                serializable_dict[key] = str(value)
+
+        return serializable_dict
 

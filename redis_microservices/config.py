@@ -1,3 +1,6 @@
+import os
+import time
+
 from dataclasses import dataclass
 import logging
 import redis
@@ -14,11 +17,28 @@ class RedisConfig:
     retry_delay: float = 0.1
     ttl: int = 3600  # Default TTL of 1 hour
 
+
 class Logs:
     def __init__(self):
+        # Get the directory of this file
+        self.log_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Create logger with the module name
         self.logger = logging.getLogger(__name__)
-        self.info_handler = logging.FileHandler(filename="info.log", mode="w")
-        self.error_handler = logging.FileHandler(filename="errors.log", mode="w")
+
+        # Set the logger level to ensure all messages get through
+        self.logger.setLevel(logging.INFO)
+
+        # Create file handlers with absolute paths
+        self.info_handler = logging.FileHandler(
+            os.path.join(self.log_dir, "logs.log"), mode="a"
+        )
+        self.error_handler = logging.FileHandler(
+            os.path.join(self.log_dir, "errors.log"), mode="a"
+        )
+
+        # Now actually set up the handlers
+        self._setup_handlers()
 
     def _setup_handlers(self):
         formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
@@ -29,8 +49,10 @@ class Logs:
         self.error_handler.setLevel(logging.ERROR)
         self.error_handler.setFormatter(formatter)
 
-        self.logger.addHandler(self.info_handler)
-        self.logger.addHandler(self.error_handler)
+        # Check if handlers are already added to avoid duplicates
+        if not self.logger.handlers:
+            self.logger.addHandler(self.info_handler)
+            self.logger.addHandler(self.error_handler)
 
     def add_info(self, message):
         self.logger.info(message)
