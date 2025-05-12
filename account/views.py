@@ -10,7 +10,7 @@ from django.apps import apps
 from .models import CustomUser
 from .forms import UserModify
 from .utils import get_user
-from send_email import send_email_reset
+# from send_email import send_email_reset
 from permissions.models import PermissionGroupAssigment
 
 def users_list(request):
@@ -61,12 +61,9 @@ def user_detail(request, user_data=None):
     )
 
 def reset_password(request):
-    send_email_reset()
-
+    # send_email_reset()
     return HttpResponse('Reset password sent')
 
-
-# url for admin data modify
 def admin_user_modify(request):
     pass
 

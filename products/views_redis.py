@@ -7,15 +7,13 @@ from .utils import CustomProductEncoder
 def redis_test_get(request):
     redis_client = redis_product_client()
     data = redis_client.insert_db_products()
-    redis_client.fetch_all()
-    redis_client.check_time_cache()
-
+    product_keys = redis_client.fetch_all()
+    print(product_keys)
     return JsonResponse(data={
         'status': 'fine',
-        'data': data
+        'data': product_keys
     })
 
-def redis_test_add(request):...
 
 def redis_test_delete(request):
     print(request)
@@ -28,5 +26,3 @@ def redis_test_delete(request):
         'data': 'test'
     })
 
-
-def redis_test_modify(request):...

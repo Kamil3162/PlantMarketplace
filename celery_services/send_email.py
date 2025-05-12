@@ -20,8 +20,10 @@ em['Subject'] = subject
 em.set_content(body)
 
 context = ssl.create_default_context()
-
 def send_email_reset():
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
-        smtp.login(email_sender, email_password)
-        smtp.send_message(em)
+        resulkt = smtp.login(email_sender, email_password)
+        r1 = smtp.sendmail(email_sender, email_receiver, "This is test email")
+        print(r1)
+
+send_email_reset()

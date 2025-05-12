@@ -7,24 +7,42 @@ from django.db import utils as django_db_exceptions
 from django.db.models import ProtectedError
 
 from products.models import Product
+from redis_microservices import redis_product_client
 from .forms import CreateProductForm
 
 def product_create(request):
     submitted = False
     if request.method == "POST":
-        submitted = True
-        create_product = CreateProductForm(request.POST)
-        if create_product.is_valid():
-            product = create_product.save()
-            product_dict = model_to_dict(product)
+        try:
+            submitted = True
+            create_product = CreateProductForm(request.POST)
+            if create_product.is_valid():
+                product = create_product.save()
+                product_dict = model_to_dict(product)
 
-            print(product)
-            print(product_dict)
+                product_uuid = product.id
+                prepared_product_data = redis_product_client()._prepare_product_for_redis(product_dict)
 
-            return render(request, 'create_product.html', {
-                'test_data': product_dict,
-                'submitted': submitted,
-            })
+                prepared_product_data['key'] = product_uuid
+
+                added_product = redis_product_client().add_product(**prepared_product_data)
+
+                return render(request, 'create_product.html', {
+                    'test_data': product_dict,
+                    'submitted': submitted,
+                })
+            else:
+                return JsonResponse(
+                    data={
+                        'status': 'error',
+                        'detail': create_product.errors
+                    }
+                )
+
+        except Exception as e:
+            print(type(e))
+            raise Exception(str(e))
+
 
     if request.method == "GET":
         create_product_from = CreateProductForm()
@@ -57,15 +75,39 @@ def product_list(request):
     return render(
         request,
         'product_list.html',
-        page_information)
+        page_information
+    )
 
-# first part we should try to render data using redis so lets go on
 def product_detail(request, product_uuid):
-    # we have to get particular product details
+    # get to get an uuid inside a key 2 ways
+
+    # group filter
+    # TODO mircoservices to update for example 1000 rows in one time
+    # TODO inventory services
+    product_uuids = [
+        "621e73fe-07cd-432e-812d-09460944934d",
+        "561430f7-d502-492f-9017-984be0dde583"
+    ]
+
+    product_queryset = Product.objects.filter(id__in=product_uuids)
+
+    # first we have to tyr to get this product from our redis db next if it doesnt exist we make a quesy inside postgresql database
+    cache_product = redis_product_client().get_product(product_uuid)
+
+    if cache_product:
+        return JsonResponse(data={
+            'status': 'success',
+            'data': cache_product
+        })
+
     product = get_object_or_404(Product, pk=product_uuid)
     return render(request, 'product_detail.html', {
         'product': product,
     })
+
+def product_modif():
+
+    pass
 
 
 def delete_product(request, product_uuid):

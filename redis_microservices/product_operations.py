@@ -22,7 +22,7 @@ from .utils import (
     RedisCache
 )
 
-
+from products.utils import generate_product_dict
 
 class RedisProductOperations:
     """
@@ -108,6 +108,7 @@ class RedisProductOperations:
             raise exceptions.DataError("Product data cannot be empty")
 
         product_fields = get_products_fields()
+        print(product_fields)
         validated_data = {}
 
         # Extract valid fields and convert data types if needed
@@ -155,8 +156,8 @@ class RedisProductOperations:
         if hasattr(self.config, 'ttl') and self.config.ttl > 0:
             self.connection.expire(key, self.config.ttl)
 
-        logger.info(f"Added product: {key} with {len(product_data)} fields")
-        return True
+        self._logger.add_info(f"Added product: {key} with {len(product_data)} fields")
+        return product_data
 
     @redis_operations_handler
     def exists(self, product_key):
@@ -265,50 +266,31 @@ class RedisProductOperations:
             dict: Product data or None if not found
         """
         key = self.format_key(product_key)
+        try:
+            redis_data = self.connection.hgetall(key)
+            if not redis_data:
+                self._logger.add_info(
+                    f"Product {product_key} not found in Redis, trying database")
 
-        # Try memory cache first if available
-        if self._cache_data is not None:
-            cached_data = self._cache_data.get(key)
-            if cached_data:
-                logger.debug(f"Cache hit for product: {product_key}")
-                return cached_data
+                product = Product.objects.get(id=product_key)
+                product_dict = model_to_dict(product)
 
-        # Try Redis next
-        redis_data = self.connection.hgetall(key)
-        if redis_data:
-            logger.debug(f"Redis hit for product: {product_key}")
+                cleaned_data = self._prepare_product_for_redis(product_dict)
 
-            # Update memory cache if available
-            if self._cache_data is not None:
-                self._cache_data[key] = redis_data
+                success = self.add_product(key=product_key, **cleaned_data)
+                self._logger.add_info(f"Redis added product: {product_key}")
+                return success
 
+            self._logger.add_info(f"Redis hit for product: {product_key}")
             return redis_data
 
-        # Try database as last resort
-        try:
-            logger.debug(
-                f"Product {product_key} not found in Redis, trying database")
-            product = Product.objects.get(id=product_key)
-
-            # Convert to dictionary
-            product_data = {
-                'id': str(product.id),
-                'name': product.name,
-                'price': str(product.price),
-                # Add other fields as needed
-            }
-
-            # Add to Redis for future requests
-            self.add_product(key=product_key, **product_data)
-
-            return product_data
-
         except Product.DoesNotExist:
-            logger.info(f"Product {product_key} not found in database")
+            self._logger.add_error(f"Product {product_key} not found in database")
             return None
-        except Exception as e:
-            logger.error(f"Error retrieving product from database: {e}")
-            raise exceptions.RedisError(f"Failed to retrieve product: {e}")
+        except redis.exceptions.DataError as e:
+            self._logger.add_error(e)
+            raise redis.exceptions.DataError(f"Product does not exist")
+
 
     @redis_operations_handler
     def delete_from_cache(self, product_key):
@@ -468,8 +450,6 @@ class RedisProductOperations:
             pipeline.hgetall(name='product:621e73fe-07cd-432e-812d-09460944934d')
 
             result = pipeline.execute()
-            result = pipeline.execute()
-            print(result)
 
             self._logger.add_info(f"Successfully stored {len(products_data)} products in Redis")
             return products_data
@@ -487,14 +467,8 @@ class RedisProductOperations:
     @redis_operations_handler
     @examine_exec_data(retry=5, performanceLogger=_performance_log)
     def fetch_all(self):
-        result = self.connection.get(name='test')
-        existing_keys = set(self.connection.keys('*'))
-        self._cache.add_data()
-
-    @examine_exec_data(retry=None, performanceLogger=_performance_log)
-    def check_time_cache(self):
-        cache_data = self._cache.get_data('test')
-        print(cache_data, 'esa')
+        result = self.connection.scan(cursor=0, match='product*', count=1000)
+        return result
 
     def _prepare_product_for_redis(self, product_dict):
         """

@@ -12,6 +12,7 @@ billiard
 black
 cachetools
 celery
+gevent
 certifi
 cffi
 charset-normalizer

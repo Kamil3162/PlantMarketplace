@@ -12,10 +12,11 @@ from products.models import Product
 
 from django.core.files import File
 from django.db.models import FileField
+from django.db.models.fields import CharField
 
 def get_products_fields():
     try:
-        return Product._meta.fields
+        return [field.name for field in Product._meta.fields]
     except AttributeError as e:
         raise AttributeError(f'Product Meta: {e}')
 

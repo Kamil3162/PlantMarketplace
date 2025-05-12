@@ -488,3 +488,160 @@
 2025-05-09 22:32:04,009 - redis_microservices.config - INFO - Starting to load products from database into Redis
 2025-05-09 22:32:04,020 - redis_microservices.config - INFO - Retrieved 1 products from database
 2025-05-09 22:32:04,024 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-11 16:48:58,569 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 16:48:58,570 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-11 16:48:58,582 - redis_microservices.config - INFO - Retrieved 1 products from database
+2025-05-11 16:48:58,587 - redis_microservices.config - INFO - Successfully stored 1 products in Redis
+2025-05-11 16:58:18,147 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:01:50,428 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:01:50,435 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:02:29,596 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:02:29,602 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:03:04,161 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:03:04,167 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:06:06,479 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:06:06,486 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:06:44,761 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:06:44,766 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:07:14,606 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:07:14,611 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:11:03,738 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:11:03,743 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:14:09,078 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:14:09,084 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:14:44,737 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:14:44,742 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:14:44,744 - redis_microservices.config - INFO - Added product: product:8195f8f3-9afa-4841-a660-6b00da55d25a with 14 fields
+2025-05-11 17:34:32,761 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:35:12,944 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:36:49,532 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:40:24,020 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 17:40:24,021 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 19:32:07,257 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:32:07,258 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:35:31,256 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:35:31,258 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:35:55,444 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:35:55,445 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:36:05,260 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:36:05,261 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:36:05,269 - redis_microservices.config - ERROR - Error retrieving product from database: name 'product_data' is not defined
+2025-05-11 19:36:05,672 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:36:05,673 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:36:05,684 - redis_microservices.config - ERROR - Error retrieving product from database: name 'product_data' is not defined
+2025-05-11 19:36:27,930 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:36:27,931 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:36:27,939 - redis_microservices.config - ERROR - Error retrieving product from database: name 'product_data' is not defined
+2025-05-11 19:36:28,326 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:36:28,328 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:36:28,337 - redis_microservices.config - ERROR - Error retrieving product from database: name 'product_data' is not defined
+2025-05-11 19:36:28,914 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:36:28,914 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:36:28,925 - redis_microservices.config - ERROR - Error retrieving product from database: name 'product_data' is not defined
+2025-05-11 19:37:07,097 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:37:07,098 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:37:07,107 - redis_microservices.config - ERROR - Error retrieving product from database: name 'product_data' is not defined
+2025-05-11 19:43:03,196 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:43:03,197 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:43:34,986 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:43:34,987 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:43:36,025 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:43:36,026 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:43:36,975 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:43:36,976 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:44:11,065 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:44:11,065 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:48:09,173 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:48:09,174 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:48:11,232 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:48:11,233 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:49:41,824 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:49:41,824 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:51:21,785 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:51:21,786 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:51:21,798 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 19:52:10,450 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:52:10,451 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:52:10,462 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 19:52:37,296 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:52:37,297 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:52:37,311 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 19:52:37,390 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:52:37,391 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:52:37,413 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 19:52:37,545 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:52:37,546 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:52:37,558 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 19:58:32,029 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 19:58:32,037 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 19:58:32,069 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 20:01:57,954 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:01:57,955 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:02:01,755 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:02:01,757 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:02:57,386 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:02:57,387 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:02:57,396 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 20:02:59,384 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:02:59,386 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:02:59,397 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 20:03:11,615 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:03:11,616 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:03:11,628 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 20:03:11,718 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:03:11,720 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:03:11,733 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 20:04:00,505 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:04:00,506 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:04:00,515 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 20:04:00,972 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:04:00,973 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:04:00,983 - redis_microservices.config - ERROR - Invalid data format: Invalid input of type: 'Decimal'. Convert to a bytes, string, int or float first.
+2025-05-11 20:05:07,373 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:05:07,374 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:05:32,668 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:05:32,669 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-11 20:05:32,684 - redis_microservices.config - INFO - Added product: product:621e73fe-07cd-432e-812d-09460944934d with 14 fields
+2025-05-11 20:05:32,684 - redis_microservices.config - INFO - Redis added product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:07:41,411 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:07:41,412 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:07:46,665 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:07:46,666 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:07:47,185 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:07:47,186 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:07:47,673 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:07:47,674 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:07:47,917 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:07:47,918 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:07:48,107 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:07:48,109 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:07:48,356 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:07:48,357 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:07:52,697 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:07:52,698 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:08:01,621 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:08:01,623 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:08:06,808 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:08:06,810 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-11 20:28:46,323 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:28:46,323 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-11 20:28:46,336 - redis_microservices.config - INFO - Retrieved 12 products from database
+2025-05-11 20:28:46,344 - redis_microservices.config - INFO - Successfully stored 12 products in Redis
+2025-05-11 20:29:14,361 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:29:14,362 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-11 20:29:14,372 - redis_microservices.config - INFO - Retrieved 12 products from database
+2025-05-11 20:29:14,378 - redis_microservices.config - INFO - Successfully stored 12 products in Redis
+2025-05-11 20:29:27,733 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:29:27,734 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-11 20:29:27,741 - redis_microservices.config - INFO - Retrieved 12 products from database
+2025-05-11 20:29:27,747 - redis_microservices.config - INFO - Successfully stored 12 products in Redis
+2025-05-11 20:29:27,940 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-11 20:29:27,941 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-11 20:29:27,950 - redis_microservices.config - INFO - Retrieved 12 products from database
+2025-05-11 20:29:27,955 - redis_microservices.config - INFO - Successfully stored 12 products in Redis
+2025-05-12 16:23:10,174 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 16:23:10,175 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-12 16:23:10,178 - redis_microservices.config - INFO - Added product: product:621e73fe-07cd-432e-812d-09460944934d with 14 fields
+2025-05-12 16:23:10,179 - redis_microservices.config - INFO - Redis added product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 16:32:23,080 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 16:32:23,081 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d

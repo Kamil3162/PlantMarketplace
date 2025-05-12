@@ -418,3 +418,28 @@
 2025-05-09 22:32:04,030 - redis_microservices.utils - INFO - Exec takes time:0.0008114060037769377
 2025-05-09 22:32:04,031 - redis_microservices.utils - INFO - Exec takes time:0.000626264009042643
 2025-05-09 22:32:04,032 - redis_microservices.utils - INFO - Exec takes time:6.515601126011461e-05
+2025-05-11 16:48:58,588 - redis_microservices.utils - INFO - Error: RedisCache.add_data() missing 2 required positional arguments: 'key' and 'data'
+2025-05-11 16:48:58,590 - redis_microservices.utils - INFO - Error: RedisCache.add_data() missing 2 required positional arguments: 'key' and 'data'
+2025-05-11 16:48:58,591 - redis_microservices.utils - INFO - Error: RedisCache.add_data() missing 2 required positional arguments: 'key' and 'data'
+2025-05-11 16:48:58,592 - redis_microservices.utils - INFO - Error: RedisCache.add_data() missing 2 required positional arguments: 'key' and 'data'
+2025-05-11 16:48:58,592 - redis_microservices.utils - INFO - Error: RedisCache.add_data() missing 2 required positional arguments: 'key' and 'data'
+2025-05-11 20:28:46,347 - redis_microservices.utils - INFO - Exec takes time:0.001319943999988027
+2025-05-11 20:28:46,348 - redis_microservices.utils - INFO - Exec takes time:0.00035049100006290246
+2025-05-11 20:28:46,349 - redis_microservices.utils - INFO - Exec takes time:0.00032643499980622437
+2025-05-11 20:28:46,349 - redis_microservices.utils - INFO - Exec takes time:0.0005549030011025025
+2025-05-11 20:28:46,350 - redis_microservices.utils - INFO - Exec takes time:0.00024861299971234985
+2025-05-11 20:29:14,378 - redis_microservices.utils - INFO - Exec takes time:0.00045521900028688833
+2025-05-11 20:29:14,379 - redis_microservices.utils - INFO - Exec takes time:0.00043221899977652356
+2025-05-11 20:29:14,380 - redis_microservices.utils - INFO - Exec takes time:0.0003027080001629656
+2025-05-11 20:29:14,381 - redis_microservices.utils - INFO - Exec takes time:0.0004083929998159874
+2025-05-11 20:29:14,382 - redis_microservices.utils - INFO - Exec takes time:0.00048746699940238614
+2025-05-11 20:29:27,748 - redis_microservices.utils - INFO - Exec takes time:0.0004992840003978927
+2025-05-11 20:29:27,749 - redis_microservices.utils - INFO - Exec takes time:0.0005887469997105654
+2025-05-11 20:29:27,750 - redis_microservices.utils - INFO - Exec takes time:0.00029283100047905464
+2025-05-11 20:29:27,751 - redis_microservices.utils - INFO - Exec takes time:0.00043845499931194354
+2025-05-11 20:29:27,751 - redis_microservices.utils - INFO - Exec takes time:0.0003588330000638962
+2025-05-11 20:29:27,956 - redis_microservices.utils - INFO - Exec takes time:0.00031734300137031823
+2025-05-11 20:29:27,957 - redis_microservices.utils - INFO - Exec takes time:0.0002815179996105144
+2025-05-11 20:29:27,957 - redis_microservices.utils - INFO - Exec takes time:0.00023492800028179772
+2025-05-11 20:29:27,958 - redis_microservices.utils - INFO - Exec takes time:0.00022392599930753931
+2025-05-11 20:29:27,959 - redis_microservices.utils - INFO - Exec takes time:0.0005646699992212234
