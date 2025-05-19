@@ -41,7 +41,6 @@ def login(request):
         # set a cookie named access_token with a value 'access_token
         response.headers['Authorization'] = f'Bearer {token}'
 
-
         response.set_cookie(
             'access_token',
             token,
@@ -141,5 +140,7 @@ def get_cookie_value(request):
 
     redis_client = redis_manager.get_user_data(access_token)
     token_decoded = JWTManager.decode_token(access_token)
-    return HttpResponse(json.dumps(token_decoded))
+    return HttpResponse(
+        json.dumps(token_decoded)
+    )
 

@@ -6,7 +6,7 @@
 </head>
 <body>
     {% if not submitted %}
-        <form method="post" action={% url 'product_create' %}>
+        <form method="post" action={% url 'product_create' %} enctype="multipart/form-data">
             {% csrf_token %}
             {{ create_product_form }}
             <button>Send</button>

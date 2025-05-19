@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+    {% if image_url %}
     {{ product }}
+    <img src="{{ image_url }}" alt="{{ product.name }}" />
+    {% else %}
+        <div class="no-image">
+            <p>No image available</p>
+        </div>
+    {% endif %}
 </body>
 </html>

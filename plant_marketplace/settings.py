@@ -73,8 +73,10 @@ INSTALLED_APPS = [
     'plants',
     'products',
     'shipments',
+    'management',
     'redis_microservices',
-    'rabbitmq_tests'
+    'rabbitmq_tests',
+    'email_service'
 ]
 
 

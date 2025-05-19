@@ -447,7 +447,7 @@ class RedisProductOperations:
             # Execute all Redis commands in a single network operation
             pipeline.execute()
 
-            pipeline.hgetall(name='product:621e73fe-07cd-432e-812d-09460944934d')
+            # pipeline.hgetall(name='product:621e73fe-07cd-432e-812d-09460944934d')
 
             result = pipeline.execute()
 

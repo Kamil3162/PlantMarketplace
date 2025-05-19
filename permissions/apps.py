@@ -7,7 +7,6 @@ class PermissionsConfig(AppConfig):
     name = "permissions"
 
     def ready(self):
-
         post_migrate.connect(self.create_permissions, sender=self)
 
     def create_permissions(self, sender, **kwargs):

@@ -1,0 +1,248 @@
+INFO 2025-05-18 19:58:37,899 autoreload 10 140389920709504 Watching for file changes with StatReloader
+INFO 2025-05-18 20:01:08,908 autoreload 10 140389920709504 /app/config/settings.py changed, reloading.
+INFO 2025-05-18 20:01:09,933 autoreload 12 140360594930560 Watching for file changes with StatReloader
+INFO 2025-05-18 20:01:54,561 autoreload 10 140622431730560 Watching for file changes with StatReloader
+INFO 2025-05-18 20:02:22,084 autoreload 10 140622431730560 /app/config/settings.py changed, reloading.
+INFO 2025-05-18 20:02:23,170 autoreload 12 140452805213056 Watching for file changes with StatReloader
+INFO 2025-05-18 20:02:50,290 autoreload 10 140696868928384 Watching for file changes with StatReloader
+INFO 2025-05-18 20:15:07,370 autoreload 11 139969174363008 Watching for file changes with StatReloader
+INFO 2025-05-18 20:32:56,611 autoreload 11 139969174363008 /app/config/settings.py changed, reloading.
+INFO 2025-05-18 21:01:44,690 autoreload 11 140056433859456 Watching for file changes with StatReloader
+INFO 2025-05-18 21:24:11,851 autoreload 11 140056433859456 /app/manage.py changed, reloading.
+INFO 2025-05-18 21:24:13,306 autoreload 36 140192554036096 Watching for file changes with StatReloader
+INFO 2025-05-18 21:25:31,561 autoreload 36 140192554036096 /app/config/settings.py changed, reloading.
+INFO 2025-05-18 21:25:32,607 autoreload 38 140427276651392 Watching for file changes with StatReloader
+INFO 2025-05-18 21:25:33,798 autoreload 38 140427276651392 /app/config/settings.py changed, reloading.
+INFO 2025-05-18 21:25:34,852 autoreload 40 140000461646720 Watching for file changes with StatReloader
+INFO 2025-05-18 21:26:06,784 autoreload 11 140186986621824 Watching for file changes with StatReloader
+INFO 2025-05-18 21:27:57,789 autoreload 11 140210238827392 Watching for file changes with StatReloader
+INFO 2025-05-18 21:28:30,930 autoreload 11 140148469877632 Watching for file changes with StatReloader
+INFO 2025-05-18 21:28:58,022 autoreload 11 139896611371904 Watching for file changes with StatReloader
+INFO 2025-05-18 21:34:48,125 autoreload 11 139675738499968 Watching for file changes with StatReloader
+INFO 2025-05-18 21:41:27,821 autoreload 12 140588849642368 Watching for file changes with StatReloader
+INFO 2025-05-18 21:47:46,417 autoreload 12 140588849642368 /app/manage.py changed, reloading.
+INFO 2025-05-18 21:47:47,491 autoreload 14 140447847390080 Watching for file changes with StatReloader
+INFO 2025-05-18 21:48:36,925 autoreload 11 139941072808832 Watching for file changes with StatReloader
+INFO 2025-05-18 21:49:53,171 autoreload 11 139941072808832 /app/manage.py changed, reloading.
+INFO 2025-05-18 21:49:54,177 autoreload 13 140191009852288 Watching for file changes with StatReloader
+INFO 2025-05-18 21:50:11,531 autoreload 11 140336203119488 Watching for file changes with StatReloader
+INFO 2025-05-18 21:50:49,250 autoreload 11 140336203119488 /app/manage.py changed, reloading.
+INFO 2025-05-18 21:50:50,478 autoreload 13 140441814772608 Watching for file changes with StatReloader
+INFO 2025-05-18 21:51:38,467 autoreload 12 140160509545344 Watching for file changes with StatReloader
+INFO 2025-05-19 10:25:52,387 autoreload 10 139854982482816 Watching for file changes with StatReloader
+INFO 2025-05-19 10:26:47,760 autoreload 10 139809341754240 Watching for file changes with StatReloader
+INFO 2025-05-19 10:33:08,070 autoreload 9 140331270732672 Watching for file changes with StatReloader
+ERROR 2025-05-19 10:33:42,491 basehttp 9 140331194508992 "GET / HTTP/1.1" 500 59
+ERROR 2025-05-19 10:33:43,252 basehttp 9 140331194508992 "GET / HTTP/1.1" 500 59
+INFO 2025-05-19 10:34:49,689 autoreload 9 140331270732672 /app/config/settings.py changed, reloading.
+INFO 2025-05-19 10:34:50,810 autoreload 13 140273111620480 Watching for file changes with StatReloader
+INFO 2025-05-19 10:35:50,782 autoreload 13 140273111620480 /app/config/urls.py changed, reloading.
+INFO 2025-05-19 10:35:51,806 autoreload 15 140610855218048 Watching for file changes with StatReloader
+INFO 2025-05-19 10:36:23,313 autoreload 15 140610855218048 /app/config/urls.py changed, reloading.
+INFO 2025-05-19 10:36:24,306 autoreload 17 140374115257216 Watching for file changes with StatReloader
+INFO 2025-05-19 10:36:55,850 autoreload 17 140374115257216 /app/config/urls.py changed, reloading.
+INFO 2025-05-19 10:36:56,848 autoreload 19 139844674296704 Watching for file changes with StatReloader
+INFO 2025-05-19 10:38:10,983 autoreload 19 139844674296704 /app/config/urls.py changed, reloading.
+INFO 2025-05-19 10:38:11,981 autoreload 21 140053786323840 Watching for file changes with StatReloader
+INFO 2025-05-19 10:38:50,603 autoreload 21 140053786323840 /app/views.py changed, reloading.
+INFO 2025-05-19 10:38:51,633 autoreload 23 140311638944640 Watching for file changes with StatReloader
+INFO 2025-05-19 10:39:10,021 autoreload 23 140311638944640 /app/config/urls.py changed, reloading.
+INFO 2025-05-19 10:39:11,086 autoreload 25 140265599253376 Watching for file changes with StatReloader
+INFO 2025-05-19 10:39:16,279 autoreload 25 140265599253376 /app/config/urls.py changed, reloading.
+INFO 2025-05-19 10:39:17,242 autoreload 27 140342439271296 Watching for file changes with StatReloader
+INFO 2025-05-19 10:45:31,655 autoreload 27 140342439271296 /app/config/urls.py changed, reloading.
+INFO 2025-05-19 10:45:32,753 autoreload 29 140662056606592 Watching for file changes with StatReloader
+INFO 2025-05-19 10:45:45,042 autoreload 29 140662056606592 /app/views.py changed, reloading.
+INFO 2025-05-19 10:45:46,254 autoreload 31 140149050608512 Watching for file changes with StatReloader
+INFO 2025-05-19 10:51:42,372 autoreload 9 140509166349184 Watching for file changes with StatReloader
+WARNING 2025-05-19 10:51:49,962 log 9 140509089621696 Not Found: /
+WARNING 2025-05-19 10:51:49,964 basehttp 9 140509089621696 "GET / HTTP/1.1" 404 2157
+WARNING 2025-05-19 10:51:54,641 log 9 140509089621696 Not Found: /email
+WARNING 2025-05-19 10:51:54,646 basehttp 9 140509089621696 "GET /email HTTP/1.1" 404 2190
+INFO 2025-05-19 10:51:59,464 basehttp 9 140509089621696 "GET /email/base HTTP/1.1" 301 0
+INFO 2025-05-19 10:51:59,474 basehttp 9 140509081228992 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:27:13,538 autoreload 9 140509166349184 /app/views.py changed, reloading.
+INFO 2025-05-19 11:27:15,281 autoreload 15 140062930217856 Watching for file changes with StatReloader
+INFO 2025-05-19 11:27:53,896 autoreload 15 140062930217856 /app/views.py changed, reloading.
+INFO 2025-05-19 11:27:54,962 autoreload 22 139873829972864 Watching for file changes with StatReloader
+INFO 2025-05-19 11:28:19,437 autoreload 22 139873829972864 /app/views.py changed, reloading.
+INFO 2025-05-19 11:28:20,435 autoreload 24 140445660253056 Watching for file changes with StatReloader
+INFO 2025-05-19 11:49:24,362 autoreload 19 140584521038720 Watching for file changes with StatReloader
+ERROR 2025-05-19 11:49:55,132 log 19 140584444487360 Internal Server Error: /email/base/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/views.py", line 17, in create_brand_new_email_query
+    message = EmailProducerInstance.add_email_to_queue()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EmailProducer.add_email_to_queue() missing 1 required positional argument: 'email_data'
+ERROR 2025-05-19 11:49:55,140 basehttp 19 140584444487360 "GET /email/base/ HTTP/1.1" 500 70062
+ERROR 2025-05-19 11:49:58,417 log 19 140584436094656 Internal Server Error: /email/base/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/views.py", line 17, in create_brand_new_email_query
+    message = EmailProducerInstance.add_email_to_queue()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EmailProducer.add_email_to_queue() missing 1 required positional argument: 'email_data'
+ERROR 2025-05-19 11:49:58,422 basehttp 19 140584436094656 "GET /email/base/ HTTP/1.1" 500 70062
+ERROR 2025-05-19 11:49:59,367 log 19 140584436094656 Internal Server Error: /email/base/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/views.py", line 17, in create_brand_new_email_query
+    message = EmailProducerInstance.add_email_to_queue()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EmailProducer.add_email_to_queue() missing 1 required positional argument: 'email_data'
+ERROR 2025-05-19 11:49:59,372 basehttp 19 140584436094656 "GET /email/base/ HTTP/1.1" 500 70062
+INFO 2025-05-19 11:50:09,211 autoreload 19 140584521038720 /app/views.py changed, reloading.
+INFO 2025-05-19 11:50:10,342 autoreload 30 139714564352896 Watching for file changes with StatReloader
+INFO 2025-05-19 11:50:43,098 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:50:43,918 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:50:44,350 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:50:44,547 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:50:44,713 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:50:44,893 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:50:45,061 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:50:45,237 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:50:45,390 basehttp 30 139714413721280 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:52:30,168 autoreload 30 139714564352896 /app/producer.py changed, reloading.
+INFO 2025-05-19 11:52:31,269 autoreload 39 139919985392512 Watching for file changes with StatReloader
+INFO 2025-05-19 11:53:04,775 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:53:49,706 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:54:05,126 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:54:05,308 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:54:05,483 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:54:05,664 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:54:05,832 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:54:05,999 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 11:54:06,155 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:00:08,338 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:00:08,742 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:00:08,930 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:00:09,107 basehttp 39 139919833953984 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:08:50,452 autoreload 19 140155622112128 Watching for file changes with StatReloader
+INFO 2025-05-19 12:10:24,216 autoreload 19 139894646197120 Watching for file changes with StatReloader
+INFO 2025-05-19 12:10:53,914 basehttp 19 139894569559744 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:10:54,657 basehttp 19 139894569559744 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:10:54,889 basehttp 19 139894569559744 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:11:11,236 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:11:11,489 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:11:11,714 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:11:11,928 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:18:46,062 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:18:46,754 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:18:46,920 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:18:47,087 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:18:47,254 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:18:47,402 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:18:47,542 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 12:18:47,677 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+WARNING 2025-05-19 12:18:48,944 log 19 139894561167040 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-19 12:18:48,947 basehttp 19 139894561167040 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2319
+INFO 2025-05-19 13:34:55,351 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 13:35:21,530 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 13:36:21,305 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+WARNING 2025-05-19 16:45:09,836 log 19 139894561167040 Not Found: /
+WARNING 2025-05-19 16:45:09,857 basehttp 19 139894561167040 "GET / HTTP/1.1" 404 2157
+INFO 2025-05-19 16:45:12,108 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:45:20,915 basehttp 19 139894569559744 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:45:21,670 basehttp 19 139894569559744 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:45:43,977 basehttp 19 139894561167040 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:49:24,916 autoreload 19 139793454332800 Watching for file changes with StatReloader
+INFO 2025-05-19 16:49:52,713 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:49:53,469 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:49:53,929 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:49:54,229 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:56:20,212 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:56:22,504 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 16:56:23,232 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:10,067 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:11,954 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:12,182 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:12,407 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:12,617 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:12,817 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:13,016 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:13,183 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:13:36,755 basehttp 19 139793377781440 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:29:55,754 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:29:58,274 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:29:58,551 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:29:58,767 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:29:58,990 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:29:59,208 basehttp 19 139793369388736 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:35:32,665 autoreload 19 139793454332800 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:35:34,845 autoreload 40 140123960765312 Watching for file changes with StatReloader
+INFO 2025-05-19 19:36:01,215 autoreload 40 140123960765312 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:36:02,335 autoreload 47 140592533932928 Watching for file changes with StatReloader
+INFO 2025-05-19 19:36:30,863 basehttp 47 140592457705152 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:36:49,440 basehttp 47 140592457705152 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:36:49,854 basehttp 47 140592457705152 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:36:50,055 basehttp 47 140592457705152 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:36:50,292 basehttp 47 140592457705152 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:36:50,499 basehttp 47 140592457705152 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:36:50,731 basehttp 47 140592457705152 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:36:51,091 basehttp 47 140592457705152 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:37:23,199 basehttp 47 140592449312448 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:37:25,294 basehttp 47 140592449312448 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:40:48,012 autoreload 47 140592533932928 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:40:49,181 autoreload 58 140067860265856 Watching for file changes with StatReloader
+INFO 2025-05-19 19:41:27,763 autoreload 58 140067860265856 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:41:28,804 autoreload 65 140372495436672 Watching for file changes with StatReloader
+INFO 2025-05-19 19:42:47,216 autoreload 65 140372495436672 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:42:48,314 autoreload 72 139889501907840 Watching for file changes with StatReloader
+INFO 2025-05-19 19:43:20,544 basehttp 72 139889425245888 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:44:52,110 basehttp 72 139889425245888 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:45:36,564 autoreload 72 139889501907840 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:45:37,683 autoreload 83 140719592745856 Watching for file changes with StatReloader
+INFO 2025-05-19 19:46:02,923 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:46:05,163 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:46:14,716 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:07,035 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:14,219 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:14,404 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:14,594 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:14,744 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:14,937 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:15,104 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:15,259 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:15,411 basehttp 83 140719515756224 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:48:45,219 autoreload 83 140719592745856 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:48:46,336 autoreload 94 139852422470528 Watching for file changes with StatReloader
+INFO 2025-05-19 19:49:16,219 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:49:38,865 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:50:01,831 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:50:18,887 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:50:19,259 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:50:19,418 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:50:19,594 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:50:19,869 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:50:20,035 basehttp 94 139852345501376 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:52:33,718 autoreload 94 139852422470528 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:52:34,786 autoreload 104 140576792804224 Watching for file changes with StatReloader
+INFO 2025-05-19 19:53:26,621 autoreload 104 140576792804224 /app/producer.py changed, reloading.
+INFO 2025-05-19 19:53:27,688 autoreload 111 140455228312448 Watching for file changes with StatReloader
+INFO 2025-05-19 19:53:53,952 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 19:57:50,662 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24

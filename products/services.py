@@ -5,7 +5,6 @@ import json
 import sys
 import time
 
-
 class RabbitMQConnection:
     def __init__(self):
         self.connection = None

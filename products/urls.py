@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import product_create, product_list, product_detail
-from .views_redis import redis_test_get, redis_test_delete
+from views import product_create, product_list, product_detail
+from views_redis import redis_test_get, redis_test_delete
+
 urlpatterns = [
     path('product/', product_create, name='product_create'),
     path('product-list/', product_list, name='product_list'),

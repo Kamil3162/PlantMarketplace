@@ -2,7 +2,7 @@ import json
 from django.http.response import JsonResponse
 
 from redis_microservices import redis_product_client
-from .utils import CustomProductEncoder
+from utils import CustomProductEncoder
 
 def redis_test_get(request):
     redis_client = redis_product_client()

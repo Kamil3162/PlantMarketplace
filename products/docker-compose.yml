@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  product-service:
+    build:
+      context: ..
+      dockerfile: products/Dockerfile
+    command: python product_manage.py runserver 0.0.0.0:8002
+    volumes:
+      - .:/app
+    ports:
+      - "8005:8000"  # Mapuje port 8000 kontenera na 8002 hosta
+    depends_on:
+      - product-db
+      - product-redis
+      - product-rabbitmq
+    environment:
+      - DJANGO_SETTINGS_MODULE=settings
+      - PRODUCT_DB_NAME=product_service
+      - DB_HOST=product-db
+      - DB_PORT=5432
+      - REDIS_HOST=product-redis
+      - REDIS_PORT=6379
+      - RABBITMQ_HOST=product-rabbitmq
+      - RABBITMQ_PORT=5673
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+    networks:
+      - product-network
+
+  product-db:
+    image: postgres:13
+    volumes:
+      - product_db_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=product_service
+    ports:
+      - "5435:5432"  # Mapuje port 5432 kontenera na 5433 hosta
+    networks:
+      - product-network
+
+  product-redis:
+    image: redis:6
+    command: redis-server --port 6379
+    ports:
+      - "6385:6379"  # Mapuje port 6379 kontenera na 6381 hosta
+    networks:
+      - product-network
+
+  product-rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5675:5672"  # Mapuje port AMQP 5672 kontenera na 5673 hosta
+      - "15675:15672"  # Mapuje port zarządzania 15672 kontenera na 15673 hosta
+    environment:
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+    networks:
+      - product-network
+
+networks:
+  product-network:
+    driver: bridge
+  main-network:
+    external: true  # Używa istniejącej sieci głównego projektu
+    # Uwaga: Musisz najpierw utworzyć tę sieć używając: docker network create main-network
+
+volumes:
+  product_db_data:

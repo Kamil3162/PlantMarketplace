@@ -1,0 +1,672 @@
+2025-05-14 00:12:48 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:12:52 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:12:59 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:13:53 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:13:57 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:14:03 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:14:18 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 00:14:18 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-14 00:14:18 - redis_microservices.config - INFO - Retrieved 23 products from database
+2025-05-14 00:14:18 - redis_microservices.config - INFO - Successfully stored 23 products in Redis
+2025-05-14 00:14:18 - redis_microservices.utils - INFO - Exec takes time:0.0013164539996068925
+2025-05-14 00:14:18 - redis_microservices.utils - INFO - Exec takes time:0.0008256779983639717
+2025-05-14 00:14:18 - redis_microservices.utils - INFO - Exec takes time:0.0007011750130914152
+2025-05-14 00:14:18 - redis_microservices.utils - INFO - Exec takes time:0.0005697190063074231
+2025-05-14 00:14:18 - redis_microservices.utils - INFO - Exec takes time:0.0007948279962874949
+2025-05-14 00:14:39 - django.request - ERROR - Internal Server Error: /product/product/
+Traceback (most recent call last):
+  File "/app/products/views.py", line 27, in product_create
+    S3Instance.upload_s3_image(file)
+  File "/app/aws/aws_s3.py", line 103, in upload_s3_image
+    s3_key = Path(file_path).name
+             ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 871, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 509, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 493, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not MultiValueDict
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 54, in product_create
+    raise Exception(str(e))
+Exception: expected str, bytes or os.PathLike object, not MultiValueDict
+2025-05-14 00:15:18 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:15:21 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:15:28 - django.request - ERROR - Internal Server Error: /product/product/
+Traceback (most recent call last):
+  File "/app/products/views.py", line 27, in product_create
+    S3Instance.upload_s3_image(file)
+  File "/app/aws/aws_s3.py", line 103, in upload_s3_image
+    s3_key = Path(file_path).name
+             ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 871, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 509, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 493, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not MultiValueDict
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 54, in product_create
+    raise Exception(str(e))
+Exception: expected str, bytes or os.PathLike object, not MultiValueDict
+2025-05-14 00:15:37 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 00:15:37 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-14 00:15:37 - redis_microservices.config - INFO - Retrieved 23 products from database
+2025-05-14 00:15:37 - redis_microservices.config - INFO - Successfully stored 23 products in Redis
+2025-05-14 00:15:37 - redis_microservices.utils - INFO - Exec takes time:0.0005332319997251034
+2025-05-14 00:15:37 - redis_microservices.utils - INFO - Exec takes time:0.0004896969912806526
+2025-05-14 00:15:37 - redis_microservices.utils - INFO - Exec takes time:0.0007126129930838943
+2025-05-14 00:15:37 - redis_microservices.utils - INFO - Exec takes time:0.0004003729991381988
+2025-05-14 00:15:37 - redis_microservices.utils - INFO - Exec takes time:0.0003870069922413677
+2025-05-14 00:16:04 - django.request - ERROR - Internal Server Error: /product/product/
+Traceback (most recent call last):
+  File "/app/products/views.py", line 27, in product_create
+    S3Instance.upload_s3_image(file)
+  File "/app/aws/aws_s3.py", line 103, in upload_s3_image
+    s3_key = Path(file_path).name
+             ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 871, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 509, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 493, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not MultiValueDict
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 54, in product_create
+    raise Exception(str(e))
+Exception: expected str, bytes or os.PathLike object, not MultiValueDict
+2025-05-14 00:16:23 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:16:27 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:17:00 - django.request - ERROR - Internal Server Error: /product/product/
+Traceback (most recent call last):
+  File "/app/products/views.py", line 27, in product_create
+    S3Instance.upload_s3_image(file['image'])
+  File "/app/aws/aws_s3.py", line 103, in upload_s3_image
+    s3_key = Path(file_path).name
+             ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 871, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 509, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 493, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not InMemoryUploadedFile
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 54, in product_create
+    raise Exception(str(e))
+Exception: expected str, bytes or os.PathLike object, not InMemoryUploadedFile
+2025-05-14 00:20:42 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 00:20:45 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:21:11 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:21:14 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:21:25 - aws.aws_s3 - INFO - Successfully uploaded Django file to plant-sell-home.jpg
+2025-05-14 00:21:25 - django.request - ERROR - Internal Server Error: /product/product/
+Traceback (most recent call last):
+  File "/app/products/views.py", line 29, in product_create
+    product = create_product.save()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1864, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1881, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1804, in as_sql
+    value_rows = [
+                 ^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1805, in <listcomp>
+    [
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1806, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1750, in pre_save_val
+    return field.pre_save(obj, add=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/storage/filesystem.py", line 141, in _save
+    for chunk in content.chunks():
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/uploadedfile.py", line 119, in chunks
+    self.file.seek(0)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 53, in product_create
+    raise Exception(str(e))
+Exception: I/O operation on closed file.
+2025-05-14 00:21:40 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:21:44 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:21:52 - aws.aws_s3 - INFO - Successfully uploaded Django file to plant-sell-home.jpg
+2025-05-14 00:21:52 - django.request - ERROR - Internal Server Error: /product/product/
+Traceback (most recent call last):
+  File "/app/products/views.py", line 29, in product_create
+    product = create_product.save()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1864, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1881, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1804, in as_sql
+    value_rows = [
+                 ^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1805, in <listcomp>
+    [
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1806, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1750, in pre_save_val
+    return field.pre_save(obj, add=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/storage/filesystem.py", line 141, in _save
+    for chunk in content.chunks():
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/uploadedfile.py", line 119, in chunks
+    self.file.seek(0)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 53, in product_create
+    raise Exception(str(e))
+Exception: I/O operation on closed file.
+2025-05-14 00:23:07 - aws.aws_s3 - INFO - Successfully uploaded Django file to monstera-photo.jfif
+2025-05-14 00:23:07 - django.request - ERROR - Internal Server Error: /product/product/
+Traceback (most recent call last):
+  File "/app/products/views.py", line 29, in product_create
+    product = create_product.save()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1864, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1881, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1804, in as_sql
+    value_rows = [
+                 ^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1805, in <listcomp>
+    [
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1806, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1750, in pre_save_val
+    return field.pre_save(obj, add=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/storage/filesystem.py", line 141, in _save
+    for chunk in content.chunks():
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/uploadedfile.py", line 119, in chunks
+    self.file.seek(0)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 53, in product_create
+    raise Exception(str(e))
+Exception: I/O operation on closed file.
+2025-05-14 00:24:03 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:24:06 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:24:30 - aws.aws_s3 - INFO - Successfully uploaded Django file to monstera-photo.jfif
+2025-05-14 00:24:31 - django.request - ERROR - Internal Server Error: /product/product/
+Traceback (most recent call last):
+  File "/app/products/views.py", line 31, in product_create
+    product = create_product.save()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1864, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1881, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1804, in as_sql
+    value_rows = [
+                 ^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1805, in <listcomp>
+    [
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1806, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1750, in pre_save_val
+    return field.pre_save(obj, add=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/storage/filesystem.py", line 141, in _save
+    for chunk in content.chunks():
+  File "/usr/local/lib/python3.11/site-packages/django/core/files/uploadedfile.py", line 119, in chunks
+    self.file.seek(0)
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 55, in product_create
+    raise Exception(str(e))
+Exception: I/O operation on closed file.
+2025-05-14 00:25:00 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:25:03 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:25:55 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:25:58 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:26:24 - aws.aws_s3 - INFO - Successfully uploaded Django file to 428442553_376895688619018_3495617988979076884_n.jpg
+2025-05-14 00:26:24 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 00:26:24 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 00:26:24 - redis_microservices.config - INFO - Added product: product:19b10081-07e4-4ce4-9d55-9c7948687a19 with 14 fields
+2025-05-14 00:28:53 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:28:57 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:29:19 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:29:22 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:36:32 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:36:35 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 00:37:34 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 00:37:37 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 12:55:24 - django.request - WARNING - Not Found: /favicon.ico
+2025-05-14 12:55:47 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 12:55:58 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 12:56:13 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 12:56:55 - django.request - ERROR - Internal Server Error: /product/product-list/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 69, in product_list
+    generate_file_name = S3Instance.generate_file_name(single_file=None, bucket_name=None)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: S3Client.generate_file_name() got an unexpected keyword argument 'single_file'
+2025-05-14 12:57:09 - django.utils.autoreload - INFO - /app/products/views.py changed, reloading.
+2025-05-14 12:57:14 - django.request - ERROR - Internal Server Error: /product/product-list/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/products/views.py", line 69, in product_list
+    generate_file_name = S3Instance.generate_file_name(file_object=None, bucket_name=None)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/aws/aws_s3.py", line 133, in generate_file_name
+    response = self.client.list_buckets()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'list_buckets'
+2025-05-14 12:59:11 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 12:59:56 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 13:00:44 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 13:01:01 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 13:01:17 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 13:01:35 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 13:02:15 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 13:02:18 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 13:02:19 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 13:02:26 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 13:02:29 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 13:02:29 - aws.aws_s3 - INFO - Successfully initialised S3 client
+2025-05-14 13:04:35 - django.utils.autoreload - INFO - /app/aws/aws_s3.py changed, reloading.
+2025-05-14 13:04:58 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:04:58 - aws.aws_s3 - ERROR - Błąd inicjalizacji klienta S3: An error occurred (404) when calling the HeadBucket operation: Not Found
+2025-05-14 13:04:58 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:04:58 - aws.aws_s3 - ERROR - Błąd inicjalizacji klienta S3: An error occurred (404) when calling the HeadBucket operation: Not Found
+2025-05-14 13:05:52 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:05:52 - aws.aws_s3 - ERROR - Błąd inicjalizacji klienta S3: An error occurred (404) when calling the HeadBucket operation: Not Found
+2025-05-14 13:08:16 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:08:17 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:08:58 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:08:58 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:09:01 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:09:01 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:09:06 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:09:06 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:09:29 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:09:29 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:09:48 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:09:49 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:10:35 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:10:35 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:11:00 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:11:00 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:11:07 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:11:07 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:11:32 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:11:32 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:11:51 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:11:51 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:12:09 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:12:10 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:12:34 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:12:35 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:12:40 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:12:41 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:13:31 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:13:31 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:13:46 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:13:46 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:15:21 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:15:21 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:15:44 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:15:44 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:15:47 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do awsbucketv1.2.3/2025-05-14/1e7007be-f52c-4997-9fb2-b61b70da120f.jfif
+2025-05-14 13:16:35 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:16:36 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:17:06 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do ebcda5f2-24df-46dd-bdb3-4eabf9193c0d.jpg
+2025-05-14 13:17:34 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:17:34 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:20:42 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:20:43 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:21:04 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do 47c69924-1d52-443b-9747-7929c55be11b.jfif
+2025-05-14 13:21:54 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:21:54 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:23:20 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:23:20 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:23:27 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:23:27 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:23:39 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:23:39 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:23:47 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do ceac272d-374b-40d7-aad3-58cef1593066.jpg
+2025-05-14 13:24:54 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:24:54 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:25:00 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:25:00 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:25:07 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:25:07 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:25:32 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do 48e45f50-b355-4656-b7dc-f7b5176dcb57.jpg
+2025-05-14 13:50:01 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:50:02 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:52:25 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:52:25 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:52:31 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:52:31 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:57:15 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:57:16 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:57:53 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:57:54 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 13:58:04 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 13:58:05 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:07:02 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:07:02 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:07:34 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:07:34 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:07:42 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:07:42 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:08:26 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:08:26 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:10:06 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:10:06 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:10:08 - aws.aws_s3 - INFO - Generated pre-signed URL for 274956f4-26a4-4837-8832-95b5ad19a484.jpg
+2025-05-14 14:10:22 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:10:23 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:10:25 - aws.aws_s3 - INFO - Generated pre-signed URL for 274956f4-26a4-4837-8832-95b5ad19a484.jpg
+2025-05-14 14:12:22 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:12:24 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:12:25 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:12:26 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:12:28 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:12:30 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:12:31 - aws.aws_s3 - INFO - Generated pre-signed URL for flowers/monstera-photo.jfif
+2025-05-14 14:13:12 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:13 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:15 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:16 - aws.aws_s3 - INFO - Generated pre-signed URL for 274956f4-26a4-4837-8832-95b5ad19a484.jpg
+2025-05-14 14:13:33 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:34 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:35 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:37 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:39 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:40 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:41 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:42 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:44 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:45 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:46 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:47 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:49 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:50 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:51 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:52 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:13:54 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:14:22 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do d34e1b65-15d9-4163-b37e-ea6db02d6776.jpg
+2025-05-14 14:16:20 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:16:20 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:16:40 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:16:40 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:16:56 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do 10da8c80-ee31-4c2d-99a8-76b889daf048.jpg
+2025-05-14 14:17:02 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:17:45 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:18:53 - aws.aws_s3 - INFO - Generated pre-signed URL for 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:19:54 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:19:54 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:20:06 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:20:06 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:20:17 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:20:18 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:20:32 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:20:32 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:20:50 - aws.aws_s3 - INFO - Generated pre-signed URL for 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:20:51 - aws.aws_s3 - INFO - Generated pre-signed URL for 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:20:56 - aws.aws_s3 - INFO - Generated pre-signed URL for 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:21:12 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:21:13 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:21:14 - aws.aws_s3 - INFO - Generated pre-signed URL for 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:21:43 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:21:43 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:21:50 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:21:50 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:21:52 - aws.aws_s3 - INFO - Generated pre-signed URL for 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:21:52 - aws.aws_s3 - INFO - Generated pre-signed URL for 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:36:13 - aws.aws_s3 - INFO - Generated pre-signed URL for 28d949d5-b73f-4106-9077-db8fbb82040e.jpg
+2025-05-14 14:36:25 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:26 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:28 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:29 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:31 - aws.aws_s3 - INFO - Generated pre-signed URL for 274956f4-26a4-4837-8832-95b5ad19a484.jpg
+2025-05-14 14:36:33 - aws.aws_s3 - INFO - Generated pre-signed URL for 274956f4-26a4-4837-8832-95b5ad19a484.jpg
+2025-05-14 14:36:35 - aws.aws_s3 - INFO - Generated pre-signed URL for 274956f4-26a4-4837-8832-95b5ad19a484.jpg
+2025-05-14 14:36:37 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:39 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:40 - aws.aws_s3 - INFO - Generated pre-signed URL for flowers/monstera-photo.jfif
+2025-05-14 14:36:46 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:48 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:49 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:50 - aws.aws_s3 - INFO - Generated pre-signed URL for 274956f4-26a4-4837-8832-95b5ad19a484.jpg
+2025-05-14 14:36:54 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:56 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:57 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:36:58 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:01 - aws.aws_s3 - INFO - Generated pre-signed URL for 96eef1bb-4fc3-4d27-874d-cb635f37c86f.jpg
+2025-05-14 14:37:02 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:04 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:05 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:08 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:10 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:11 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:12 - aws.aws_s3 - INFO - Generated pre-signed URL for 10da8c80-ee31-4c2d-99a8-76b889daf048.jpg
+2025-05-14 14:37:16 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:17 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:18 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:20 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:22 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:24 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:25 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:37:27 - aws.aws_s3 - WARNING - No object key provided
+2025-05-14 14:50:58 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:50:58 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:51:48 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:51:49 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 14:52:07 - aws.aws_s3 - INFO - Pomyślnie wrzucono plik Django do fce2ae0c-a432-4791-9fae-d84aabddf2ba.jpg
+2025-05-14 14:52:33 - aws.aws_s3 - INFO - Generated pre-signed URL for fce2ae0c-a432-4791-9fae-d84aabddf2ba.jpg
+2025-05-14 14:55:17 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 14:55:18 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3
+2025-05-14 15:09:21 - aws.aws_s3 - INFO - Inicjalizacja klienta S3...
+2025-05-14 15:09:21 - aws.aws_s3 - INFO - Pomyślnie zainicjalizowano klienta S3 dla bucketa awsbucketv1.2.3

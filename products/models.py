@@ -92,10 +92,74 @@ class Product(models.Model):
         self.save()
         return self
 
+class ProductEvent(models.Model):
+    EVENT_SUNLIGHT_CHANGED = "sunlight_changed"
+    EVENT_DIFFICULTY_CHANGED = "difficulty_changed"
+    EVENT_WATER_CHANGED = "water_changed"
+    EVENT_NAME_CHANGED = "name_changed"
+    EVENT_DESCRIPTION_CHANGED = "description_changed"
+    EVENT_PRICE_CHANGED = "price_changed"
+    EVENT_HEIGHT_CHANGED = "height_changed"
+    EVENT_SPREAD_CHANGED = "spread_changed"
+    EVENT_BLOOM_CHANGED = "bloom_changed"
+    EVENT_FLOWER_CHANGED = "flower_changed"
+    EVENT_IMAGE_CHANGED = "image_changed"
+
+    PRODUCT_EVENTS = [
+        (EVENT_SUNLIGHT_CHANGED, "Changed Sunlight"),
+        (EVENT_DIFFICULTY_CHANGED, "Changed Difficulty"),
+        (EVENT_WATER_CHANGED, "Changed Water Requirements"),
+        (EVENT_NAME_CHANGED, "Changed Name"),
+        (EVENT_DESCRIPTION_CHANGED, "Changed Description"),
+        (EVENT_PRICE_CHANGED, "Changed Price"),
+        (EVENT_HEIGHT_CHANGED, "Changed Height"),
+        (EVENT_SPREAD_CHANGED, "Changed Spread"),
+        (EVENT_BLOOM_CHANGED, "Changed Bloom Information"),
+        (EVENT_FLOWER_CHANGED, "Changed Flower Details"),
+        (EVENT_IMAGE_CHANGED, "Changed Image"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='events')
+    event_type = models.CharField(max_length=50, choices=PRODUCT_EVENTS)
+    old_value = models.JSONField(null=True, blank=True, help_text="Previous value(s) before change")
+    new_value = models.JSONField(null=True, blank=True, help_text="New value(s) after change")
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='product_events'
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    reason = models.TextField(blank=True, help_text="Optional reason for the change")
+
+    class Meta:
+        ordering = ['-created_at']  # Newest first is typically more useful
+        verbose_name = 'Product Event'
+        verbose_name_plural = 'Product Events'
+
+    def __str__(self):
+        return f"{self.get_event_type_display()} - {self.product} - {self.created_at}"
+
+    @classmethod
+    def log_event(cls, product, event_type, old_value, new_value, user=None, reason=""):
+        """Create and save a new product event"""
+        return cls.objects.create(
+            product=product,
+            event_type=event_type,
+            old_value=old_value,
+            new_value=new_value,
+            created_by=user,
+            reason=reason
+        )
+
+# we have to use redis
+
+
 
 class InventoryManager(models.Manager):
     """
-    Custom manager for Inventory model providing inventory-specific operations.
+        Custom manager for Inventory model providing inventory-specific operations.
     """
 
     def create_inventory(self, product, quantity=0, low_stock_threshold=5):

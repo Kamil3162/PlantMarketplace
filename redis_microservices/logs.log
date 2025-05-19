@@ -645,3 +645,333 @@
 2025-05-12 16:23:10,179 - redis_microservices.config - INFO - Redis added product: 621e73fe-07cd-432e-812d-09460944934d
 2025-05-12 16:32:23,080 - redis_microservices.config - INFO - Succesfull create and connect with redis
 2025-05-12 16:32:23,081 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 22:48:34,938 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 22:48:34,939 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-12 22:48:34,957 - redis_microservices.config - INFO - Added product: product:621e73fe-07cd-432e-812d-09460944934d with 14 fields
+2025-05-12 22:48:34,957 - redis_microservices.config - INFO - Redis added product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:25,197 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:25,200 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:26,008 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:26,009 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:26,702 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:26,703 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:27,268 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:27,270 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:27,895 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:27,896 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:28,456 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:28,457 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:29,025 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:29,026 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:29,532 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:29,533 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:30,075 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:30,076 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:30,630 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:30,631 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:38:31,199 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:38:31,200 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:40:48,633 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:40:48,634 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-12 23:40:48,640 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-12 23:40:48,641 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-12 23:40:48,661 - redis_microservices.config - INFO - Retrieved 12 products from database
+2025-05-12 23:40:48,670 - redis_microservices.config - INFO - Successfully stored 12 products in Redis
+2025-05-13 15:43:48,662 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 15:43:48,663 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-13 15:43:48,677 - redis_microservices.config - INFO - Retrieved 12 products from database
+2025-05-13 15:43:48,685 - redis_microservices.config - INFO - Successfully stored 12 products in Redis
+2025-05-13 15:44:48,881 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 15:44:48,881 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-13 15:44:48,896 - redis_microservices.config - INFO - Retrieved 12 products from database
+2025-05-13 15:44:48,905 - redis_microservices.config - INFO - Successfully stored 12 products in Redis
+2025-05-13 21:39:14,831 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:39:14,836 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:39:14,847 - redis_microservices.config - INFO - Added product: product:d65a1d49-8fc9-4d55-93d2-be2ed6478678 with 14 fields
+2025-05-13 21:43:43,897 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:43:43,907 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:43:43,910 - redis_microservices.config - INFO - Added product: product:a13119c8-e34b-40e3-9aba-2da416c88c09 with 14 fields
+2025-05-13 21:43:48,520 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:43:48,526 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:43:48,528 - redis_microservices.config - INFO - Added product: product:cb846baa-e7fa-4b96-b369-f4d5ae6a8042 with 14 fields
+2025-05-13 21:44:37,145 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:44:37,151 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:44:37,155 - redis_microservices.config - INFO - Added product: product:1e142315-d5e8-4470-999d-410709f8067e with 14 fields
+2025-05-13 21:46:59,078 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:46:59,083 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:46:59,086 - redis_microservices.config - INFO - Added product: product:1afacba4-5235-4ce9-8f0d-9ee30e6d9bd1 with 14 fields
+2025-05-13 21:47:15,693 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:47:15,700 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:47:15,704 - redis_microservices.config - INFO - Added product: product:ee30438b-a60a-47ae-a7fa-a66c86dc9e08 with 14 fields
+2025-05-13 21:47:53,624 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:47:53,629 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:47:53,631 - redis_microservices.config - INFO - Added product: product:ab9df825-b3f0-47af-8185-d860c9080ccc with 14 fields
+2025-05-13 21:51:47,901 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:51:47,907 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:51:47,910 - redis_microservices.config - INFO - Added product: product:f947d0c9-2ded-40f6-8be7-7dd3ca21b108 with 14 fields
+2025-05-13 21:52:42,226 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:52:42,233 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:52:42,236 - redis_microservices.config - INFO - Added product: product:b1284315-7c7b-42e3-b3a9-d8a1c617258f with 14 fields
+2025-05-13 21:52:43,960 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:52:43,966 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:52:43,969 - redis_microservices.config - INFO - Added product: product:7fc734a3-ea2a-45b9-8c09-37752dd18632 with 14 fields
+2025-05-13 21:53:00,571 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:53:00,578 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 21:53:00,580 - redis_microservices.config - INFO - Added product: product:0ba23b3e-4b05-4431-af27-c701b6e05141 with 14 fields
+2025-05-13 22:20:53,712 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 22:20:53,713 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-13 22:20:53,726 - redis_microservices.config - INFO - Retrieved 23 products from database
+2025-05-13 22:20:53,733 - redis_microservices.config - INFO - Successfully stored 23 products in Redis
+2025-05-13 22:21:15,823 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 22:21:15,824 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-13 22:21:15,834 - redis_microservices.config - INFO - Retrieved 23 products from database
+2025-05-13 22:21:15,841 - redis_microservices.config - INFO - Successfully stored 23 products in Redis
+2025-05-13 23:07:53,117 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 23:07:53,118 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-13 23:07:53,134 - redis_microservices.config - INFO - Retrieved 23 products from database
+2025-05-13 23:07:53,143 - redis_microservices.config - INFO - Successfully stored 23 products in Redis
+2025-05-13 23:27:28,776 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-13 23:27:28,777 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-14 00:14:18,496 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 00:14:18,501 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-14 00:14:18,519 - redis_microservices.config - INFO - Retrieved 23 products from database
+2025-05-14 00:14:18,530 - redis_microservices.config - INFO - Successfully stored 23 products in Redis
+2025-05-14 00:15:37,565 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 00:15:37,566 - redis_microservices.config - INFO - Starting to load products from database into Redis
+2025-05-14 00:15:37,575 - redis_microservices.config - INFO - Retrieved 23 products from database
+2025-05-14 00:15:37,584 - redis_microservices.config - INFO - Successfully stored 23 products in Redis
+2025-05-14 00:26:24,426 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 00:26:24,431 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 00:26:24,434 - redis_microservices.config - INFO - Added product: product:19b10081-07e4-4ce4-9d55-9c7948687a19 with 14 fields
+2025-05-14 13:15:47,596 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:15:47,601 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:15:47,603 - redis_microservices.config - INFO - Added product: product:4c482b84-94c5-43ce-bc88-c028c84fde34 with 14 fields
+2025-05-14 13:17:06,358 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:17:06,363 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:17:06,367 - redis_microservices.config - INFO - Added product: product:92c728e3-916e-4dbc-a5e4-fdc9467b844a with 14 fields
+2025-05-14 13:21:04,751 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:21:04,757 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:21:04,758 - redis_microservices.config - INFO - Added product: product:abbd613a-ce17-4edc-abd5-bdc2aa64f4c1 with 14 fields
+2025-05-14 13:25:32,339 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:25:32,343 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:25:32,345 - redis_microservices.config - INFO - Added product: product:a5c9b7ac-e321-4c93-b277-8ac7d252ec5a with 14 fields
+2025-05-14 13:50:53,958 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:50:53,960 - redis_microservices.config - INFO - Product 8195f8f3-9afa-4841-a660-6b00da55d25a not found in Redis, trying database
+2025-05-14 13:50:53,992 - redis_microservices.config - INFO - Added product: product:8195f8f3-9afa-4841-a660-6b00da55d25a with 14 fields
+2025-05-14 13:50:53,993 - redis_microservices.config - INFO - Redis added product: 8195f8f3-9afa-4841-a660-6b00da55d25a
+2025-05-14 13:51:47,298 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 13:51:47,299 - redis_microservices.config - INFO - Product 1e3d3aa6-ab4f-4533-9251-83e59e3f7318 not found in Redis, trying database
+2025-05-14 13:51:47,311 - redis_microservices.config - INFO - Added product: product:1e3d3aa6-ab4f-4533-9251-83e59e3f7318 with 14 fields
+2025-05-14 13:51:47,311 - redis_microservices.config - INFO - Redis added product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:09:51,102 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:09:51,104 - redis_microservices.config - INFO - Redis hit for product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:10:08,359 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:10:08,360 - redis_microservices.config - INFO - Redis hit for product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:10:25,783 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:10:25,784 - redis_microservices.config - INFO - Redis hit for product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:12:22,409 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:12:22,411 - redis_microservices.config - INFO - Product 7fc734a3-ea2a-45b9-8c09-37752dd18632 not found in Redis, trying database
+2025-05-14 14:12:22,426 - redis_microservices.config - INFO - Added product: product:7fc734a3-ea2a-45b9-8c09-37752dd18632 with 14 fields
+2025-05-14 14:12:22,427 - redis_microservices.config - INFO - Redis added product: 7fc734a3-ea2a-45b9-8c09-37752dd18632
+2025-05-14 14:12:24,025 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:12:24,027 - redis_microservices.config - INFO - Product b1284315-7c7b-42e3-b3a9-d8a1c617258f not found in Redis, trying database
+2025-05-14 14:12:24,042 - redis_microservices.config - INFO - Added product: product:b1284315-7c7b-42e3-b3a9-d8a1c617258f with 14 fields
+2025-05-14 14:12:24,042 - redis_microservices.config - INFO - Redis added product: b1284315-7c7b-42e3-b3a9-d8a1c617258f
+2025-05-14 14:12:25,266 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:12:25,267 - redis_microservices.config - INFO - Product ab9df825-b3f0-47af-8185-d860c9080ccc not found in Redis, trying database
+2025-05-14 14:12:25,280 - redis_microservices.config - INFO - Added product: product:ab9df825-b3f0-47af-8185-d860c9080ccc with 14 fields
+2025-05-14 14:12:25,280 - redis_microservices.config - INFO - Redis added product: ab9df825-b3f0-47af-8185-d860c9080ccc
+2025-05-14 14:12:26,405 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:12:26,407 - redis_microservices.config - INFO - Product f947d0c9-2ded-40f6-8be7-7dd3ca21b108 not found in Redis, trying database
+2025-05-14 14:12:26,419 - redis_microservices.config - INFO - Added product: product:f947d0c9-2ded-40f6-8be7-7dd3ca21b108 with 14 fields
+2025-05-14 14:12:26,420 - redis_microservices.config - INFO - Redis added product: f947d0c9-2ded-40f6-8be7-7dd3ca21b108
+2025-05-14 14:12:28,908 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:12:28,909 - redis_microservices.config - INFO - Redis hit for product: abbd613a-ce17-4edc-abd5-bdc2aa64f4c1
+2025-05-14 14:12:30,071 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:12:30,073 - redis_microservices.config - INFO - Redis hit for product: 4c482b84-94c5-43ce-bc88-c028c84fde34
+2025-05-14 14:12:31,310 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:12:31,311 - redis_microservices.config - INFO - Product 0ba23b3e-4b05-4431-af27-c701b6e05141 not found in Redis, trying database
+2025-05-14 14:12:31,323 - redis_microservices.config - INFO - Added product: product:0ba23b3e-4b05-4431-af27-c701b6e05141 with 14 fields
+2025-05-14 14:12:31,324 - redis_microservices.config - INFO - Redis added product: 0ba23b3e-4b05-4431-af27-c701b6e05141
+2025-05-14 14:13:12,040 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:12,041 - redis_microservices.config - INFO - Product cb846baa-e7fa-4b96-b369-f4d5ae6a8042 not found in Redis, trying database
+2025-05-14 14:13:12,056 - redis_microservices.config - INFO - Added product: product:cb846baa-e7fa-4b96-b369-f4d5ae6a8042 with 14 fields
+2025-05-14 14:13:12,056 - redis_microservices.config - INFO - Redis added product: cb846baa-e7fa-4b96-b369-f4d5ae6a8042
+2025-05-14 14:13:13,297 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:13,298 - redis_microservices.config - INFO - Product b8993811-d2c8-43a5-9f1f-122fb83ee5b8 not found in Redis, trying database
+2025-05-14 14:13:13,312 - redis_microservices.config - INFO - Added product: product:b8993811-d2c8-43a5-9f1f-122fb83ee5b8 with 14 fields
+2025-05-14 14:13:13,313 - redis_microservices.config - INFO - Redis added product: b8993811-d2c8-43a5-9f1f-122fb83ee5b8
+2025-05-14 14:13:15,538 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:15,539 - redis_microservices.config - INFO - Product 19b10081-07e4-4ce4-9d55-9c7948687a19 not found in Redis, trying database
+2025-05-14 14:13:15,552 - redis_microservices.config - INFO - Added product: product:19b10081-07e4-4ce4-9d55-9c7948687a19 with 14 fields
+2025-05-14 14:13:15,553 - redis_microservices.config - INFO - Redis added product: 19b10081-07e4-4ce4-9d55-9c7948687a19
+2025-05-14 14:13:16,928 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:16,929 - redis_microservices.config - INFO - Redis hit for product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:13:33,363 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:33,364 - redis_microservices.config - INFO - Product 621e73fe-07cd-432e-812d-09460944934d not found in Redis, trying database
+2025-05-14 14:13:33,376 - redis_microservices.config - INFO - Added product: product:621e73fe-07cd-432e-812d-09460944934d with 14 fields
+2025-05-14 14:13:33,376 - redis_microservices.config - INFO - Redis added product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-14 14:13:34,538 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:34,540 - redis_microservices.config - INFO - Product a13119c8-e34b-40e3-9aba-2da416c88c09 not found in Redis, trying database
+2025-05-14 14:13:34,551 - redis_microservices.config - INFO - Added product: product:a13119c8-e34b-40e3-9aba-2da416c88c09 with 14 fields
+2025-05-14 14:13:34,552 - redis_microservices.config - INFO - Redis added product: a13119c8-e34b-40e3-9aba-2da416c88c09
+2025-05-14 14:13:35,759 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:35,760 - redis_microservices.config - INFO - Product d65a1d49-8fc9-4d55-93d2-be2ed6478678 not found in Redis, trying database
+2025-05-14 14:13:35,772 - redis_microservices.config - INFO - Added product: product:d65a1d49-8fc9-4d55-93d2-be2ed6478678 with 14 fields
+2025-05-14 14:13:35,773 - redis_microservices.config - INFO - Redis added product: d65a1d49-8fc9-4d55-93d2-be2ed6478678
+2025-05-14 14:13:37,010 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:37,011 - redis_microservices.config - INFO - Redis hit for product: b8993811-d2c8-43a5-9f1f-122fb83ee5b8
+2025-05-14 14:13:39,037 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:39,038 - redis_microservices.config - INFO - Product 595635ac-dbc0-4738-9fe0-13f32d26dc1c not found in Redis, trying database
+2025-05-14 14:13:39,050 - redis_microservices.config - INFO - Added product: product:595635ac-dbc0-4738-9fe0-13f32d26dc1c with 14 fields
+2025-05-14 14:13:39,051 - redis_microservices.config - INFO - Redis added product: 595635ac-dbc0-4738-9fe0-13f32d26dc1c
+2025-05-14 14:13:40,155 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:40,156 - redis_microservices.config - INFO - Product ee30438b-a60a-47ae-a7fa-a66c86dc9e08 not found in Redis, trying database
+2025-05-14 14:13:40,170 - redis_microservices.config - INFO - Added product: product:ee30438b-a60a-47ae-a7fa-a66c86dc9e08 with 14 fields
+2025-05-14 14:13:40,171 - redis_microservices.config - INFO - Redis added product: ee30438b-a60a-47ae-a7fa-a66c86dc9e08
+2025-05-14 14:13:41,245 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:41,246 - redis_microservices.config - INFO - Product 1afacba4-5235-4ce9-8f0d-9ee30e6d9bd1 not found in Redis, trying database
+2025-05-14 14:13:41,259 - redis_microservices.config - INFO - Added product: product:1afacba4-5235-4ce9-8f0d-9ee30e6d9bd1 with 14 fields
+2025-05-14 14:13:41,260 - redis_microservices.config - INFO - Redis added product: 1afacba4-5235-4ce9-8f0d-9ee30e6d9bd1
+2025-05-14 14:13:42,418 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:42,419 - redis_microservices.config - INFO - Product 1e142315-d5e8-4470-999d-410709f8067e not found in Redis, trying database
+2025-05-14 14:13:42,433 - redis_microservices.config - INFO - Added product: product:1e142315-d5e8-4470-999d-410709f8067e with 14 fields
+2025-05-14 14:13:42,433 - redis_microservices.config - INFO - Redis added product: 1e142315-d5e8-4470-999d-410709f8067e
+2025-05-14 14:13:44,297 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:44,299 - redis_microservices.config - INFO - Product f1c6493a-f007-4c89-995e-11d43f63eb59 not found in Redis, trying database
+2025-05-14 14:13:44,311 - redis_microservices.config - INFO - Added product: product:f1c6493a-f007-4c89-995e-11d43f63eb59 with 14 fields
+2025-05-14 14:13:44,311 - redis_microservices.config - INFO - Redis added product: f1c6493a-f007-4c89-995e-11d43f63eb59
+2025-05-14 14:13:45,345 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:45,346 - redis_microservices.config - INFO - Product a9c2ef21-4676-4db9-85d0-c7341d6f2ca3 not found in Redis, trying database
+2025-05-14 14:13:45,359 - redis_microservices.config - INFO - Added product: product:a9c2ef21-4676-4db9-85d0-c7341d6f2ca3 with 14 fields
+2025-05-14 14:13:45,360 - redis_microservices.config - INFO - Redis added product: a9c2ef21-4676-4db9-85d0-c7341d6f2ca3
+2025-05-14 14:13:46,440 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:46,441 - redis_microservices.config - INFO - Redis hit for product: 92c728e3-916e-4dbc-a5e4-fdc9467b844a
+2025-05-14 14:13:47,502 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:47,503 - redis_microservices.config - INFO - Product 280ca238-614b-4698-8e0b-bc917d58efca not found in Redis, trying database
+2025-05-14 14:13:47,515 - redis_microservices.config - INFO - Added product: product:280ca238-614b-4698-8e0b-bc917d58efca with 14 fields
+2025-05-14 14:13:47,516 - redis_microservices.config - INFO - Redis added product: 280ca238-614b-4698-8e0b-bc917d58efca
+2025-05-14 14:13:49,416 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:49,417 - redis_microservices.config - INFO - Product 40e3b442-2e85-440e-b772-54f1e5a8ada3 not found in Redis, trying database
+2025-05-14 14:13:49,428 - redis_microservices.config - INFO - Added product: product:40e3b442-2e85-440e-b772-54f1e5a8ada3 with 14 fields
+2025-05-14 14:13:49,429 - redis_microservices.config - INFO - Redis added product: 40e3b442-2e85-440e-b772-54f1e5a8ada3
+2025-05-14 14:13:50,362 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:50,363 - redis_microservices.config - INFO - Product 561430f7-d502-492f-9017-984be0dde583 not found in Redis, trying database
+2025-05-14 14:13:50,377 - redis_microservices.config - INFO - Added product: product:561430f7-d502-492f-9017-984be0dde583 with 14 fields
+2025-05-14 14:13:50,378 - redis_microservices.config - INFO - Redis added product: 561430f7-d502-492f-9017-984be0dde583
+2025-05-14 14:13:51,478 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:51,479 - redis_microservices.config - INFO - Product 61590c36-53c4-4fbf-8f18-8b2b356bac70 not found in Redis, trying database
+2025-05-14 14:13:51,492 - redis_microservices.config - INFO - Added product: product:61590c36-53c4-4fbf-8f18-8b2b356bac70 with 14 fields
+2025-05-14 14:13:51,492 - redis_microservices.config - INFO - Redis added product: 61590c36-53c4-4fbf-8f18-8b2b356bac70
+2025-05-14 14:13:52,299 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:52,300 - redis_microservices.config - INFO - Product b504bb16-a710-48d0-849a-8d187df19777 not found in Redis, trying database
+2025-05-14 14:13:52,312 - redis_microservices.config - INFO - Added product: product:b504bb16-a710-48d0-849a-8d187df19777 with 14 fields
+2025-05-14 14:13:52,313 - redis_microservices.config - INFO - Redis added product: b504bb16-a710-48d0-849a-8d187df19777
+2025-05-14 14:13:54,085 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:13:54,086 - redis_microservices.config - INFO - Redis hit for product: 8195f8f3-9afa-4841-a660-6b00da55d25a
+2025-05-14 14:14:22,197 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:14:22,202 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:14:22,205 - redis_microservices.config - INFO - Added product: product:646fa91b-b33f-4864-a3c3-1ea1bf54c4c8 with 14 fields
+2025-05-14 14:16:56,412 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:16:56,417 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:16:56,418 - redis_microservices.config - INFO - Added product: product:45bead14-c1b5-4699-9e49-f850768839b2 with 14 fields
+2025-05-14 14:17:02,243 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:17:02,249 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:17:02,251 - redis_microservices.config - INFO - Added product: product:bfa560a4-bcb5-4226-87e6-b168d20e71cd with 14 fields
+2025-05-14 14:17:45,900 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:17:45,901 - redis_microservices.config - INFO - Redis hit for product: 8195f8f3-9afa-4841-a660-6b00da55d25a
+2025-05-14 14:18:53,396 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:18:53,397 - redis_microservices.config - INFO - Redis hit for product: bfa560a4-bcb5-4226-87e6-b168d20e71cd
+2025-05-14 14:20:50,445 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:20:50,446 - redis_microservices.config - INFO - Redis hit for product: bfa560a4-bcb5-4226-87e6-b168d20e71cd
+2025-05-14 14:20:51,967 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:20:51,968 - redis_microservices.config - INFO - Redis hit for product: bfa560a4-bcb5-4226-87e6-b168d20e71cd
+2025-05-14 14:20:56,528 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:20:56,529 - redis_microservices.config - INFO - Redis hit for product: bfa560a4-bcb5-4226-87e6-b168d20e71cd
+2025-05-14 14:21:14,252 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:21:14,253 - redis_microservices.config - INFO - Redis hit for product: bfa560a4-bcb5-4226-87e6-b168d20e71cd
+2025-05-14 14:21:52,303 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:21:52,304 - redis_microservices.config - INFO - Redis hit for product: bfa560a4-bcb5-4226-87e6-b168d20e71cd
+2025-05-14 14:21:52,694 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:21:52,695 - redis_microservices.config - INFO - Redis hit for product: bfa560a4-bcb5-4226-87e6-b168d20e71cd
+2025-05-14 14:36:13,223 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:13,225 - redis_microservices.config - INFO - Redis hit for product: bfa560a4-bcb5-4226-87e6-b168d20e71cd
+2025-05-14 14:36:25,295 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:25,296 - redis_microservices.config - INFO - Redis hit for product: 7fc734a3-ea2a-45b9-8c09-37752dd18632
+2025-05-14 14:36:26,779 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:26,780 - redis_microservices.config - INFO - Redis hit for product: b1284315-7c7b-42e3-b3a9-d8a1c617258f
+2025-05-14 14:36:28,019 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:28,020 - redis_microservices.config - INFO - Redis hit for product: ab9df825-b3f0-47af-8185-d860c9080ccc
+2025-05-14 14:36:29,268 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:29,270 - redis_microservices.config - INFO - Redis hit for product: f947d0c9-2ded-40f6-8be7-7dd3ca21b108
+2025-05-14 14:36:31,430 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:31,432 - redis_microservices.config - INFO - Redis hit for product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:36:33,120 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:33,122 - redis_microservices.config - INFO - Redis hit for product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:36:35,650 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:35,651 - redis_microservices.config - INFO - Redis hit for product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:36:37,500 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:37,502 - redis_microservices.config - INFO - Product abbd613a-ce17-4edc-abd5-bdc2aa64f4c1 not found in Redis, trying database
+2025-05-14 14:36:37,515 - redis_microservices.config - INFO - Added product: product:abbd613a-ce17-4edc-abd5-bdc2aa64f4c1 with 14 fields
+2025-05-14 14:36:37,516 - redis_microservices.config - INFO - Redis added product: abbd613a-ce17-4edc-abd5-bdc2aa64f4c1
+2025-05-14 14:36:39,145 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:39,146 - redis_microservices.config - INFO - Product 4c482b84-94c5-43ce-bc88-c028c84fde34 not found in Redis, trying database
+2025-05-14 14:36:39,159 - redis_microservices.config - INFO - Added product: product:4c482b84-94c5-43ce-bc88-c028c84fde34 with 14 fields
+2025-05-14 14:36:39,159 - redis_microservices.config - INFO - Redis added product: 4c482b84-94c5-43ce-bc88-c028c84fde34
+2025-05-14 14:36:40,871 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:40,872 - redis_microservices.config - INFO - Redis hit for product: 0ba23b3e-4b05-4431-af27-c701b6e05141
+2025-05-14 14:36:46,077 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:46,079 - redis_microservices.config - INFO - Redis hit for product: cb846baa-e7fa-4b96-b369-f4d5ae6a8042
+2025-05-14 14:36:48,065 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:48,066 - redis_microservices.config - INFO - Redis hit for product: b8993811-d2c8-43a5-9f1f-122fb83ee5b8
+2025-05-14 14:36:49,498 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:49,499 - redis_microservices.config - INFO - Redis hit for product: 19b10081-07e4-4ce4-9d55-9c7948687a19
+2025-05-14 14:36:50,860 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:50,863 - redis_microservices.config - INFO - Redis hit for product: 1e3d3aa6-ab4f-4533-9251-83e59e3f7318
+2025-05-14 14:36:54,494 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:54,496 - redis_microservices.config - INFO - Redis hit for product: cb846baa-e7fa-4b96-b369-f4d5ae6a8042
+2025-05-14 14:36:55,998 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:55,999 - redis_microservices.config - INFO - Redis hit for product: a13119c8-e34b-40e3-9aba-2da416c88c09
+2025-05-14 14:36:57,504 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:57,505 - redis_microservices.config - INFO - Redis hit for product: d65a1d49-8fc9-4d55-93d2-be2ed6478678
+2025-05-14 14:36:58,713 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:36:58,714 - redis_microservices.config - INFO - Redis hit for product: b8993811-d2c8-43a5-9f1f-122fb83ee5b8
+2025-05-14 14:37:01,035 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:01,036 - redis_microservices.config - INFO - Redis hit for product: 646fa91b-b33f-4864-a3c3-1ea1bf54c4c8
+2025-05-14 14:37:02,568 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:02,570 - redis_microservices.config - INFO - Redis hit for product: ee30438b-a60a-47ae-a7fa-a66c86dc9e08
+2025-05-14 14:37:04,110 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:04,112 - redis_microservices.config - INFO - Redis hit for product: 1afacba4-5235-4ce9-8f0d-9ee30e6d9bd1
+2025-05-14 14:37:05,993 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:05,995 - redis_microservices.config - INFO - Redis hit for product: 1e142315-d5e8-4470-999d-410709f8067e
+2025-05-14 14:37:08,724 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:08,726 - redis_microservices.config - INFO - Redis hit for product: b504bb16-a710-48d0-849a-8d187df19777
+2025-05-14 14:37:10,076 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:10,078 - redis_microservices.config - INFO - Redis hit for product: 595635ac-dbc0-4738-9fe0-13f32d26dc1c
+2025-05-14 14:37:11,394 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:11,395 - redis_microservices.config - INFO - Redis hit for product: 621e73fe-07cd-432e-812d-09460944934d
+2025-05-14 14:37:12,893 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:12,894 - redis_microservices.config - INFO - Redis hit for product: 45bead14-c1b5-4699-9e49-f850768839b2
+2025-05-14 14:37:16,098 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:16,099 - redis_microservices.config - INFO - Redis hit for product: f1c6493a-f007-4c89-995e-11d43f63eb59
+2025-05-14 14:37:17,566 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:17,567 - redis_microservices.config - INFO - Redis hit for product: a9c2ef21-4676-4db9-85d0-c7341d6f2ca3
+2025-05-14 14:37:18,923 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:18,925 - redis_microservices.config - INFO - Product 92c728e3-916e-4dbc-a5e4-fdc9467b844a not found in Redis, trying database
+2025-05-14 14:37:18,938 - redis_microservices.config - INFO - Added product: product:92c728e3-916e-4dbc-a5e4-fdc9467b844a with 14 fields
+2025-05-14 14:37:18,939 - redis_microservices.config - INFO - Redis added product: 92c728e3-916e-4dbc-a5e4-fdc9467b844a
+2025-05-14 14:37:20,207 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:20,209 - redis_microservices.config - INFO - Redis hit for product: 280ca238-614b-4698-8e0b-bc917d58efca
+2025-05-14 14:37:22,775 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:22,776 - redis_microservices.config - INFO - Redis hit for product: 8195f8f3-9afa-4841-a660-6b00da55d25a
+2025-05-14 14:37:24,477 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:24,479 - redis_microservices.config - INFO - Redis hit for product: 61590c36-53c4-4fbf-8f18-8b2b356bac70
+2025-05-14 14:37:25,827 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:25,828 - redis_microservices.config - INFO - Redis hit for product: 40e3b442-2e85-440e-b772-54f1e5a8ada3
+2025-05-14 14:37:27,152 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:37:27,153 - redis_microservices.config - INFO - Redis hit for product: 561430f7-d502-492f-9017-984be0dde583
+2025-05-14 14:52:07,294 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:52:07,300 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:52:07,303 - redis_microservices.config - INFO - Added product: product:6660a277-472a-44f7-a116-3d36e40ebe3a with 14 fields
+2025-05-14 14:52:33,401 - redis_microservices.config - INFO - Succesfull create and connect with redis
+2025-05-14 14:52:33,402 - redis_microservices.config - INFO - Redis hit for product: 6660a277-472a-44f7-a116-3d36e40ebe3a

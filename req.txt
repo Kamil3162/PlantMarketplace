@@ -81,3 +81,5 @@ urllib3
 vine
 wcwidth
 yarl
+minio
+boto3

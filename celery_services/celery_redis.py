@@ -1,6 +1,7 @@
 import smtplib
 import os.path
 import ssl
+import sys
 
 import celery
 from email.message import EmailMessage
@@ -9,7 +10,6 @@ import json
 
 from .config import ConfigCelery, EmailConfig
 from redis_microservices import redis_product_client
-
 
 class CeleryOperations:
     def __init__(self, config:ConfigCelery):
@@ -39,7 +39,10 @@ class CeleryOperations:
 
             # Pobierz dane z Redisa
             products = self.get_products_from_redis()
-
+            if products:
+                body = 'test'
+            else:
+                body = 'brak produktów'
             # Formatuj treść emaila
             body = self._format_products_for_email(products)
 
@@ -52,6 +55,7 @@ class CeleryOperations:
             }
 
             success = self._send_email(email_data)
+
             return {
                 "success": success,
                 "products_count": len(products),
@@ -72,12 +76,10 @@ class CeleryOperations:
         products = []
 
         for key in product_keys:
-            product_data = redis_client.get(key)
+            product_data = redis_client.hgetall(key)
             if product_data:
                 try:
-                    product = json.loads(product_data)
-                    product['id'] = key.replace('product:', '')
-                    products.append(product)
+                    products.append(product_data)
                 except json.JSONDecodeError:
                     # Ignoruj nieprawidłowe dane
                     pass
@@ -91,7 +93,7 @@ class CeleryOperations:
 
         body = "Lista produktów:\n\n"
 
-        for i, product in enumerate(products, 1):
+        for i, product in enumerate(products):
             body += f"Produkt #{i}\n"
             body += f"ID: {product.get('id', 'N/A')}\n"
             body += f"Nazwa: {product.get('name', 'N/A')}\n"
@@ -103,6 +105,7 @@ class CeleryOperations:
             body += "\n"
 
         return body
+
 
     def create_email(self, sender, receiver, subject, body):
         """Tworzy obiekt EmailMessage"""
@@ -138,6 +141,7 @@ class CeleryOperations:
             return False
 
     def send_products_email(self, recipient=None, subject=None):
+        print('send products email - exec')
         """Wywołuje zadanie asynchronicznie"""
         # Używamy .delay() do asynchronicznego wywołania zadania
         task = self.app.send_task(

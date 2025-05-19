@@ -10,7 +10,7 @@ from .jwt_manager import JWTManager
 class RedisManager(object):
     def __init__(self):
         self.redInst = redis.Redis(
-            host='redis_microservices',
+            host='redis',
             port=6379,
             db=0,
             # decode_responses=True
@@ -119,6 +119,7 @@ class RedisManager(object):
         """
         key = f'{self.user_prefix}{token}'
         user_data = self.redInst.hgetall(key)
+        print(user_data)
         return user_data
 
     def remove_access_token(self, token):
