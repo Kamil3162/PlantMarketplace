@@ -7,7 +7,6 @@ import ssl
 import logging
 import celery
 
-
 from pika.exceptions import AMQPConnectionError
 from email.message import EmailMessage
 from celery_conf import ConfigCelery

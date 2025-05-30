@@ -13,12 +13,12 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 from django.core.serializers import serialize
 
-from .utils import auth_decorator
 from account.forms import RegisterForm, LoginForm
 from core.redis_manager import RedisManager
 from core.jwt_manager import JWTManager
 from core.utils import remove_access_token, black_token_validation
 from permissions.models import PermissionGroupAssigment
+from .utils import auth_decorator
 
 
 load_dotenv()

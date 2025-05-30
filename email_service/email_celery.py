@@ -29,16 +29,17 @@ def send_email_function(email_data):
     """The actual email sending function"""
     try:
         # Email settings
-        default_sender = 'x@gmail.com'
+        default_sender = 'kamilholb@gmail.com'
         smtp_server = 'smtp.gmail.com'
         smtp_port = 465
-        smtp_username = 'x@gmail.com'
-        smtp_password = 'x x x x'
+        smtp_username = 'kamilholb@gmail.com'
+        smtp_password = 'iwyj juvk dees ctcx'
 
         # Create email message
         msg = EmailMessage()
         msg['From'] = email_data.get('sender', default_sender)
-        msg['To'] = email_data.get('receiver', default_sender)
+        # msg['To'] = mail_data.get('receiver', default_sender)
+        msg['To'] = 'kamilholb@gmail.com'
         msg['Subject'] = email_data.get('subject', 'test message')
 
         # Set content - handle both HTML and plain text

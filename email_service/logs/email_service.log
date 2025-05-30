@@ -246,3 +246,293 @@ INFO 2025-05-19 19:53:26,621 autoreload 104 140576792804224 /app/producer.py cha
 INFO 2025-05-19 19:53:27,688 autoreload 111 140455228312448 Watching for file changes with StatReloader
 INFO 2025-05-19 19:53:53,952 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
 INFO 2025-05-19 19:57:50,662 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 23:49:21,818 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 23:49:53,185 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-19 23:50:00,283 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:23:44,044 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:24:45,127 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:24:53,806 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:44,018 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:44,203 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:44,563 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:44,692 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:44,980 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:45,384 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:45,655 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:45,928 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:25:46,520 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:26:12,361 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 00:27:15,681 basehttp 111 140455150872256 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 10:45:34,783 autoreload 111 140455228312448 /app/config/urls.py changed, reloading.
+INFO 2025-05-20 10:45:36,906 autoreload 140 140105529875328 Watching for file changes with StatReloader
+INFO 2025-05-20 11:08:23,153 autoreload 140 140105529875328 /app/config/urls.py changed, reloading.
+INFO 2025-05-20 11:08:24,843 autoreload 147 139646730382208 Watching for file changes with StatReloader
+INFO 2025-05-20 11:08:55,498 autoreload 147 139646730382208 /app/api/urls.py changed, reloading.
+INFO 2025-05-20 11:08:56,537 autoreload 149 140289109719936 Watching for file changes with StatReloader
+INFO 2025-05-20 11:28:49,435 autoreload 19 139824023292800 Watching for file changes with StatReloader
+INFO 2025-05-20 11:29:16,732 basehttp 19 139823945868992 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 11:31:29,115 autoreload 19 140589978987392 Watching for file changes with StatReloader
+INFO 2025-05-20 11:32:07,196 basehttp 19 140589903374016 "GET /email/base/ HTTP/1.1" 200 24
+WARNING 2025-05-20 18:27:13,717 log 19 140589894981312 Not Found: /
+WARNING 2025-05-20 18:27:13,736 basehttp 19 140589894981312 "GET / HTTP/1.1" 404 2157
+WARNING 2025-05-20 18:40:37,927 log 19 140589894981312 Not Found: /
+WARNING 2025-05-20 18:40:37,947 basehttp 19 140589894981312 "GET / HTTP/1.1" 404 2157
+WARNING 2025-05-20 19:11:33,391 log 19 140589894981312 Not Found: /
+WARNING 2025-05-20 19:11:33,410 basehttp 19 140589894981312 "GET / HTTP/1.1" 404 2157
+INFO 2025-05-20 20:55:44,727 autoreload 19 140290915236736 Watching for file changes with StatReloader
+WARNING 2025-05-20 20:56:22,545 log 19 140290839013056 Not Found: /
+WARNING 2025-05-20 20:56:22,548 basehttp 19 140290839013056 "GET / HTTP/1.1" 404 2157
+WARNING 2025-05-20 20:56:26,911 log 19 140290839013056 Not Found: /base
+WARNING 2025-05-20 20:56:26,915 basehttp 19 140290839013056 "GET /base HTTP/1.1" 404 2187
+INFO 2025-05-20 20:56:32,141 basehttp 19 140290839013056 "GET /email/base HTTP/1.1" 301 0
+INFO 2025-05-20 20:56:32,155 basehttp 19 140290830620352 "GET /email/base/ HTTP/1.1" 200 24
+WARNING 2025-05-20 21:08:06,790 log 19 140290830620352 Not Found: /users/1/emails
+WARNING 2025-05-20 21:08:06,799 basehttp 19 140290830620352 "GET /users/1/emails HTTP/1.1" 404 2217
+WARNING 2025-05-20 21:08:46,863 log 19 140290830620352 Not Found: /
+WARNING 2025-05-20 21:08:46,865 basehttp 19 140290830620352 "GET / HTTP/1.1" 404 2157
+WARNING 2025-05-20 21:08:57,556 log 19 140290839013056 Not Found: /
+WARNING 2025-05-20 21:08:57,559 basehttp 19 140290839013056 "GET / HTTP/1.1" 404 2157
+INFO 2025-05-20 21:16:57,002 basehttp 19 140290839013056 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:17:02,875 basehttp 19 140290830620352 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:17:12,850 basehttp 19 140290839013056 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:17:14,279 basehttp 19 140290839013056 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:17:14,454 basehttp 19 140290839013056 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:32:31,872 autoreload 19 140072932154240 Watching for file changes with StatReloader
+INFO 2025-05-20 21:33:02,179 basehttp 19 140072854742720 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:39:05,629 autoreload 19 140072932154240 /app/config/settings.py changed, reloading.
+INFO 2025-05-20 21:39:06,826 autoreload 28 140462818319232 Watching for file changes with StatReloader
+INFO 2025-05-20 21:40:15,532 autoreload 19 140485827439488 Watching for file changes with StatReloader
+INFO 2025-05-20 21:40:47,123 basehttp 19 140485750417088 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:40:57,869 basehttp 19 140485742024384 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:41:04,268 basehttp 19 140485742024384 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 21:53:13,420 basehttp 19 140485742024384 "GET /email/base/ HTTP/1.1" 200 24
+ERROR 2025-05-20 21:57:50,724 exception 19 140485742024384 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 21:57:50,822 log 19 140485742024384 Bad Request: /email/base
+WARNING 2025-05-20 21:57:50,826 basehttp 19 140485742024384 "GET /email/base HTTP/1.1" 400 67482
+ERROR 2025-05-20 21:59:05,043 exception 19 140485742024384 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 21:59:05,066 log 19 140485742024384 Bad Request: /email/base
+WARNING 2025-05-20 21:59:05,068 basehttp 19 140485742024384 "GET /email/base HTTP/1.1" 400 67482
+INFO 2025-05-20 21:59:48,237 autoreload 19 140485827439488 /app/config/settings.py changed, reloading.
+INFO 2025-05-20 21:59:49,776 autoreload 34 139787642137472 Watching for file changes with StatReloader
+ERROR 2025-05-20 23:48:51,709 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:48:51,871 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:48:51,877 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:48:57,290 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:48:57,311 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:48:57,314 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:48:58,023 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:48:58,042 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:48:58,045 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:48:58,294 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:48:58,318 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:48:58,322 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:48:58,604 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:48:58,637 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:48:58,641 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:48:58,938 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:48:58,959 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:48:58,963 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:48:59,679 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:48:59,696 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:48:59,699 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:49:11,600 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:49:11,618 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:49:11,621 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:50:05,500 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:50:05,520 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:50:05,524 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+ERROR 2025-05-20 23:50:06,266 exception 34 139787495274176 Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'email_service-web-1:8000'. The domain name provided is not valid according to RFC 1034/1035.
+WARNING 2025-05-20 23:50:06,294 log 34 139787495274176 Bad Request: /email/base
+WARNING 2025-05-20 23:50:06,297 basehttp 34 139787495274176 "GET /email/base HTTP/1.1" 400 67562
+INFO 2025-05-20 23:50:44,974 basehttp 34 139787495274176 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 23:59:16,538 basehttp 34 139787486881472 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-20 23:59:26,590 basehttp 34 139787495274176 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:00:49,151 autoreload 19 140356316310400 Watching for file changes with StatReloader
+INFO 2025-05-21 00:02:22,904 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:41,624 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:41,981 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:42,176 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:42,428 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:42,589 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:42,732 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:42,872 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:43,009 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:02:43,157 basehttp 19 140356240795328 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:06:24,992 autoreload 19 140356316310400 /app/config/settings.py changed, reloading.
+INFO 2025-05-21 00:06:26,295 autoreload 30 139994661608320 Watching for file changes with StatReloader
+INFO 2025-05-21 00:08:27,613 autoreload 19 139759715031936 Watching for file changes with StatReloader
+INFO 2025-05-21 00:08:54,614 basehttp 19 139759638800064 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:12:57,629 autoreload 19 140348966890368 Watching for file changes with StatReloader
+INFO 2025-05-21 00:13:33,220 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:13:42,397 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:13:49,359 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:13:50,068 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:13:50,663 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:13:50,845 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:13:51,016 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:13:51,167 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:14:44,179 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:14:44,926 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:14:45,400 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:14:45,787 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:14:46,019 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:14:46,356 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:14:49,250 basehttp 19 140348890277568 "GET /email/base/ HTTP/1.1" 200 24
+INFO 2025-05-21 00:16:55,406 autoreload 19 140320341470080 Watching for file changes with StatReloader
+INFO 2025-05-21 00:19:50,508 basehttp 19 140320264152768 "GET /email/base/ HTTP/1.1" 200 24

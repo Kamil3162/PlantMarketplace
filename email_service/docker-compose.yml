@@ -20,6 +20,7 @@ services:
 
   web:
     build: .
+    container_name: email-service
     command: >
       bash -c "
       python manage.py makemigrations &&
@@ -51,6 +52,7 @@ services:
       - rabbitmq
     networks:
       - app-network
+      - microservices-network
 
 #  consumer:
 #    build: .
@@ -121,3 +123,5 @@ volumes:
 networks:
   app-network:
     driver: bridge
+  microservices-network:
+    external: true

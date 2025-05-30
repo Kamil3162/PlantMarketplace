@@ -12,9 +12,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Kopiuj requirements.txt z katalogu products
+# Kopiuj base.txt z katalogu products
 COPY products/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r base.txt
 
 # Kopiuj cały projekt
 COPY . .

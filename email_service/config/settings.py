@@ -14,9 +14,16 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-produc
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+CORS_ALLOW_ALL_ORIGINS = True  # TYLKO DO TESTÓW!
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
-
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'email-service',    # ← DODAJ container name!
+    '0.0.0.0',         # ← DODAJ dla Docker
+    '*',
+    'gateway-gateway-app-1'# ← Tymczasowo dla debug
+]
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',

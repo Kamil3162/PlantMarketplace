@@ -154,7 +154,7 @@ class PermissionGroupManager(models.Manager):
             raise ModelDoesNotExists('CustomUser model does not exist')
 
         except Exception as e:
-            # exception used only during development
+            # exception used only during development.txt
             raise Exception(str(e))
 
     def _generate_base_groups(self):
