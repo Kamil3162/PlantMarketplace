@@ -21,7 +21,7 @@ def get_products_fields():
         raise AttributeError(f'Product Meta: {e}')
 
 def redis_operations_handler(function):
-    """Decorator for handling Redis operation exceptions consistently."""
+    """Decorator for handling Redis operation core consistently."""
     @functools.wraps(function)
     def wrapper(*args, **kwargs):
         try:

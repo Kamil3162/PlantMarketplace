@@ -10,11 +10,11 @@ class ConfigCelery:
     name: str = 'email-service'
 
     # RabbitMQ configuration
-    broker_user: str = os.getenv('RABBITMQ_DEFAULT_USER', 'myuser')
-    broker_password: str = os.getenv('RABBITMQ_DEFAULT_PASS', 'mypassword')
+    broker_user: str = os.getenv('RABBITMQ_DEFAULT_USER', 'gateway_user')
+    broker_password: str = os.getenv('RABBITMQ_DEFAULT_PASS', 'gateway_pass')
     broker_host: str = os.getenv('RABBITMQ_HOST', 'localhost')  # Use service name in docker
     broker_port: int = os.getenv('RABBITMQ_PORT', '5672')
-    broker_url: str = f'amqp://{broker_user}:{broker_password}@localhost:{broker_port}//'
+    broker_url: str = f'amqp://{broker_user}:{broker_password}@{broker_host}:{broker_port}//'
 
     # For result backend, you could use Redis or PostgreSQL
     result_backend: str = os.getenv('CELERY_RESULT_BACKEND', 'redis://redis:6379/0')

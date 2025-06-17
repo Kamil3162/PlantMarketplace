@@ -1,0 +1,639 @@
+INFO 2025-06-14 13:11:22,285 autoreload 7 137074430905216 Watching for file changes with StatReloader
+INFO 2025-06-14 13:12:26,405 autoreload 7 137074430905216 /app/manage.py changed, reloading.
+INFO 2025-06-14 13:12:27,307 autoreload 9 138491537296256 Watching for file changes with StatReloader
+INFO 2025-06-14 13:12:34,722 autoreload 9 138491537296256 /app/manage.py changed, reloading.
+INFO 2025-06-14 13:12:35,682 autoreload 11 136630003440512 Watching for file changes with StatReloader
+INFO 2025-06-14 13:13:08,300 autoreload 11 136630003440512 /app/config/urls.py changed, reloading.
+INFO 2025-06-14 13:13:09,188 autoreload 13 136458549832576 Watching for file changes with StatReloader
+INFO 2025-06-14 13:14:13,660 autoreload 13 136458549832576 /app/views.py changed, reloading.
+INFO 2025-06-14 13:14:14,856 autoreload 15 135540815022976 Watching for file changes with StatReloader
+INFO 2025-06-14 13:15:28,088 autoreload 7 136682911157120 Watching for file changes with StatReloader
+INFO 2025-06-14 13:15:37,404 autoreload 7 136682911157120 /app/urls.py changed, reloading.
+INFO 2025-06-14 13:15:38,243 autoreload 9 138632962194304 Watching for file changes with StatReloader
+INFO 2025-06-14 13:18:15,247 autoreload 9 132717081496448 Watching for file changes with StatReloader
+INFO 2025-06-14 13:24:32,103 autoreload 9 132717081496448 /app/manage.py changed, reloading.
+INFO 2025-06-14 13:24:32,908 autoreload 25 125538609412992 Watching for file changes with StatReloader
+INFO 2025-06-14 13:24:52,896 autoreload 9 125428416183168 Watching for file changes with StatReloader
+INFO 2025-06-14 13:26:41,723 autoreload 9 139777765022592 Watching for file changes with StatReloader
+INFO 2025-06-14 16:56:48,086 autoreload 9 139777765022592 /app/config/settings.py changed, reloading.
+INFO 2025-06-14 16:56:49,909 autoreload 21 128526870432640 Watching for file changes with StatReloader
+INFO 2025-06-14 16:56:57,564 autoreload 21 128526870432640 /app/config/settings.py changed, reloading.
+INFO 2025-06-14 16:56:58,988 autoreload 23 124741323463552 Watching for file changes with StatReloader
+INFO 2025-06-14 16:57:09,817 autoreload 23 124741323463552 /app/config/settings.py changed, reloading.
+INFO 2025-06-14 16:57:10,917 autoreload 25 126713387580288 Watching for file changes with StatReloader
+INFO 2025-06-14 16:57:17,470 autoreload 25 126713387580288 /app/config/settings.py changed, reloading.
+INFO 2025-06-14 16:57:18,766 autoreload 27 135465228032896 Watching for file changes with StatReloader
+INFO 2025-06-14 16:57:25,123 autoreload 27 135465228032896 /app/config/settings.py changed, reloading.
+INFO 2025-06-14 16:57:27,235 autoreload 29 125498181585792 Watching for file changes with StatReloader
+INFO 2025-06-14 16:59:43,070 autoreload 8 133400204274560 Watching for file changes with StatReloader
+INFO 2025-06-14 17:01:53,751 autoreload 8 133400204274560 /app/config/settings.py changed, reloading.
+INFO 2025-06-14 17:01:54,685 autoreload 10 123783007824768 Watching for file changes with StatReloader
+INFO 2025-06-14 17:08:15,354 autoreload 9 128279167859584 Watching for file changes with StatReloader
+INFO 2025-06-14 17:14:12,583 autoreload 9 128279167859584 /app/config/settings.py changed, reloading.
+INFO 2025-06-14 17:14:13,695 autoreload 11 136956958579584 Watching for file changes with StatReloader
+INFO 2025-06-14 17:16:15,003 autoreload 9 129512782130048 Watching for file changes with StatReloader
+INFO 2025-06-14 17:41:58,871 autoreload 9 139031616977792 Watching for file changes with StatReloader
+INFO 2025-06-14 17:42:44,845 autoreload 9 130428212362112 Watching for file changes with StatReloader
+INFO 2025-06-14 17:44:02,967 autoreload 9 140183410482048 Watching for file changes with StatReloader
+INFO 2025-06-14 17:48:30,086 autoreload 8 139723044739968 Watching for file changes with StatReloader
+INFO 2025-06-15 09:50:58,364 autoreload 8 138120909052800 Watching for file changes with StatReloader
+WARNING 2025-06-15 09:51:01,624 log 8 138120831952576 Not Found: /
+WARNING 2025-06-15 09:51:01,625 basehttp 8 138120831952576 "GET / HTTP/1.1" 404 2157
+WARNING 2025-06-15 09:51:01,875 log 8 138120831952576 Not Found: /favicon.ico
+WARNING 2025-06-15 09:51:01,882 basehttp 8 138120831952576 "GET /favicon.ico HTTP/1.1" 404 2208
+WARNING 2025-06-15 09:51:07,449 log 8 138120831952576 Not Found: /users
+WARNING 2025-06-15 09:51:07,451 basehttp 8 138120831952576 "GET /users HTTP/1.1" 404 2190
+INFO 2025-06-15 09:53:23,906 autoreload 8 138120909052800 /app/config/urls.py changed, reloading.
+INFO 2025-06-15 09:53:25,342 autoreload 12 136804078349184 Watching for file changes with StatReloader
+INFO 2025-06-15 09:56:29,257 autoreload 7 138507697740672 Watching for file changes with StatReloader
+WARNING 2025-06-15 09:56:32,852 log 7 138507613886144 Not Found: /users
+WARNING 2025-06-15 09:56:32,854 basehttp 7 138507613886144 "GET /users HTTP/1.1" 404 2190
+ERROR 2025-06-15 09:56:45,491 log 7 138507613886144 Internal Server Error: /users/api/users
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "account_customuser" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "account_customuser"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 19, in users_list
+    page_objects = paginator.get_page(1)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/paginator.py", line 80, in get_page
+    number = self.validate_number(number)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/paginator.py", line 70, in validate_number
+    if number > self.num_pages:
+                ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/paginator.py", line 116, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+       ^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/local/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "account_customuser" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "account_customuser"
+                                          ^
+
+ERROR 2025-06-15 09:56:45,501 basehttp 7 138507613886144 "GET /users/api/users HTTP/1.1" 500 144131
+INFO 2025-06-15 09:57:12,492 autoreload 7 138507697740672 /app/api/views.py changed, reloading.
+INFO 2025-06-15 09:57:13,458 autoreload 11 130845127261056 Watching for file changes with StatReloader
+INFO 2025-06-15 09:57:23,947 autoreload 11 130845127261056 /app/api/views.py changed, reloading.
+INFO 2025-06-15 09:57:26,085 autoreload 13 135543634779008 Watching for file changes with StatReloader
+INFO 2025-06-15 09:57:28,541 basehttp 13 135543557973696 "GET /users/api/users HTTP/1.1" 200 4
+INFO 2025-06-15 09:57:48,366 autoreload 13 135543634779008 /app/forms.py changed, reloading.
+INFO 2025-06-15 09:57:49,320 autoreload 17 139327655336832 Watching for file changes with StatReloader
+WARNING 2025-06-15 09:58:23,685 log 17 139327579350720 Not Found: /users/adsa
+WARNING 2025-06-15 09:58:23,686 basehttp 17 139327579350720 "GET /users/adsa HTTP/1.1" 404 3141
+WARNING 2025-06-15 10:03:51,228 log 17 139327579350720 Not Found: /users/adsa
+WARNING 2025-06-15 10:03:51,243 basehttp 17 139327579350720 "GET /users/adsa HTTP/1.1" 404 3141
+INFO 2025-06-15 10:03:57,349 basehttp 17 139327579350720 "GET /users/api/users HTTP/1.1" 200 52942
+INFO 2025-06-15 10:05:27,957 basehttp 17 139327579350720 "GET /users/api/me HTTP/1.1" 200 964
+INFO 2025-06-15 10:06:21,539 autoreload 17 139327655336832 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:06:23,058 autoreload 35 139732990253952 Watching for file changes with StatReloader
+INFO 2025-06-15 10:06:24,717 autoreload 35 139732990253952 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:06:26,093 autoreload 37 130510730611584 Watching for file changes with StatReloader
+WARNING 2025-06-15 10:07:00,372 log 37 130510653220544 Not Found: /users/api/users/
+WARNING 2025-06-15 10:07:00,375 basehttp 37 130510653220544 "GET /users/api/users/?page=1 HTTP/1.1" 404 3166
+INFO 2025-06-15 10:07:05,239 basehttp 37 130510653220544 "GET /users/api/users?page=1 HTTP/1.1" 200 52942
+INFO 2025-06-15 10:07:42,776 autoreload 37 130510730611584 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:07:43,744 autoreload 41 129097276144512 Watching for file changes with StatReloader
+INFO 2025-06-15 10:14:21,314 autoreload 41 129097276144512 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:14:22,955 autoreload 43 127614985485184 Watching for file changes with StatReloader
+INFO 2025-06-15 10:14:29,374 autoreload 43 127614985485184 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:14:30,421 autoreload 45 129724147137408 Watching for file changes with StatReloader
+INFO 2025-06-15 10:14:38,082 autoreload 45 129724147137408 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:14:39,080 autoreload 47 137410806008704 Watching for file changes with StatReloader
+INFO 2025-06-15 10:15:10,343 autoreload 47 137410806008704 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:15:11,389 autoreload 49 138522227260288 Watching for file changes with StatReloader
+INFO 2025-06-15 10:15:13,945 autoreload 49 138522227260288 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:15:15,077 autoreload 51 133304501205888 Watching for file changes with StatReloader
+INFO 2025-06-15 10:15:55,574 autoreload 51 133304501205888 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:15:56,579 autoreload 53 133909623139200 Watching for file changes with StatReloader
+INFO 2025-06-15 10:15:59,937 autoreload 53 133909623139200 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:16:00,968 autoreload 55 136431144377216 Watching for file changes with StatReloader
+INFO 2025-06-15 10:16:07,438 autoreload 55 136431144377216 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:16:08,457 autoreload 57 134986006334336 Watching for file changes with StatReloader
+INFO 2025-06-15 10:16:23,642 autoreload 57 134986006334336 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:16:24,836 autoreload 59 135714395728768 Watching for file changes with StatReloader
+INFO 2025-06-15 10:16:40,733 autoreload 59 135714395728768 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:16:43,302 autoreload 61 132499285244800 Watching for file changes with StatReloader
+INFO 2025-06-15 10:17:09,555 autoreload 61 132499285244800 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:17:10,837 autoreload 63 124388991519616 Watching for file changes with StatReloader
+INFO 2025-06-15 10:17:14,457 autoreload 63 124388991519616 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:17:15,465 autoreload 65 139644942445440 Watching for file changes with StatReloader
+INFO 2025-06-15 10:17:16,763 autoreload 65 139644942445440 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:17:17,806 autoreload 67 134603151334272 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:17:19,658 log 67 134602999985856 Internal Server Error: /users/api/users
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 18, in users_list
+    start = (page - 1) * PAGE_SIZE
+             ~~~~~^~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+ERROR 2025-06-15 10:17:19,664 basehttp 67 134602999985856 "GET /users/api/users?page=1 HTTP/1.1" 500 64288
+ERROR 2025-06-15 10:17:27,772 log 67 134602999985856 Internal Server Error: /users/api/users
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 18, in users_list
+    start = (page - 1) * PAGE_SIZE
+             ~~~~~^~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+ERROR 2025-06-15 10:17:27,777 basehttp 67 134602999985856 "GET /users/api/users?page=2 HTTP/1.1" 500 64151
+INFO 2025-06-15 10:17:51,472 autoreload 67 134603151334272 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:17:52,670 autoreload 71 124690399095680 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:17:53,680 log 71 124690314024640 Internal Server Error: /users/api/users
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 19, in users_list
+    start = (page - 1) * PAGE_SIZE
+             ~~~~~^~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+ERROR 2025-06-15 10:17:53,692 basehttp 71 124690314024640 "GET /users/api/users?page=2 HTTP/1.1" 500 64283
+INFO 2025-06-15 10:18:01,547 autoreload 71 124690399095680 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:18:02,763 autoreload 75 139317792070528 Watching for file changes with StatReloader
+INFO 2025-06-15 10:18:16,708 autoreload 75 139317792070528 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:18:17,666 autoreload 77 130583586225024 Watching for file changes with StatReloader
+INFO 2025-06-15 10:18:18,478 basehttp 77 130583510378176 "GET /users/api/users?page=2 HTTP/1.1" 200 7942
+INFO 2025-06-15 10:18:23,056 basehttp 77 130583510378176 "GET /users/api/users?page=1 HTTP/1.1" 200 7941
+INFO 2025-06-15 10:18:29,808 basehttp 77 130583510378176 "GET /users/api/users?page=2 HTTP/1.1" 200 7942
+INFO 2025-06-15 10:21:35,568 autoreload 77 130583586225024 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:21:36,522 autoreload 81 136271112305536 Watching for file changes with StatReloader
+WARNING 2025-06-15 10:22:41,599 log 81 136271034836672 Forbidden (Origin checking failed - http://xyz23.com does not match any trusted origins.): /users/api/me-modify/
+WARNING 2025-06-15 10:22:41,601 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2549
+WARNING 2025-06-15 10:23:05,534 log 81 136271034836672 Forbidden (CSRF token missing.): /users/api/me-modify/
+WARNING 2025-06-15 10:23:05,536 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2491
+WARNING 2025-06-15 10:23:51,314 log 81 136271034836672 Forbidden (CSRF token missing.): /users/api/me-modify/
+WARNING 2025-06-15 10:23:51,315 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2491
+WARNING 2025-06-15 10:24:05,052 log 81 136271034836672 Forbidden (CSRF token missing.): /users/api/me-modify/
+WARNING 2025-06-15 10:24:05,054 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2491
+WARNING 2025-06-15 10:24:19,928 log 81 136271034836672 Forbidden (CSRF token missing.): /users/api/me-modify/
+WARNING 2025-06-15 10:24:19,931 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2491
+WARNING 2025-06-15 10:25:15,769 log 81 136271034836672 Forbidden (CSRF token missing.): /users/api/me-modify/
+WARNING 2025-06-15 10:25:15,770 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2491
+WARNING 2025-06-15 10:25:22,905 log 81 136271034836672 Forbidden (CSRF token missing.): /users/api/me-modify/
+WARNING 2025-06-15 10:25:22,906 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2491
+WARNING 2025-06-15 10:25:43,358 log 81 136271026443968 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-06-15 10:25:43,370 basehttp 81 136271026443968 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2319
+INFO 2025-06-15 10:25:50,103 basehttp 81 136271026443968 "GET /users/api/users?page=2 HTTP/1.1" 200 7942
+WARNING 2025-06-15 10:25:50,139 log 81 136271026443968 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-06-15 10:25:50,146 basehttp 81 136271026443968 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2319
+WARNING 2025-06-15 10:26:08,821 log 81 136271034836672 Forbidden (CSRF token missing.): /users/api/me-modify/
+WARNING 2025-06-15 10:26:08,823 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2491
+WARNING 2025-06-15 10:26:45,204 log 81 136271034836672 Forbidden (CSRF token missing.): /users/api/me-modify/
+WARNING 2025-06-15 10:26:45,209 basehttp 81 136271034836672 "POST /users/api/me-modify/ HTTP/1.1" 403 2491
+INFO 2025-06-15 10:27:48,324 basehttp 81 136271026443968 "GET /users/api/users HTTP/1.1" 200 7941
+INFO 2025-06-15 10:28:35,701 autoreload 81 136271112305536 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:28:36,855 autoreload 89 130787238067072 Watching for file changes with StatReloader
+INFO 2025-06-15 10:28:41,536 autoreload 89 130787238067072 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:28:42,707 autoreload 91 138860087303040 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:28:46,912 log 91 138860010923712 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 29, in user_modify
+    user_email = user_data['email']
+                 ~~~~~~~~~^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+ERROR 2025-06-15 10:28:46,922 basehttp 91 138860010923712 "POST /users/api/me-modify/ HTTP/1.1" 500 66451
+INFO 2025-06-15 10:29:30,384 autoreload 91 138860087303040 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:29:31,310 autoreload 95 140545667345280 Watching for file changes with StatReloader
+INFO 2025-06-15 10:29:33,877 autoreload 95 140545667345280 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:29:35,142 autoreload 97 136087966968704 Watching for file changes with StatReloader
+INFO 2025-06-15 10:29:38,645 autoreload 97 136087966968704 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:29:39,748 autoreload 99 124854757292928 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:29:41,027 log 99 124854680413888 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 30, in user_modify
+    user_email = request.POST.data['email']
+                 ^^^^^^^^^^^^^^^^^
+AttributeError: 'QueryDict' object has no attribute 'data'
+ERROR 2025-06-15 10:29:41,040 basehttp 99 124854680413888 "POST /users/api/me-modify/ HTTP/1.1" 500 66510
+INFO 2025-06-15 10:29:50,123 autoreload 99 124854757292928 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:29:51,621 autoreload 103 137398681287552 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:29:54,540 log 103 137398604261056 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 29, in user_modify
+    print(request.POST.data)
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'QueryDict' object has no attribute 'data'
+ERROR 2025-06-15 10:29:54,548 basehttp 103 137398604261056 "POST /users/api/me-modify/ HTTP/1.1" 500 66484
+INFO 2025-06-15 10:30:19,469 autoreload 103 137398681287552 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:30:20,694 autoreload 107 134155289283456 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:30:21,944 log 107 134155211892416 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 30, in user_modify
+    print(request.POST.data)
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'QueryDict' object has no attribute 'data'
+ERROR 2025-06-15 10:30:21,952 basehttp 107 134155211892416 "POST /users/api/me-modify/ HTTP/1.1" 500 66440
+ERROR 2025-06-15 10:30:23,646 log 107 134155211892416 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 30, in user_modify
+    print(request.POST.data)
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'QueryDict' object has no attribute 'data'
+ERROR 2025-06-15 10:30:23,649 basehttp 107 134155211892416 "POST /users/api/me-modify/ HTTP/1.1" 500 66440
+INFO 2025-06-15 10:30:57,690 autoreload 107 134155289283456 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:30:58,816 autoreload 111 128581360319360 Watching for file changes with StatReloader
+INFO 2025-06-15 10:31:19,310 autoreload 111 128581360319360 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:31:20,462 autoreload 113 137051274500992 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:31:28,593 log 113 137051198449344 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 30, in user_modify
+    print(request.POST.data)
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'QueryDict' object has no attribute 'data'
+ERROR 2025-06-15 10:31:28,599 basehttp 113 137051198449344 "POST /users/api/me-modify/ HTTP/1.1" 500 66840
+INFO 2025-06-15 10:31:53,375 autoreload 113 137051274500992 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:31:54,400 autoreload 117 138378534243200 Watching for file changes with StatReloader
+INFO 2025-06-15 10:31:56,755 autoreload 117 138378534243200 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:31:57,922 autoreload 119 139552227158912 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:32:02,457 log 119 139552077379264 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 30, in user_modify
+    user_email = request.POST['email']
+                 ~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'email'
+ERROR 2025-06-15 10:32:02,466 basehttp 119 139552077379264 "POST /users/api/me-modify/ HTTP/1.1" 500 75243
+ERROR 2025-06-15 10:32:20,088 log 119 139552077379264 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 30, in user_modify
+    user_email = request.POST['email']
+                 ~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'email'
+ERROR 2025-06-15 10:32:20,094 basehttp 119 139552077379264 "POST /users/api/me-modify/ HTTP/1.1" 500 74757
+ERROR 2025-06-15 10:33:56,642 log 119 139552060593856 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2128, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'dixonjames@example.net'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 31, in user_modify
+    user_obj = get_user(user_email)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/app/utils.py", line 12, in get_user
+    return CustomUser.objects.get(id=user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 619, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1588, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1415, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/lookups.py", line 38, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/lookups.py", line 410, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/lookups.py", line 96, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2130, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'dixonjames@example.net'.
+ERROR 2025-06-15 10:33:56,652 basehttp 119 139552060593856 "POST /users/api/me-modify/ HTTP/1.1" 500 139257
+INFO 2025-06-15 10:34:41,978 autoreload 119 139552227158912 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:34:43,265 autoreload 125 125928091425664 Watching for file changes with StatReloader
+INFO 2025-06-15 10:34:52,995 autoreload 125 125928091425664 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:34:55,475 autoreload 127 129490875382656 Watching for file changes with StatReloader
+WARNING 2025-06-15 10:35:00,880 log 127 129490799814336 Not Found: /users/api/me-modify/user_data=1
+WARNING 2025-06-15 10:35:00,882 basehttp 127 129490799814336 "POST /users/api/me-modify/user_data=1 HTTP/1.1" 404 3207
+ERROR 2025-06-15 10:35:08,675 log 127 129490799814336 Internal Server Error: /users/api/me-modify
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8001/users/api/me-modify/?user_data=1 (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-06-15 10:35:08,677 basehttp 127 129490799814336 "POST /users/api/me-modify?user_data=1 HTTP/1.1" 500 68959
+INFO 2025-06-15 10:36:25,905 autoreload 127 129490875382656 /app/utils.py changed, reloading.
+INFO 2025-06-15 10:36:26,975 autoreload 131 134970130717568 Watching for file changes with StatReloader
+INFO 2025-06-15 10:36:32,508 autoreload 131 134970130717568 /app/utils.py changed, reloading.
+INFO 2025-06-15 10:36:33,732 autoreload 133 132948866268032 Watching for file changes with StatReloader
+INFO 2025-06-15 10:36:53,745 autoreload 133 132948866268032 /app/utils.py changed, reloading.
+INFO 2025-06-15 10:36:55,162 autoreload 135 127240291011456 Watching for file changes with StatReloader
+INFO 2025-06-15 10:36:58,660 autoreload 135 127240291011456 /app/utils.py changed, reloading.
+INFO 2025-06-15 10:37:00,936 autoreload 137 129351534463872 Watching for file changes with StatReloader
+INFO 2025-06-15 10:37:08,563 autoreload 137 129351534463872 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:37:09,646 autoreload 139 125336472054656 Watching for file changes with StatReloader
+INFO 2025-06-15 10:37:14,143 autoreload 139 125336472054656 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:37:15,373 autoreload 141 139801562848128 Watching for file changes with StatReloader
+ERROR 2025-06-15 10:37:56,984 log 141 139801485371072 Internal Server Error: /users/api/me-modify/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "account_customuser" does not exist
+LINE 1: ...eated_at", "account_customuser"."updated_at" FROM "account_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/api/views.py", line 31, in user_modify
+    user_obj = get_user_by_email(user_email)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/utils.py", line 19, in get_user_by_email
+    return CustomUser.objects.get(email=email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 629, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 366, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/local/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "account_customuser" does not exist
+LINE 1: ...eated_at", "account_customuser"."updated_at" FROM "account_c...
+                                                             ^
+
+ERROR 2025-06-15 10:37:56,995 basehttp 141 139801485371072 "POST /users/api/me-modify/ HTTP/1.1" 500 138221
+INFO 2025-06-15 10:38:16,427 autoreload 141 139801562848128 /app/utils.py changed, reloading.
+INFO 2025-06-15 10:38:18,114 autoreload 145 125652810267520 Watching for file changes with StatReloader
+INFO 2025-06-15 10:38:19,270 basehttp 145 125652732733120 "POST /users/api/me-modify/ HTTP/1.1" 200 3
+INFO 2025-06-15 10:38:41,229 autoreload 145 125652810267520 /app/api/views.py changed, reloading.
+INFO 2025-06-15 10:38:42,192 autoreload 149 139162971757440 Watching for file changes with StatReloader
+INFO 2025-06-15 12:10:26,184 basehttp 149 139162896295616 "GET /users/api/users?page=2 HTTP/1.1" 200 7942
+WARNING 2025-06-15 12:10:26,321 log 149 139162896295616 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-06-15 12:10:26,323 basehttp 149 139162896295616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2319
+INFO 2025-06-15 12:12:43,989 basehttp 149 139162896295616 "GET /users/api/users?page=2 HTTP/1.1" 200 7942
+WARNING 2025-06-15 12:12:44,010 log 149 139162896295616 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-06-15 12:12:44,016 basehttp 149 139162896295616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2319
+INFO 2025-06-15 12:12:45,815 basehttp 149 139162896295616 "GET /users/api/users?page=2 HTTP/1.1" 200 7942
+WARNING 2025-06-15 12:12:45,832 log 149 139162896295616 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-06-15 12:12:45,842 basehttp 149 139162896295616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2319
+INFO 2025-06-15 12:27:40,488 autoreload 149 139162971757440 /app/api/urls.py changed, reloading.
+INFO 2025-06-15 12:27:42,347 autoreload 156 138721222249344 Watching for file changes with StatReloader
+INFO 2025-06-15 12:27:48,835 autoreload 156 138721222249344 /app/api/urls.py changed, reloading.
+INFO 2025-06-15 12:27:49,639 autoreload 158 135843181853568 Watching for file changes with StatReloader
+INFO 2025-06-15 12:27:59,143 autoreload 158 135843181853568 /app/api/urls.py changed, reloading.
+INFO 2025-06-15 12:28:00,218 autoreload 160 134689281239936 Watching for file changes with StatReloader
+INFO 2025-06-15 12:47:07,887 autoreload 8 136045470784384 Watching for file changes with StatReloader
+INFO 2025-06-15 12:57:43,454 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:57:46,105 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:57:46,752 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:57:47,170 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:57:47,663 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:57:50,996 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:57:52,787 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:57:57,504 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:58:06,884 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:58:08,115 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:58:09,059 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:58:13,910 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:58:17,252 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:58:18,248 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:58:32,352 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:58:35,210 basehttp 8 136045393864384 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:59:51,364 autoreload 8 136045470784384 /app/api/views.py changed, reloading.
+INFO 2025-06-15 12:59:52,263 autoreload 26 130163257539456 Watching for file changes with StatReloader
+INFO 2025-06-15 12:59:57,709 basehttp 26 130163180299968 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 12:59:59,432 basehttp 26 130163180299968 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 13:00:24,565 autoreload 26 130163257539456 /app/api/views.py changed, reloading.
+INFO 2025-06-15 13:00:25,505 autoreload 30 132294044023680 Watching for file changes with StatReloader
+INFO 2025-06-15 13:00:28,595 basehttp 30 132293968520896 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 13:00:36,089 autoreload 30 132294044023680 /app/api/views.py changed, reloading.
+INFO 2025-06-15 13:00:37,123 autoreload 33 134155390733184 Watching for file changes with StatReloader
+INFO 2025-06-15 13:00:41,600 autoreload 33 134155390733184 /app/api/views.py changed, reloading.
+INFO 2025-06-15 13:00:42,637 autoreload 35 125799141272448 Watching for file changes with StatReloader
+INFO 2025-06-15 13:00:44,374 basehttp 35 125799065708224 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 13:00:45,079 basehttp 35 125799065708224 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 13:00:45,629 basehttp 35 125799065708224 "GET /users/all HTTP/1.1" 200 7941
+INFO 2025-06-15 13:03:35,811 basehttp 35 125799065708224 "GET /users/all?page=4 HTTP/1.1" 200 7936
+INFO 2025-06-15 13:03:40,122 basehttp 35 125799065708224 "GET /users/all?page=4 HTTP/1.1" 200 7936
+INFO 2025-06-15 13:03:47,492 basehttp 35 125799065708224 "GET /users/all?page=1 HTTP/1.1" 200 7941
+INFO 2025-06-15 13:03:52,373 basehttp 35 125799065708224 "GET /users/all?page=2 HTTP/1.1" 200 7942
+INFO 2025-06-15 13:03:57,341 basehttp 35 125799065708224 "GET /users/all?page=3 HTTP/1.1" 200 7954
+INFO 2025-06-15 16:58:55,192 autoreload 35 125799141272448 /app/api/views.py changed, reloading.
+INFO 2025-06-15 16:59:48,534 autoreload 45 137445638736768 Watching for file changes with StatReloader
+INFO 2025-06-15 17:01:27,289 autoreload 45 137445638736768 /app/api/views.py changed, reloading.
+INFO 2025-06-15 17:01:28,423 autoreload 47 138133200276352 Watching for file changes with StatReloader
+INFO 2025-06-15 17:01:29,762 autoreload 47 138133200276352 /app/api/views.py changed, reloading.
+INFO 2025-06-15 17:01:30,834 autoreload 49 128212700707712 Watching for file changes with StatReloader
+INFO 2025-06-15 17:04:32,794 autoreload 49 128212700707712 /app/api/views.py changed, reloading.
+INFO 2025-06-15 17:04:34,540 autoreload 51 139373667646336 Watching for file changes with StatReloader

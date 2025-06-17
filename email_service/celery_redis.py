@@ -16,7 +16,6 @@ class CeleryOperations:
         self.app = celery.Celery(
             config.name,
             broker=config.broker_url,
-            # backend=config.result_backend
         )
         self._email_config = EmailConfig()
 
@@ -127,10 +126,8 @@ class CeleryOperations:
                 body=email_data['body']
             )
 
-            # Konfiguracja SSL
             context = ssl.create_default_context()
 
-            # Wysyłka emaila
             with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                 smtp.login(email_data['sender'], self._email_config.email_password)
                 smtp.send_message(email_obj)
@@ -143,7 +140,6 @@ class CeleryOperations:
     def send_products_email(self, recipient=None, subject=None):
         print('send products email - exec')
         """Wywołuje zadanie asynchronicznie"""
-        # Używamy .delay() do asynchronicznego wywołania zadania
         task = self.app.send_task(
             'fetch_and_email_products',
             kwargs={

@@ -15,6 +15,10 @@ config = ConfigCelery()
 # Create Celery app - this needs to be at module level for Celery to find it
 app = Celery(config.name)
 
+print(
+    config.broker_url,
+)
+
 # Configure Celery
 app.conf.update(
     broker_url=config.broker_url,
@@ -33,7 +37,7 @@ def send_email_function(email_data):
         smtp_server = 'smtp.gmail.com'
         smtp_port = 465
         smtp_username = 'kamilholb@gmail.com'
-        smtp_password = 'iwyj juvk dees ctcx'
+        smtp_password = '### ### ###'
 
         # Create email message
         msg = EmailMessage()
@@ -42,15 +46,12 @@ def send_email_function(email_data):
         msg['To'] = 'kamilholb@gmail.com'
         msg['Subject'] = email_data.get('subject', 'test message')
 
-        # Set content - handle both HTML and plain text
         if 'body_html' in email_data and email_data['body_html']:
             msg.add_alternative(email_data['body_html'], subtype='html')
 
-        # Use body_text if available, otherwise use body key for backwards compatibility
         body_text = email_data.get('body_text', email_data.get('body', ''))
         msg.set_content(body_text)
 
-        # Send the email via SMTP
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL(smtp_server, smtp_port, context=context) as server:
             server.login(smtp_username, smtp_password)

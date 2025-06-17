@@ -83,44 +83,7 @@ def sign_out(request):
 
     return response
 
-def register(request):
-    """
-        Function responsible for registering a new user
 
-        :param request:
-        :return:
-    """
-    if request.method == 'POST':
-        data = request.POST
-        form = RegisterForm(data)
-        try:
-            if form.is_valid():
-                user = form.save()
-
-                user_dict = model_to_dict(user, fields=[
-                    'id',
-                    'first_name',
-                    'last_name',
-                    'email',
-                    'is_active'
-                ])
-
-                user_group = PermissionGroupAssigment.objects.assign_group(
-                    user,
-                    'CUSTOMER',
-                    'CUSTOMER'
-                )
-
-                return JsonResponse({
-                    'status': 'success',
-                    'user_data': user_dict,
-                })
-        except ValidationError as e:
-            raise ValidationError(str(e))
-        return HttpResponse('hello post method')
-    else:
-        form = RegisterForm()
-        return render(request, 'register.html', {'form': form})
 
 # @authenticated(api_response=True)
 @auth_decorator(redirect_url='sign_in', api_response=False)

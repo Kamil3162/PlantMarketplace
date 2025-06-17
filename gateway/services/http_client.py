@@ -18,19 +18,22 @@ class ServiceClient:
         json_data: Optional[Dict[str, Any]] = None
     ):
         """
-        Wywołuje Django Email Service
+            Wywołuje Django Email Service
         """
-        email_url = SericeURLS.EMAIL_SERVICE.value  # usuń slash na końcu
-        final_url = f"{email_url}{path}/"
-
 
         async with httpx.AsyncClient(timeout=self.timeout) as client:
             try:
-                response = await client.request(
-                    method='get',
-                    url=final_url
-                )
-
+                if json_data and method in ["POST", "PUT", "PATCH"]:
+                    response = await client.request(
+                        method=method,
+                        url=path,
+                        data=json_data  # <-- ZMIANA: data zamiast json
+                    )
+                else:
+                    response = await client.request(
+                        method=method,
+                        url=path,
+                    )
                 if response.status_code == 404:
                     raise ServiceNotFoundException(
                         service_name="email-service",
@@ -42,7 +45,6 @@ class ServiceClient:
                         original_error="Internal server error"
                     )
                 elif response.status_code >= 400:
-
                     raise ServiceUnavailableException(
                         service_name="email-service",
                         original_error=f"HTTP {response.status_code}: {response.text}"
@@ -74,6 +76,4 @@ class ServiceClient:
                     original_error=f"Unexpected error: {str(e)}"
                 )
 
-
-# Singleton instance
 email_client = ServiceClient()

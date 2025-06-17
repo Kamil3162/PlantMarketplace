@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 class EmailProducer(object):
     __instance = None
+
     def __new__(cls, *args, **kwargs):
         if cls.__instance is None:
             cls.__instance = super(EmailProducer, cls).__new__(cls)
@@ -98,8 +99,8 @@ class EmailProducer(object):
                 'args': [],
                 'kwargs': {
                     'sender' :'kamilholb@gmail.com',
-                    'receiver' :'kamilholb@gmail.com',
-                    'subject' :'Test message'
+                    'receiver' : email_data.get('to_email', 'kamilholb@gmail.com'),
+                    'subject' : email_data.get('subject', 'subject'),
                 }
             }
 

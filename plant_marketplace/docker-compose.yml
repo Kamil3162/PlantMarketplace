@@ -1,0 +1,137 @@
+
+# docker-compose.yml
+version: '3.8'
+services:
+  web:
+    build: .
+    command: >
+      bash -c " 
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_DB=mydatabase
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=mydatabase
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    healthcheck:
+#      test: ["CMD-SHELL", "pg_isready -U myuser -d mydatabase"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes  # Enable persistence
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    ports:
+      - "5672:5672"    # AMQP protocol port
+      - "15672:15672"  # Management UI port
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD", "rabbitmq-diagnostics", "check_port_connectivity" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+# minIO image
+#  minio:
+#    image: minio/minio:latest
+#    container_name: minio_storage
+#    # These ports expose MinIO - 9000 for the API and 9001 for the web console
+#    ports:
+#      - "9000:9000"  # API port for your application to connect to
+#      - "9001:9001"  # Web console port for administration
+#    # These environment variables set up the admin credentials
+#    environment:
+#      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}      # Username for MinIO
+#      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}  # Password for MinIO
+#      MINIO_BROWSER_REDIRECT_URL: http://localhost:9001  # URL for the MinIO console
+#    networks:
+#      - app-network  # Add this line
+#    # This command starts the MinIO server and tells it where to store data
+#    command: server /data --console-address ":9001"
+#    # These volumes persist your data even if the container is removed
+#    volumes:
+#      - minio_data:/data  # This stores your actual images
+#    # This ensures MinIO restarts if it crashes or if the server reboots
+#    restart: always
+#    # This makes MinIO healthier in a production environment
+#    healthcheck:
+#      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+#      interval: 30s
+#      timeout: 20s
+#      retries: 3
+#
+#  createbuckets:
+#    image: minio/mc
+#    depends_on:
+#      - minio
+#    environment:
+#      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+#      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+#    entrypoint: >
+#      /bin/sh -c "
+#      sleep 10;
+#      /usr/bin/mc config host add minio http://minio:9000 $${MINIO_ROOT_USER} $${MINIO_ROOT_PASSWORD};
+#      /usr/bin/mc mb --ignore-existing minio/products;
+#      /usr/bin/mc policy set download minio/products;
+#      exit 0;
+#      "
+
+volumes:
+  postgres_data:
+  redis_data:
+  rabbitmq_data:
+#  minio_data:
+
+networks:
+  app-network:
+    driver: bridge
+
+
+#    python manage.py makemigrations &&
+#    python manage.py migrate &&
+#    python manage.py runserver 0.0.0.0:8000"

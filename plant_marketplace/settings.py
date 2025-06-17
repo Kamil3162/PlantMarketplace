@@ -76,7 +76,8 @@ INSTALLED_APPS = [
     'management',
     'redis_microservices',
     'rabbitmq_tests',
-    'email_service'
+    'email_service',
+    'inventory'
 ]
 
 

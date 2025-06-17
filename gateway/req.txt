@@ -89,3 +89,4 @@ uvicorn
 psycopg2-binary
 httpx
 docker
+python-consul

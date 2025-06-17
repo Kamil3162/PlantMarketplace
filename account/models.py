@@ -8,9 +8,6 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
 
 from phonenumber_field.modelfields import PhoneNumberField, PhoneNumber
 
-
-
-# Create your models here.
 class Address(models.Model):
     """
         Model reponsible for input detail delivery address for bought flowers
@@ -34,6 +31,13 @@ class Address(models.Model):
                 f'{self.street}'
                 f'{self.apartment_number}'
         )
+
+    class Meta:
+        app_label = 'account'
+        verbose_name = 'Address'
+        verbose_name_plural = 'Addresses'
+
+
 
 class UserManager(BaseUserManager["CustomUser"]):
     def create_user(
@@ -98,8 +102,8 @@ class UserManager(BaseUserManager["CustomUser"]):
         print("test message")
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=31)
+    last_name = models.CharField(max_length=31)
     email = models.EmailField(null=False, unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)

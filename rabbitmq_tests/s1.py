@@ -106,7 +106,7 @@ class ParallelYouTubeConsumer:
         done_tasks = {task for task in self.active_tasks if task.done()}
         self.active_tasks.difference_update(done_tasks)
         for task in done_tasks:
-            # Ensure any exceptions are logged
+            # Ensure any core are logged
             if task.exception():
                 logger.error(f"Task failed with error: {task.exception()}")
 

@@ -1,17 +1,34 @@
 version: '3.8'
 services:
+
+  consul:
+    image: hashicorp/consul:latest
+    container_name: consul1
+    command: agent -server -ui -bootstrap-expect=1 -client=0.0.0.0
+    ports:
+      - "8500:8500"
+    volumes:
+      - consul_data:/consul/data  # dodaj persistence
+    networks:
+      - microservices-network
+
   gateway-app:
     build: .
+    container_name: api-gateway
     ports:
       - "8010:8010"
     environment:
       - DATABASE_URL=postgresql://gateway_user:gateway_pass@gateway-db:5432/gateway_db
       - REDIS_URL=redis://gateway-redis:6379
       - RABBITMQ_URL=amqp://gateway_user:gateway_pass@gateway-rabbitmq:5672
+      - ALLOWED_HOST=localhost:3001
+      - ALLOWED_ORIGIN=xyz.com
+      - ALLOWED_ORIGIN_HOST=http://xyz.com
     depends_on:
       - gateway-db
       - gateway-redis
       - gateway-rabbitmq
+      - consul
     networks:
       - gateway-network
       - microservices-network
@@ -44,17 +61,20 @@ services:
       - RABBITMQ_DEFAULT_USER=gateway_user
       - RABBITMQ_DEFAULT_PASS=gateway_pass
     ports:
-      - "5682:5672"   # AMQP port (5672 + 10)
-      - "15682:15672" # Management UI port (15672 + 10)
+      - "5672:5672"   # AMQP port (5672 + 10)
+      - "15672:15672" # Management UI port (15672 + 10)
     volumes:
       - gateway_rabbitmq_data:/var/lib/rabbitmq
     networks:
       - gateway-network
+      - microservices-network
 
 volumes:
   gateway_postgres_data:
   gateway_redis_data:
   gateway_rabbitmq_data:
+  consul_data:  # dodaj volume dla consul
+
 
 networks:
   gateway-network:

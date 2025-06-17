@@ -11,8 +11,15 @@ router = APIRouter(
 )
 
 @router.get("/")
-async def root():
+async def root(request: Request):
+    host = request.headers.get("host")
+    origin = request.headers.get("host")
+    ip_client = request.client.host
+
+    print(host, origin, ip_client)
+
     return { "message": "Hello world"}
+
 
 @router.get("/test")
 async def base_url(request: Request) -> dict:

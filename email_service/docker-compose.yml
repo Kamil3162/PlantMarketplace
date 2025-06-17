@@ -1,31 +1,30 @@
 version: '3.8'
 services:
-  rabbitmq:
-    image: rabbitmq:3.12-management
-    ports:
-      - "5672:5672"    # AMQP protocol port
-      - "15672:15672"  # Management UI port
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-    environment:
-      - RABBITMQ_DEFAULT_USER=myuser
-      - RABBITMQ_DEFAULT_PASS=mypassword
-    networks:
-      - app-network
-    healthcheck:
-      test: [ "CMD", "rabbitmq-diagnostics", "check_port_connectivity" ]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
+#  rabbitmq:
+#    image: rabbitmq:3.12-management
+#    ports:
+#      - "5672:5672"    # AMQP protocol port
+#      - "15672:15672"  # Management UI port
+#    volumes:
+#      - rabbitmq_data:/var/lib/rabbitmq
+#    environment:
+#      - RABBITMQ_DEFAULT_USER=myuser
+#      - RABBITMQ_DEFAULT_PASS=mypassword
+#    networks:
+#      - app-network
+#    healthcheck:
+#      test: [ "CMD", "rabbitmq-diagnostics", "check_port_connectivity" ]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 5
+# bash -c "
+#      python manage.py makemigrations &&
+#      python manage.py migrate && "
   web:
     build: .
     container_name: email-service
-    command: >
-      bash -c "
-      python manage.py makemigrations &&
-      python manage.py migrate &&
-      python manage.py runserver 0.0.0.0:8000"
+    command:
+      python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
       - static_volume:/app/staticfiles
@@ -41,15 +40,15 @@ services:
       - POSTGRES_PASSWORD=mypassword
       - POSTGRES_HOST=db
       - POSTGRES_PORT=5432
-      - RABBITMQ_DEFAULT_USER=myuser
-      - RABBITMQ_DEFAULT_PASS=mypassword
-      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_DEFAULT_USER=gateway_user
+      - RABBITMQ_DEFAULT_PASS=gateway_pass
+      - RABBITMQ_HOST=gateway-rabbitmq
       - RABBITMQ_PORT=5672
       - REDIS_URL=redis://redis:6379/1
     depends_on:
       - db
       - redis
-      - rabbitmq
+#      - rabbitmq
     networks:
       - app-network
       - microservices-network
@@ -113,6 +112,37 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+  celery-worker:
+    build: .
+    container_name: email-celery-worker
+    command: celery -A email_celery worker --loglevel=INFO -P gevent -Q emails1
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings
+      - PYTHONPATH=/app:/app/email_service
+      - POSTGRES_DB=email_db
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - RABBITMQ_DEFAULT_USER=gateway_user
+      - RABBITMQ_DEFAULT_PASS=gateway_pass
+      - RABBITMQ_HOST=gateway-rabbitmq
+      - RABBITMQ_PORT=5672
+      - REDIS_URL=redis://redis:6379/1
+    depends_on:
+#        - rabbitmq
+        - db
+        - redis
+        - web
+    networks:
+        - app-network
+        - microservices-network  # ← DODAJ TĘ LINIĘ!
+    restart: unless-stopped
 
 volumes:
   postgres_data:

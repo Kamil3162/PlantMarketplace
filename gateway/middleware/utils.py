@@ -4,6 +4,8 @@ from typing import Optional
 from fastapi import Request, Response
 
 from exceptions import InvalidRequestError
+
+
 def validate_user_token(redirect_url='', api_response=False):
     def decorator(view_function):
         @wraps(view_function)

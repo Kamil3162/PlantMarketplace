@@ -91,7 +91,6 @@ def product_list(request):
     )
 
 def product_detail(request, product_uuid):
-    # get to get an uuid inside a key 2 ways
     # TODO mircoservices to update for example 1000 rows in one time
     # TODO inventory services
 

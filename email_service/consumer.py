@@ -106,7 +106,7 @@ class EmailConsumer:
             with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as server:
                 server.login(
                     'kamilholb@gmail.com',
-                    'iwyj juvk dees ctcx'
+                    '#### #### ####'
                 )
 
                 server.send_message(msg)

@@ -153,9 +153,6 @@ class ProductEvent(models.Model):
             reason=reason
         )
 
-# we have to use redis
-
-
 
 class InventoryManager(models.Manager):
     """
@@ -230,7 +227,7 @@ class Inventory(models.Model):
         editable=False,
         verbose_name=_("Inventory ID")
     )
-    product = models.ForeignKey(
+    product = models.UUIDField(
         'Product',  # Using string to avoid circular imports
         on_delete=models.CASCADE,
         related_name='inventories',

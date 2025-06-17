@@ -1,0 +1,90 @@
+import httpx
+from typing import Optional, Dict, Any
+from .exceptions import (
+    ServiceNotFoundException,
+    ServiceUnavailableException,
+    ServiceTimeoutException
+)
+from .services import SERVICE_URLS, ServiceName
+
+
+class BaseServiceClient:
+    def __init__(self, service_name: str):
+        self.service_name = service_name
+        self.base_url = SERVICE_URLS.get(service_name)
+        self.timeout = 5.0
+
+    async def make_request(
+            self,
+            endpoint: str,
+            method: str = "GET",
+            json_data: Optional[Dict[str, Any]] = None,
+            headers: Optional[Dict[str, str]] = None
+    ):
+        full_url = f"{self.base_url}{endpoint}"
+
+        async with httpx.AsyncClient(timeout=self.timeout) as client:
+            try:
+                response = await client.request(
+                    method=method,
+                    url=full_url,
+                    json=json_data,
+                    headers=headers
+                )
+
+                if response.status_code == 404:
+                    raise ServiceNotFoundException(
+                        service_name=self.service_name,
+                        resource=endpoint
+                    )
+                elif response.status_code == 500:
+                    raise ServiceUnavailableException(
+                        service_name=self.service_name,
+                        original_error="Internal server error"
+                    )
+                elif response.status_code >= 400:
+                    raise ServiceUnavailableException(
+                        service_name=self.service_name,
+                        original_error=f"HTTP {response.status_code}: {response.text}"
+                    )
+
+                return response.json()
+
+            except httpx.TimeoutException as e:
+                raise ServiceTimeoutException(
+                    service_name=self.service_name,
+                    timeout=self.timeout
+                )
+            except httpx.ConnectError as e:
+                raise ServiceUnavailableException(
+                    service_name=self.service_name,
+                    original_error=f"Connection failed: {str(e)}"
+                )
+            except (ServiceNotFoundException, ServiceUnavailableException,
+                    ServiceTimeoutException):
+                raise
+            except Exception as e:
+                raise ServiceUnavailableException(
+                    service_name=self.service_name,
+                    original_error=f"Unexpected error: {str(e)}"
+                )
+
+
+class EmailClient(BaseServiceClient):
+    def __init__(self):
+        super().__init__(ServiceName.EMAIL_SERVICE.value)
+
+
+class UserClient(BaseServiceClient):
+    def __init__(self):
+        super().__init__(ServiceName.USER_SERVICE.value)
+
+
+class AuthClient(BaseServiceClient):
+    def __init__(self):
+        super().__init__(ServiceName.AUTH_SERVICE.value)
+
+
+class ProductClient(BaseServiceClient):
+    def __init__(self):
+        super().__init__(ServiceName.PRODUCT_SERVICE.value)

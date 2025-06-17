@@ -47,3 +47,14 @@ class ServiceTimeoutException(BaseServiceException):
             detail=f"Service {service_name} timeout after {timeout}s",
             service_name=service_name
         )
+
+class TokenNotFound(BaseServiceException):
+    """
+        Gdy token nie istnieje w headerze requesta
+    """
+    def __init__(self, detail:str, service_name:str='auth'):
+        super().__init__(
+            status_code=401,
+            detail=detail,
+            service_name=service_name
+        )

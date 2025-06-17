@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from oauth2_provider import urls as oauth2_provider_urls
 from authentication import urls as auth_urls
-from account import urls as user_urls
+from account.api import urls as user_urls
 from permissions import urls as permission_urls
 
 from products import urls as product_urls

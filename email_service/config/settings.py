@@ -13,7 +13,9 @@ print("execute settings email service")
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-production')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+# DEBUG = os.environ.get('DEBUG', 'False').lower() == 'false'
+DEBUG = True
+
 CORS_ALLOW_ALL_ORIGINS = True  # TYLKO DO TESTÓW!
 
 ALLOWED_HOSTS = [

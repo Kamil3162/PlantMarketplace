@@ -7,7 +7,7 @@ import random
 
 from django.core.management.base import BaseCommand
 from faker import Faker
-from account.models import CustomUser
+from data.models import CustomUser
 
 User = CustomUser
 

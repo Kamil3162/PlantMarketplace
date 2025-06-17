@@ -4,7 +4,6 @@ from core.exceptions import ServiceNotFoundException, ServiceUnavailableExceptio
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials, APIKeyCookie
 from fastapi.responses import JSONResponse
 
-
 router = APIRouter(prefix="/api/email", tags=["email"])
 security = HTTPBearer()
 
@@ -15,6 +14,8 @@ async def get_user_emails(user_id: int):
     """
     try:
         # Wywołujemy Django serwis
+        print(user_id)
+
         emails = await email_client.call_email_service(
             path="/email/base"
         )
@@ -33,8 +34,6 @@ async def auth_v1(authorization: HTTPAuthorizationCredentials = Depends(security
     token = authorization.credentials
     name = authorization.scheme
 
-    print(token)
-    print(name)
 
     return JSONResponse(
         content={
