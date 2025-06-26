@@ -1,4 +1,4 @@
-from .permisions import (
+from PlantMarketplace.permissions.core.permisions import (
     AccountPermissions,
     AppPermission,
     BargainPermission,

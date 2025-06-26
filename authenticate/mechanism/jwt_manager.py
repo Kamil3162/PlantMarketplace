@@ -1,12 +1,9 @@
 from datetime import datetime, timedelta, timezone
 import uuid
 import jwt
-from dataclasses import dataclass
 
 from django.conf import settings
 
-from .models import AccessToken
-from account.scheme import UserScheme
 
 class JWTManager(object):
     ALGORITHM = 'HS256'
@@ -15,7 +12,7 @@ class JWTManager(object):
     @classmethod
     def create_access_token(cls, user_id: int):
         """
-            Encodes user data to JWT token
+            Encodes user data to JWT mechanism
 
             Args:
                 secret_key:
@@ -32,7 +29,7 @@ class JWTManager(object):
             "token_type": "access",
             "exp": int(expire_time.timestamp()),
             "iat": int(now.timestamp()),
-            "jti": str(uuid.uuid4().hex),  # Unique token identifier
+            "jti": str(uuid.uuid4().hex),  # Unique mechanism identifier
             "user_id": user_id
         }
 
@@ -47,18 +44,18 @@ class JWTManager(object):
     @staticmethod
     def decode_token(token: str) -> dict:
         """
-        Decodes and validates a JWT token.
+        Decodes and validates a JWT mechanism.
 
         Args:
             secret_key:
-            token: The JWT token string to decode
+            token: The JWT mechanism string to decode
 
         Returns:
             Dictionary containing the decoded payload
 
         Raises:
-            jwt.ExpiredSignatureError: If token has expired
-            jwt.InvalidTokenError: If token is invalid
+            jwt.ExpiredSignatureError: If mechanism has expired
+            jwt.InvalidTokenError: If mechanism is invalid
         """
         try:
             payload = jwt.decode(
@@ -70,5 +67,5 @@ class JWTManager(object):
         except jwt.ExpiredSignatureError:
             raise jwt.ExpiredSignatureError("Token has expired")
         except jwt.InvalidTokenError:
-            raise jwt.InvalidTokenError("Invalid token")
+            raise jwt.InvalidTokenError("Invalid mechanism")
 

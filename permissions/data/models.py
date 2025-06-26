@@ -231,4 +231,3 @@ class PermissionGroupAssigment(models.Model):
 
 
 
-

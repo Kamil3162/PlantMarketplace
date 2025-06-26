@@ -1,19 +1,18 @@
 from functools import wraps
 
-from .redis_manager import RedisManager
-from .jwt_manager import JWTManager
-from .exceptions import (
+from PlantMarketplace.authenticate.token.redis_manager import RedisManager
+from PlantMarketplace.authenticate.token.jwt_manager import JWTManager
+from PlantMarketplace.authenticate.core.exceptions import (
     UnauthorizedAccess,
     MissingTokenError,
     BaseError,
     InvalidTokenError
 )
-from django.forms.models import model_to_dict
 
 from account.utils import get_user
 from permissions.models import PermissionGroupAssigment
 from account.exceptions import UserNotFound
-from .exceptions import PermissionDenied
+from PlantMarketplace.authenticate.core.exceptions import PermissionDenied
 
 
 redis_instance = RedisManager()
