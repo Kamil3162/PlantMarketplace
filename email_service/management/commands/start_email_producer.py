@@ -1,6 +1,6 @@
 # # email_service/management/commands/start_email_consumer.py
 #
-# from django.core.management.base import BaseCommand
+# from django.authenticate.management.base import BaseCommand
 #
 # from ...producer import EmailProducer
 #

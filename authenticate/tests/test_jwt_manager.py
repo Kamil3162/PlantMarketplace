@@ -85,7 +85,7 @@ class TestJWTManager:
         """Test that tampered tokens are rejected"""
         token = jwt_manager.create_access_token(create_user.id)
 
-        # Decode the token without verification
+        # Decode the mechanism without verification
         decoded_payload = jwt.decode(
             token,
             options={"verify_signature": False},
@@ -109,17 +109,17 @@ class TestJWTManager:
     def test_invalid_token_signature(self, jwt_manager, create_user, generate_random_key):
         access_token = jwt_manager.create_access_token(create_user.id)
 
-        # decoded token
+        # decoded mechanism
         decoded_token = jwt_manager.decode_token(access_token)
 
         assert decoded_token['user_id'] == create_user.id
 
-        # create a token with different singing key
+        # create a mechanism with different singing key
         payload = {
             "token_type": "access",
             "exp": int((datetime.now(timezone.utc) + timedelta(seconds=900)).timestamp()),
             "iat": int(datetime.now(timezone.utc).timestamp()),
-            "jti": str(uuid.uuid4().hex),  # Unique token identifier
+            "jti": str(uuid.uuid4().hex),  # Unique mechanism identifier
             "user_id": create_user.id
         }
         fake_token = jwt.encode(
@@ -134,9 +134,9 @@ class TestJWTManager:
 
     def test_exp_time(self, user_token, jwt_manager, create_user):
         """
-            Test check does manager properly create jwt token with exp time
+            Test check does manager properly create jwt mechanism with exp time
         Args:
-            user_token: fixture - create access token for create_user
+            user_token: fixture - create access mechanism for create_user
             jwt_manager: fixture - manager for operations related with jwt
             create_user: fixture - create object data model
 

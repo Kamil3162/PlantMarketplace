@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("auth", "0012_alter_user_first_name_max_length"),
+        ("authenticate", "0012_alter_user_first_name_max_length"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
                 (
                     "group",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="auth.group"
+                        on_delete=django.db.models.deletion.CASCADE, to="authenticate.group"
                     ),
                 ),
                 (

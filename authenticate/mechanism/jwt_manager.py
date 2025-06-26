@@ -1,13 +1,16 @@
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 import uuid
 import jwt
 
 from django.conf import settings
+from django.utils import timezone  # Użyj Django timezone zamiast datetime.timezone
+from core.exceptions import TokenExpiredError
 
 
 class JWTManager(object):
     ALGORITHM = 'HS256'
-    DEFAULT_EXPIRY_SECONDS = 900
+    DEFAULT_EXPIRY_SECONDS = 1800
+    SECRET_KEY = "$+#hqc5(f0#y84^!$a!suex3(k@3dlzphefh42ls=(bk)jrctr"
 
     @classmethod
     def create_access_token(cls, user_id: int):
@@ -15,57 +18,129 @@ class JWTManager(object):
             Encodes user data to JWT mechanism
 
             Args:
-                secret_key:
                 user_id: int
-                expires_delta - timedelta - timedelta
 
             Returns:
-                Dictionary access_token
+                String access_token
         """
-        now = datetime.now(timezone.utc)
+        now = timezone.now()  # Użyj Django timezone.now()
         expire_time = now + timedelta(seconds=cls.DEFAULT_EXPIRY_SECONDS)
 
         payload = {
             "token_type": "access",
             "exp": int(expire_time.timestamp()),
             "iat": int(now.timestamp()),
-            "jti": str(uuid.uuid4().hex),  # Unique mechanism identifier
+            "jti": str(uuid.uuid4().hex),
             "user_id": user_id
         }
 
         access_token = jwt.encode(
             payload,
-            settings.SECRET_KEY,
+            cls.SECRET_KEY,
             algorithm=cls.ALGORITHM,
         )
 
         return access_token
 
-    @staticmethod
-    def decode_token(token: str) -> dict:
+    @classmethod
+    def decode_token(cls, token: str) -> dict:
         """
-        Decodes and validates a JWT mechanism.
+        Decodes and validates a JWT token.
 
         Args:
-            secret_key:
-            token: The JWT mechanism string to decode
+            token: The JWT token string to decode
 
         Returns:
             Dictionary containing the decoded payload
 
         Raises:
-            jwt.ExpiredSignatureError: If mechanism has expired
-            jwt.InvalidTokenError: If mechanism is invalid
+            jwt.ExpiredSignatureError: If token has expired
+            jwt.InvalidTokenError: If token is invalid
         """
         try:
             payload = jwt.decode(
                 token,
-                settings.SECRET_KEY,
-                algorithms=['HS256']
+                cls.SECRET_KEY,
+                algorithms=[cls.ALGORITHM]
             )
             return payload
         except jwt.ExpiredSignatureError:
-            raise jwt.ExpiredSignatureError("Token has expired")
+            raise jwt.ExpiredSignatureError("Token has expired - decode function")
         except jwt.InvalidTokenError:
-            raise jwt.InvalidTokenError("Invalid mechanism")
+            raise jwt.InvalidTokenError("Invalid token")
 
+    @classmethod
+    def validate_token(cls, token: str):
+        """
+            Validate expiration date of passed token
+        Args:
+            token: JWT token string
+        Returns:
+            Boolean or raises exception
+        """
+        decoded_token = cls.decode_token(token)
+        current_time = timezone.now().timestamp()  # Użyj Django timezone
+        expiration_time = decoded_token.get('exp', None)
+
+        if expiration_time is None:
+            return False
+        elif expiration_time < current_time:
+            raise TokenExpiredError("Token validation expired")
+        return True
+
+    @classmethod
+    def create_refresh_token(cls, user_id: int):
+        """
+            Creates refresh token for the given user
+        Args:
+            user_id: User ID
+
+        Returns:
+            String refresh token
+        """
+        token_life_time = getattr(settings, "TOKEN_LIFETIME_DAYS", 7)
+        now = timezone.now()  # Użyj Django timezone
+        expires_at = now + timedelta(days=token_life_time)
+
+        payload = {
+            "token_type": "refresh",
+            "exp": int(expires_at.timestamp()),
+            "iat": int(now.timestamp()),
+            "jti": str(uuid.uuid4().hex),
+            "user_id": user_id
+        }
+
+        refresh_token = jwt.encode(
+            payload,
+            cls.SECRET_KEY,
+            algorithm=cls.ALGORITHM
+        )
+        return refresh_token
+
+    @classmethod
+    def refresh_access_token(cls, refresh_token: str):
+        """
+        Creates a new access token using a valid refresh token.
+
+        Args:
+            refresh_token: String refresh token
+
+        Returns:
+            String new access token
+        """
+        try:
+            payload = cls.decode_token(refresh_token)
+
+            if payload.get('token_type') != 'refresh':
+                raise ValueError("Token is not a refresh token")
+
+            user_id = payload.get('user_id')
+            if not user_id:
+                raise ValueError("Invalid token payload")
+
+            return cls.create_access_token(user_id)
+
+        except jwt.ExpiredSignatureError:
+            raise jwt.ExpiredSignatureError("Refresh token has expired")
+        except jwt.InvalidTokenError:
+            raise jwt.InvalidTokenError("Invalid refresh token")

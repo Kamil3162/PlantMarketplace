@@ -27,10 +27,10 @@ def get_request_token(request):
         token = request.COOKIES.get('access_token', None)
 
         if token is None:
-            raise TokenNotFoundError("Access token not found in request cookies")
+            raise TokenNotFoundError("Access mechanism not found in request cookies")
 
         if is_token_expired(token):  # You would need to implement this function
-            raise ExpiredTokenError("The access token has expired")
+            raise ExpiredTokenError("The access mechanism has expired")
 
         return token
 

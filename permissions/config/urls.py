@@ -21,5 +21,5 @@ from django.urls import path, include
 from api.urls import urlpatterns as urls
 
 urlpatterns = [
-    path('authenticate/', include(urls))
+    path('permission/', include(urls))
 ]

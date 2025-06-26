@@ -1,11 +1,9 @@
-
-
 class BaseError(Exception):
-    """Custom exception for token validation errors"""
+    """Custom exception for mechanism validation errors"""
     pass
 
 class TokenExpiredError(BaseError):
-    """Custom exception for token expired errors"""
+    """Custom exception for mechanism expired errors"""
     pass
 
 class UnauthorizedAccess(BaseError):
@@ -13,12 +11,12 @@ class UnauthorizedAccess(BaseError):
     pass
 
 class MissingTokenError(BaseError):
-    """Custom exception for missing token"""
+    """Custom exception for missing mechanism"""
     pass
 
 class InvalidTokenError(BaseError):
     """
-        Custom exception for invalid token
+        Custom exception for invalid mechanism
     """
 
 class PermissionDenied(BaseError):

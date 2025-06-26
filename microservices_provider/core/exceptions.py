@@ -32,10 +32,10 @@ class ServiceUnavailableException(BaseServiceException):
     """
     Gdy serwis Django nie odpowiada
     """
-    def __init__(self, service_name: str, original_error: str):
+    def __init__(self, service_name: str, original_error: str, status_code: int = None):
         super().__init__(
-            status_code=503,
-            detail=f"Service {service_name} is unavailable: {original_error}",
+            status_code=status_code,
+            detail=original_error,
             service_name=service_name
         )
 
@@ -52,9 +52,9 @@ class ServiceTimeoutException(BaseServiceException):
 
 class TokenNotFound(BaseServiceException):
     """
-        Gdy token nie istnieje w headerze requesta
+        Gdy mechanism nie istnieje w headerze requesta
     """
-    def __init__(self, detail: str, service_name: str = 'auth'):
+    def __init__(self, detail: str, service_name: str = 'authenticate'):
         super().__init__(
             status_code=401,
             detail=detail,

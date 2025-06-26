@@ -4,7 +4,7 @@ import enum
 class ServiceName(enum.Enum):
     USER_SERVICE = "users"
     PRODUCT_SERVICE = "product"
-    AUTH_SERVICE = "auth"
+    AUTH_SERVICE = "authenticate"
     EMAIL_SERVICE = "email"
 
     @classmethod
@@ -36,9 +36,9 @@ SERVICE_URLS:Dict[str, str] = {
 
 class ServiceConfig(enum.Enum):
     AUTH_SERVICE = {
-        "name": "auth",
+        "name": "authenticate",
         "url": "http://auth-service:8000",
-        "path_prefix": "/auth",
+        "path_prefix": "/authenticate",
         "no_auth_paths": ["login", "register", "forgot-password",
                           "verify-email"]
     }
@@ -62,12 +62,12 @@ class ServiceConfig(enum.Enum):
         "name": "order",
         "url": "http://order-service:8000",
         "path_prefix": "/orders",
-        "no_auth_paths": []  # wszystko wymaga auth
+        "no_auth_paths": []  # wszystko wymaga authenticate
     }
 
     EMAIL_SERVICE = {
         "name": "email",
         "url": "http://email-service:8000",
         "path_prefix": "/emails",
-        "no_auth_paths": []  # wszystko wymaga auth
+        "no_auth_paths": []  # wszystko wymaga authenticate
     }

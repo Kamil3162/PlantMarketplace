@@ -37,7 +37,7 @@ async def auth_v1(authorization: HTTPAuthorizationCredentials = Depends(security
 
     return JSONResponse(
         content={
-            'token': token,
+            'mechanism': token,
             'name': name
         },
         status_code=status.HTTP_200_OK

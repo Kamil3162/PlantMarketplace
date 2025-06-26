@@ -1,7 +1,7 @@
 from functools import wraps
 
-from PlantMarketplace.authenticate.token.redis_manager import RedisManager
-from PlantMarketplace.authenticate.token.jwt_manager import JWTManager
+from PlantMarketplace.authenticate.mechanism.redis_manager import RedisManager
+from PlantMarketplace.authenticate.mechanism.jwt_manager import JWTManager
 from PlantMarketplace.authenticate.core.exceptions import (
     UnauthorizedAccess,
     MissingTokenError,
@@ -21,15 +21,15 @@ def get_token_from_request(request):
     try:
         return request.COOKIES.get('access_token', False)
     except KeyError:
-        raise UnauthorizedAccess('Request token is missing')
+        raise UnauthorizedAccess('Request mechanism is missing')
 
 def black_token_validation(func):
     """
-        Function use to validate does token exists in blacklisted tokens.
-        We wanna prevent to reuse one more time during steal token unautorized acceess
+        Function use to validate does mechanism exists in blacklisted tokens.
+        We wanna prevent to reuse one more time during steal mechanism unautorized acceess
     Args:ssss
         func:
-        token: jwt token
+        mechanism: jwt mechanism
     Returns:
         Reponse: - redirect
         exception - unatorized access
@@ -40,7 +40,7 @@ def black_token_validation(func):
             access_token = get_token_from_request(request)
 
             if not access_token:
-                raise MissingTokenError('No access token provided')
+                raise MissingTokenError('No access mechanism provided')
 
             if redis_instance.is_blocked(access_token):
                 raise UnauthorizedAccess('Token has been revoked')
@@ -54,11 +54,11 @@ def black_token_validation(func):
 
 def remove_access_token(func):
     """
-        Function use to user valid token exists in user-tokens
+        Function use to user valid mechanism exists in user-tokens
         We wanna prevent to control and improve flow authentication
 
     Args:
-        token: jwt token
+        mechanism: jwt mechanism
     Returns:
         Reponse: - redirect
         exception - unatorized access
@@ -76,7 +76,7 @@ def remove_access_token(func):
 
 def check_access_token(required_group=None):
     """
-        Function use to user valid token exists in user-tokens, during each operation
+        Function use to user valid mechanism exists in user-tokens, during each operation
     Returns:
     """
     def decorator(function):
@@ -86,7 +86,7 @@ def check_access_token(required_group=None):
                 access_token = get_token_from_request(request)
 
                 if not access_token:
-                    raise MissingTokenError('No access token provided')
+                    raise MissingTokenError('No access mechanism provided')
 
                 decoded_token = JWTManager.decode_token(access_token)
                 user_id = decoded_token['user_id']
@@ -120,7 +120,7 @@ def check_access_token(required_group=None):
 
 def admin_access_required(function):
     """
-    Combined decorator that validates token and checks admin status.
+    Combined decorator that validates mechanism and checks admin status.
     Args:
         function:
     Returns:
@@ -130,7 +130,7 @@ def admin_access_required(function):
         try:
             access_token = get_token_from_request(request)
             if not access_token:
-                raise MissingTokenError('No access token provided')
+                raise MissingTokenError('No access mechanism provided')
 
             user_data = JWTManager.decode_token(access_token)
             user_id = user_data['user_id']

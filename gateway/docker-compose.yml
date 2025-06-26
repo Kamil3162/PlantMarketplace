@@ -13,7 +13,9 @@ services:
       - microservices-network
 
   gateway-app:
-    build: .
+    build:
+      context: ..
+      dockerfile: gateway/Dockerfile
     container_name: api-gateway
     ports:
       - "8010:8010"

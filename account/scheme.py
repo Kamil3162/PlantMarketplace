@@ -4,7 +4,7 @@ from dataclasses import dataclass
 @dataclass
 class UserScheme:
     """
-        Represents core user data for token generation.
+        Represents authenticate user data for mechanism generation.
         This class validates and structures user information.
     """
     id: int  # Using int since Django's default ID is AutoField

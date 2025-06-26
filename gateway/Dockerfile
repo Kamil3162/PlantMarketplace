@@ -5,11 +5,15 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy requirements file
-COPY req.txt .
+COPY gateway/req.txt .
 RUN pip install --no-cache-dir -r req.txt
 
+# Skopiuj microservices_provider z root
+COPY microservices_provider /app/microservices_provider
+RUN pip install -e /app/microservices_provider
+
 # Copy project
-COPY . .
+COPY gateway/ /app/
 
 # Expose the correct port
 EXPOSE 8010

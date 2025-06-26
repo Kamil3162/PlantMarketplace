@@ -4,7 +4,7 @@ import enum
 class ServiceName(enum.Enum):
     USER_SERVICE = "users"
     PRODUCT_SERVICE = "product"
-    AUTH_SERVICE = "auth"
+    AUTH_SERVICE = "authenticate"
     EMAIL_SERVICE = "email"
 
     @classmethod
@@ -13,10 +13,10 @@ class ServiceName(enum.Enum):
 
 
 class SericeURLS(enum.Enum):
-    USER_SERVICE = "http://user-service:8001"
-    PRODUCT_SERVICE = "http://product-service:8000"
-    AUTH_SERVICE = "http://auth-service:8000"
-    EMAIL_SERVICE = "http://email-service:8000"
+    USER_SERVICE = "http://user-service:8001/users"
+    PRODUCT_SERVICE = "http://product-service:8000/"
+    AUTH_SERVICE = "http://auth-service1:8100/"
+    EMAIL_SERVICE = "http://email-service:8000/"
 
 class NotAuthUrl(enum.Enum):
     LOGIN = "login"

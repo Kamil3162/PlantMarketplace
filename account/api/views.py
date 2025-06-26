@@ -1,3 +1,5 @@
+import json
+
 import asyncio
 from django.http import JsonResponse, HttpResponse
 from django.core import serializers
@@ -8,11 +10,17 @@ from django.core.paginator import Paginator
 from django.apps import apps
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
+from django.contrib.auth import authenticate, login
+from django.http import HttpRequest
+
 
 from data.models import CustomUser
 from forms import UserModify, RegisterForm  # Dodaj RegisterForm import
 from utils import get_user, get_user_by_email
+from exceptions import UserPermissionDenied
 from microservices_provider import EmailClient, SericeURLS
+from .responses import CustomResponse
+
 
 PAGE_SIZE = 15
 
@@ -79,7 +87,7 @@ def user_modify(request, user_data=None):
 
         form = UserModify(request.POST, instance=user_obj)
         try:
-            if form.is_valid():
+            if form.is_valid(raise_exception=True):
                 user = form.save()
                 user_dict = model_to_dict(user, fields=[
                     'email',
@@ -125,11 +133,11 @@ def user_modify(request, user_data=None):
                     'message': 'Form validation failed',
                     'errors': form.errors
                 })
-        except ValidationError as e:
+        except ValidationError as exc:
             return JsonResponse({
-                'status': 'error',
-                'message': str(e)
-            })
+                'status': exc.code,
+                'message': str(exc.message)
+            }, status=400)
         except Exception as e:
             return JsonResponse({
                 'status': 'error',
@@ -203,7 +211,6 @@ def reset_password(request):
         try:
             user = get_user_by_email(email)
 
-            # Wyślij email resetowania hasła
             email_data = {
                 'to_email': email,
                 'subject': 'Password Reset Request - PlantMarketplace',
@@ -310,14 +317,17 @@ def register(request):
                     'email_sent': email_sent
                 })
         except ValidationError as e:
-            return JsonResponse({
-                'status': 'error',
-                'message': str(e)
-            })
+            return JsonResponse(
+                {
+                    'status': 'error',
+                    'message': str(e)
+                },
+                status=400
+            )
         return JsonResponse({
             'status': 'error',
-            'message': 'Form validation failed'
-        })
+            'message': f'Form validation failed {form.errors}'
+        }, status=400)
     else:
         return JsonResponse({
             'status': 'error',
@@ -369,3 +379,33 @@ def user_delete(request, user_id):
         'status': 'error',
         'message': 'Only DELETE method allowed'
     }, status=405)
+
+@csrf_exempt
+def user_by_email(request):
+    try:
+        if request.content_type == "application/json" and request.method == "POST":
+            print('application json')
+            user_data = json.loads(request.body)
+        elif request.method == "POST":
+            user_data = request.POST
+            print('post form data')
+
+        print(user_data)
+
+        user_email = user_data['email']
+        user_password = user_data['password']
+
+        user_object = authenticate(request, email=user_email, password=user_password)
+
+        if not user_object:
+            raise UserPermissionDenied("Your email or password is incorrect", 403)
+        else:
+            response = user_object.to_json()
+
+        return CustomResponse(detail=response, status_code=200, type="success")
+    except UserPermissionDenied as e:
+        return CustomResponse(
+            detail=e.detail,
+            status_code=e.status_code,
+            type="error"
+        )

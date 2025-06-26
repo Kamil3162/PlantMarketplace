@@ -3,15 +3,15 @@ from django.contrib.auth.models import Group, Permission, ContentType
 
 from account.models import CustomUser
 from account.exceptions import UserNotFound
-from .exceptions import (
+from PlantMarketplace.permissions.core.exceptions import (
     PermissionGroupError,
     PermissionGroupExists,
     PermissionGroupDenied,
     ModelDoesNotExists
 )
-from .roles import ROLE_PERMISSIONS
-from .permisions import PERMISSIONS
-from .utils import generate_permission_name, get_permission_codenames
+from PlantMarketplace.permissions.core.roles import ROLE_PERMISSIONS
+from PlantMarketplace.permissions.core.permisions import PERMISSIONS
+from PlantMarketplace.permissions.utils import generate_permission_name, get_permission_codenames
 
 class PermissionGroupManager(models.Manager):
     """
@@ -227,6 +227,8 @@ class PermissionGroupAssigment(models.Model):
 
     def __str__(self):
         return f"{self.user.get_username()} - {self.role_type}"
+
+
 
 
 

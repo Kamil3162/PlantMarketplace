@@ -1,5 +1,10 @@
+import datetime
+from datetime import timedelta
+from django.utils import timezone  # ✅ POPRAWNE - Django timezone
+
 from django.db import models
-from plant_marketplace import settings
+from django.conf import settings
+
 
 class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -8,26 +13,38 @@ class TimeStampedModel(models.Model):
     class Meta:
         abstract = True
 
-class Address(TimeStampedModel):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    street = models.CharField(max_length=255)
-    city = models.CharField(max_length=100)
-    state = models.CharField(max_length=100)
-    postal_code = models.CharField(max_length=20)
-    country = models.CharField(max_length=100)
-    is_default = models.BooleanField(default=False)
-    type = models.CharField(max_length=20, choices=[
-        ('billing', 'Billing'),
-        ('shipping', 'Shipping')
-    ])
 
 class AccessToken(models.Model):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
+    user = models.UUIDField(
+        null=False
     )
     access_token = models.TextField()
     refresh_token = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_blacklisted = models.BooleanField(default=False)
+
+
+class RefreshToken(models.Model):
+    user_id = models.UUIDField()
+    token = models.CharField(max_length=255, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField()
+    objects = models.Manager()
+
+    def save(self, *args, **kwargs):
+        lifetime_days = getattr(settings, "TOKEN_LIFETIME_DAYS", 7)
+        self.expires_at = timezone.now() + timedelta(days=lifetime_days)
+        super().save(*args, **kwargs)
+
+
+    class Meta:
+        ordering = ('created_at', )
+
+class BlackListedTokens(models.Model):
+    user = models.UUIDField(
+        null=False
+    )
+    banned_token = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+

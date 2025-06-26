@@ -2,19 +2,19 @@
 
 class TokenError(Exception):
     """
-        Base exception for token related errors
+        Base exception for mechanism related errors
     """
     pass
 
 class TokenNotFound(TokenError):
     """
-        Raises when token is not found in request
+        Raises when mechanism is not found in request
     """
     pass
 
 class TokenExpired(TokenError):
     """
-        Raises when token validation time expired
+        Raises when mechanism validation time expired
     """
     pass
 

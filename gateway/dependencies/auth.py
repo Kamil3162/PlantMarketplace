@@ -1,4 +1,5 @@
 import datetime
+from datetime import datetime, timezone, timedelta
 
 import jwt
 import uuid
@@ -7,42 +8,42 @@ from fastapi import Cookie, FastAPI, Query, Header
 from core.config import SECRET_KEY
 
 class AuthService:
-    ALGORITHM = 'HS256'
-    DEFAULT_EXPIRY_SECONDS = 3600
-    SECRET_KEY = SECRET_KEY
+    ALGORITHM = "HS256"
+    DEFAULT_EXPIRY_SECONDS = 1800
+    SECRET_KEY = "$+#hqc5(f0#y84^!$a!suex3(k@3dlzphefh42ls=(bk)jrctr"
 
     @classmethod
     def decode_token(cls, token):
         """
-            Decodes and validates a JWT token.
+            Decodes and validates a JWT mechanism.
 
             Args:
                 secret_key:
-                token: The JWT token string to decode
+                token: The JWT mechanism string to decode
 
             Returns:
                 Dictionary containing the decoded payload
 
             Raises:
-                jwt.ExpiredSignatureError: If token has expired
-                jwt.InvalidTokenError: If token is invalid
+                jwt.ExpiredSignatureError: If mechanism has expired
+                jwt.InvalidTokenError: If mechanism is invalid
         """
         try:
             payload = jwt.decode(
                 token,
                 SECRET_KEY,
-                algorithms=['HS256']
+                algorithms=[cls.ALGORITHM]
             )
             return payload
-        except jwt.ExpiredSignatureError:
-            raise jwt.ExpiredSignatureError("Token has expired")
-        except jwt.InvalidTokenError:
-            raise jwt.InvalidTokenError("Invalid token")
+        except jwt.ExpiredSignatureError as exc:
+            raise jwt.ExpiredSignatureError(f"{str(exc)}")
+        except jwt.InvalidTokenError as exc:
+            raise jwt.InvalidTokenError(f"{str(exc)}")
 
     @classmethod
     def encode_token(cls, user_id: uuid) -> dict:
         """
-            Encodes user data to JWT token
+            Encodes user data to JWT mechanism
 
             Args:
                 secret_key:
@@ -59,7 +60,7 @@ class AuthService:
             "token_type": "access",
             "exp": int(expire_time.timestamp()),
             "iat": int(now.timestamp()),
-            "jti": str(uuid.uuid4().hex),  # Unique token identifier
+            "jti": str(uuid.uuid4().hex),  # Unique mechanism identifier
             "user_id": user_id
         }
 
@@ -74,19 +75,22 @@ class AuthService:
     @classmethod
     def is_token_valid(cls, token: str) -> bool:
         try:
-            pay_load = cls.decode_token(token)
+            payload = cls.decode_token(token)
+            print(f"Decoded payload: {payload}")
 
-            # Compare expiration timestamp with current time
             current_time = datetime.now(timezone.utc).timestamp()
-            exp_token = pay_load.get('exp', None)
+            exp_time = payload.get('exp')  # ✅ Poprawna nazwa zmiennej
 
             # Check if expiration time exists
-            if exp_token is None:
+            if exp_time is None:  # ✅ Poprawiona zmienna
+                print("No expiration time found")
                 return False
 
-            if current_time > exp_token:
+            if current_time > exp_time:  # ✅ Poprawiona zmienna
+                print("Token expired")
                 return False
 
+            print("Token is valid")
             return True
 
         except Exception as e:

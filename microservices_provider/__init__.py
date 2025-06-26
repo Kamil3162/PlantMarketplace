@@ -12,6 +12,7 @@ from .core.exceptions import (
     ServiceTimeoutException,
     TokenNotFound
 )
+
 from .core.services import ServiceName, SERVICE_URLS, SericeURLS
 
 __version__ = "0.1.0"
@@ -27,5 +28,5 @@ __all__ = [
     "ServiceTimeoutException",
     "TokenNotFound",
     "ServiceName",
-    "SERVICE_URLS"
+    "SERVICE_URLS",
 ]

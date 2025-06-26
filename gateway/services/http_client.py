@@ -7,6 +7,7 @@ from core.exceptions import (
 )
 from core.services import SericeURLS, ServiceName
 
+
 class ServiceClient:
     def __init__(self):
         self.timeout = 5.0  # 5 sekund wystarczy
@@ -49,7 +50,8 @@ class ServiceClient:
                         service_name="email-service",
                         original_error=f"HTTP {response.status_code}: {response.text}"
                     )
-
+                print(response)
+                print(response.json())
                 # Sukces - zwracamy dane
                 return response.json()
 

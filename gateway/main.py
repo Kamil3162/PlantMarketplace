@@ -7,8 +7,10 @@ from routers import (
     sample_route,
     universal_route,
     users_route,
-
+    example_routers,
+    auth_route
 )
+
 from middleware.validator import CredentialsMiddleware
 import consul
 
@@ -38,9 +40,9 @@ async def shutdown():
 async def health():
     return {"status": "healthy"}
 
-# app.add_middleware(
-#     CredentialsMiddleware
-# )
+app.add_middleware(
+    CredentialsMiddleware
+)
 
 # app.add_middleware(
 #     TrustedHostMiddleware,
@@ -60,7 +62,8 @@ app.include_router(email_route.router, tags=["Email"])
 app.include_router(sample_route.router, tags=["Sample"])
 app.include_router(universal_route.router, tags=["Universal"])
 app.include_router(users_route.router, tags=["Users"])
-
+app.include_router(example_routers.router, tags=["Example"])
+app.include_router(auth_route.router, tags=["Auth"])
 
 @app.get("/discover/{service_name}")
 async def discover_service(service_name: str):

@@ -20,14 +20,14 @@ class RedisManager(object):
 
     def generate_user_data(self, user_instance):
         """
-            Generate user data and token for Redis storage
+            Generate user data and mechanism for Redis storage
 
             Args:
                 user_instance (User): User instance
 
             Returns:
                 user_dict - converted django User instance to dict
-                access_token - generated access token for passed user
+                access_token - generated access mechanism for passed user
         """
         if not user_instance:
             raise ValueError("Invalid user instance")
@@ -54,7 +54,7 @@ class RedisManager(object):
             RedisError: If Redis operation fails
         """
         try:
-            # Generate user data and token
+            # Generate user data and mechanism
             user_data, token = self.generate_user_data(user_instance)
             key = f'{self.user_prefix}{token}'
 
@@ -92,14 +92,14 @@ class RedisManager(object):
 
     def is_blocked(self, token):
         """
-            Check does user token can be used for future authentication
+            Check does user mechanism can be used for future authentication
         """
         blocked_key = f"{self.blocked_token_prefix}{token}"
         return bool(self.redInst.exists(blocked_key))
 
     def block_token(self, token):
         """
-            Block token use for future usage
+            Block mechanism use for future usage
 
         """
         try:
@@ -115,7 +115,7 @@ class RedisManager(object):
 
     def get_user_data(self, token):
         """
-            Generate user data and token for user request
+            Generate user data and mechanism for user request
         """
         key = f'{self.user_prefix}{token}'
         user_data = self.redInst.hgetall(key)
@@ -124,7 +124,7 @@ class RedisManager(object):
 
     def remove_access_token(self, token):
         """
-            Remove record from Redis storage to prevent unexpected auth behavior
+            Remove record from Redis storage to prevent unexpected authenticate behavior
         Args:
             token:
 
@@ -139,7 +139,7 @@ class RedisManager(object):
 
     def get_blocked_token(self, token):
         """
-            Function use to test does connection and block token works fine
+            Function use to test does connection and block mechanism works fine
         Returns:
 
         """

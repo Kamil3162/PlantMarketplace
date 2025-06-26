@@ -8,12 +8,12 @@ from services.http_client import email_client
 router = APIRouter(
     prefix="/users",
 )
-prefix = "/users"
+
 @router.api_route("/{path:path}",
                   methods=["GET", "POST", "PUT", "PATCH", "DELETE"])
 async def user_proxy(path: str, request: Request):
     service_url = SericeURLS.USER_SERVICE.value
-    target_url = f"{service_url}{prefix}/{path}"
+    target_url = f"{service_url}{path}"
     method = request.method
 
     # Pobierz dane z requestu ZAWSZE jako dict

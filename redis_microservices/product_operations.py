@@ -102,7 +102,7 @@ class RedisProductOperations:
             Dictionary with validated product data
 
         Raises:
-            core.DataError: If required fields are missing
+            authenticate.DataError: If required fields are missing
         """
         if not product_data:
             raise exceptions.DataError("Product data cannot be empty")

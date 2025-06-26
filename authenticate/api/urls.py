@@ -1,6 +1,12 @@
 from django.urls import path
-from PlantMarketplace.authenticate.api.views import display_all_permissions
+from .views import login, logout, temporary_url, render_csrf_token, token_validate_url
+
 
 urlpatterns = [
-    path('all/', display_all_permissions, name='user_permissions')
+    path('all/', login, name='user_permissions'),
+    path('temporary/', temporary_url, name='temp_url'),
+    path('render-csrf/', render_csrf_token, name='csrf-render'),
+    path('login/', login, name='login'),
+    path('token/', token_validate_url, name='token_validation'),
+
 ]

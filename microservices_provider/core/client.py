@@ -5,8 +5,9 @@ from .exceptions import (
     ServiceUnavailableException,
     ServiceTimeoutException
 )
+from httpx import Response
 from .services import SERVICE_URLS, ServiceName
-
+import json
 
 class BaseServiceClient:
     def __init__(self, service_name: str):
@@ -31,7 +32,6 @@ class BaseServiceClient:
                     json=json_data,
                     headers=headers
                 )
-
                 if response.status_code == 404:
                     raise ServiceNotFoundException(
                         service_name=self.service_name,
@@ -43,12 +43,25 @@ class BaseServiceClient:
                         original_error="Internal server error"
                     )
                 elif response.status_code >= 400:
+                    print(response.status_code)
+                    print(response.headers)
+                    print("test wyjebane w to gówno pierdolone")
                     raise ServiceUnavailableException(
                         service_name=self.service_name,
-                        original_error=f"HTTP {response.status_code}: {response.text}"
+                        original_error=response.json(),
+                        status_code=response.status_code
                     )
 
-                return response.json()
+                if "csrf" in endpoint:
+                    print('csrf')
+                    response_data = response.json()
+                    print(response_data)
+                    if isinstance(response_data, dict):
+                        d1 = [response_data]
+                        return [response_data]
+
+                response_json = response.json()
+                return response_json
 
             except httpx.TimeoutException as e:
                 raise ServiceTimeoutException(
@@ -87,4 +100,4 @@ class AuthClient(BaseServiceClient):
 
 class ProductClient(BaseServiceClient):
     def __init__(self):
-        super().__init__(ServiceName.PRODUCT_SERVICE.value)
+        super().__init__(ServiceName.PRODUCT_SERVICE.value)  # Pass the service name

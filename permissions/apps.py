@@ -11,7 +11,7 @@ class PermissionsConfig(AppConfig):
 
     def create_permissions(self, sender, **kwargs):
         try:
-            from .models import PermissionGroupAssigment
+            from PlantMarketplace.permissions.data.models import PermissionGroupAssigment
 
             permissions = PermissionGroupAssigment.objects._create_permissions()
             group_list = PermissionGroupAssigment.objects._generate_base_groups()

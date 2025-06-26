@@ -50,9 +50,9 @@ class ServiceTimeoutException(BaseServiceException):
 
 class TokenNotFound(BaseServiceException):
     """
-        Gdy token nie istnieje w headerze requesta
+        Gdy mechanism nie istnieje w headerze requesta
     """
-    def __init__(self, detail:str, service_name:str='auth'):
+    def __init__(self, detail:str, service_name:str='authenticate'):
         super().__init__(
             status_code=401,
             detail=detail,

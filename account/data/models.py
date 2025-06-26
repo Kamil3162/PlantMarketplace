@@ -122,6 +122,13 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return f'CustomUser email={self.email}'
 
+    def to_json(self):
+        return {
+            'id': self.pk,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'email': self.email
+        }
 
 
 

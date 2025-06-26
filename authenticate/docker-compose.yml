@@ -4,18 +4,18 @@ version: '3.8'
 services:
   web:
     build:
-      context: ../../
-      dockerfile: authenticate/deployment/Dockerfile
-    container_name: auth-service
+      context: ..
+      dockerfile: authenticate/Dockerfile
+    container_name: auth-service1
     command: >
       bash -c " 
-      python manage.py makemigrations &&
+      python manage.py makemigrations && 
       python manage.py migrate &&
       python manage.py runserver 0.0.0.0:8100"
     ports:
       - "8100:8100"
     environment:
-      - POSTGRES_DB=authdb
+      - POSTGRES_DB=authdb1
       - POSTGRES_USER=authadmin
       - POSTGRES_PASSWORD=authpassword
       - POSTGRES_HOST=db
@@ -23,7 +23,7 @@ services:
     depends_on:
       - db
     networks:
-      - app-network
+      - auth-network
       - microservices-network
 
   db:
@@ -32,13 +32,13 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     environment:
       - PGUSER=authadmin
-      - POSTGRES_DB=authdb
+      - POSTGRES_DB=authdb1
       - POSTGRES_USER=authadmin
       - POSTGRES_PASSWORD=authpassword
     ports:
       - "5432:5432"
     networks:
-      - app-network
+      - auth-network
     healthcheck:
 #      test: ["CMD-SHELL", "pg_isready -U myuser -d mydatabase"]
       interval: 10s
@@ -48,14 +48,14 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: auth-redis
+    container_name: auth-redis1
     ports:
       - "6379:6379"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes  # Enable persistence
     networks:
-      - app-network
+      - auth-network
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
       interval: 10s
@@ -67,7 +67,7 @@ volumes:
   redis_data:
 
 networks:
-  app-network:
+  auth-network:
     driver: bridge
   microservices-network:
     external: true

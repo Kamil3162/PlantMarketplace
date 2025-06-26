@@ -1,11 +1,16 @@
 from datetime import time, datetime, timezone
 
 import redis
-
-from account.scheme import UserScheme
 from redis import RedisError
 
 from .jwt_manager import JWTManager
+
+expiry_map = {
+    'low': 3600,        # 1 hour
+    'medium': 86400,    # 1 day
+    'high': 604800,     # 1 week
+    'critical': 2592000 # 30 days
+}
 
 class RedisManager(object):
     def __init__(self):
@@ -32,7 +37,6 @@ class RedisManager(object):
         if not user_instance:
             raise ValueError("Invalid user instance")
 
-        user_dict = UserScheme.by_django_user(user_instance)
         user_dict['is_staff'] = 'false'
         user_dict['is_confirmed'] = 'false'
 
@@ -97,18 +101,23 @@ class RedisManager(object):
         blocked_key = f"{self.blocked_token_prefix}{token}"
         return bool(self.redInst.exists(blocked_key))
 
-    def block_token(self, token):
+    def block_token(self, token, severity:str):
         """
             Block mechanism use for future usage
 
         """
+        if not severity in expiry_map:
+            severity_time = expiry_map['medium']
+
+        severity_time = expiry_map[severity]
+
         try:
             block_expiry = 1200
             blocked_key = f"{self.blocked_token_prefix}{token}"
             self.redInst.set(
                 blocked_key,
                 '1',
-                ex=block_expiry
+                ex=severity_time
             )
         except RedisError as e:
             raise RedisError(f"Failed to store user data: {str(e)}")

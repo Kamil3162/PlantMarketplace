@@ -20,7 +20,7 @@ COPY microservices_provider /app/microservices_provider
 RUN pip install -e /app/microservices_provider
 
 # Skopiuj tylko kod account (nie wszystkie foldery)
-COPY authenticate /app/authenticate
-WORKDIR /app/authenticate
+COPY authenticate/ /app/
+#WORKDIR /app/authenticate
 
 RUN mkdir -p /app/logs

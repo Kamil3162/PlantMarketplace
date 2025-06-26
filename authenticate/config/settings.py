@@ -4,16 +4,20 @@ from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print("execute setting authenticate service")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-production')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG', 'False').lower() == 'false'
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS=[
+    "http://api-gateway:8010",
+    "http://localhost:8010",
+    'http://127.0.0.1:8010',
+]
+
 CORS_ALLOW_ALL_ORIGINS = True  # TYLKO DO TESTÓW!
+TOKEN_LIFETIME_DAYS = 7
+
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -21,7 +25,7 @@ ALLOWED_HOSTS = [
     'email-service',    # ← DODAJ container name!
     '0.0.0.0',         # ← DODAJ dla Docker
     '*',
-    'gateway-gateway-app-1'# ← Tymczasowo dla debug
+    'api-gateway'# ← Tymczasowo dla debug
 ]
 # Application definition
 INSTALLED_APPS = [
@@ -31,10 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Third-party apps
-    # 'django_celery_beat',  # For scheduled tasks
-    # 'django_celery_results',  # For storing task results in database
-    # Local apps
+    'data'
 ]
 
 MIDDLEWARE = [
@@ -73,10 +74,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'email_db'),
-        'USER': os.environ.get('POSTGRES_USER', 'myuser'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'mypassword'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'email_db'),
+        'NAME': os.environ.get('POSTGRES_DB', 'authdb1'),
+        'USER': os.environ.get('POSTGRES_USER', 'authadmin'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'authpassword'),
+        'HOST': os.environ.get('POSTGRES_HOST', 'db'),
         'PORT': os.environ.get('POSTGRES_PORT', '5432'),
         'OPTIONS': {
             'connect_timeout': 10,

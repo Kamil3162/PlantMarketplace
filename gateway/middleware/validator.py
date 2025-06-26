@@ -4,8 +4,12 @@ from starlette.middleware.base import BaseHTTPMiddleware
 
 from core.services import NotAuthUrl, ServiceConfig, SERVICE_URLS
 from core.exceptions import TokenNotFound, ServiceUnavailableException
+from microservices_provider import AuthClient
 from dependencies.auth import AuthService
 
+
+auth_client = AuthClient()
+prefix = "/authenticate/token"
 
 class CredentialsMiddleware(BaseHTTPMiddleware):
 
@@ -26,8 +30,7 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
 
         try:
             service_name = self.__extract_prefix(path)
-            self.__check_service_name(
-                service_name)
+            service_name_v1 = self.__check_service_name(service_name)
         except ServiceUnavailableException as e:
             return JSONResponse(
                 status_code=404,
@@ -36,28 +39,24 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
                     "message": str(e)
                 }
             )
+        try:
+            token = self.__extract_token(request)
+            token_valid = AuthService.is_token_valid(token)
 
-        # try:
-            # token = self.__extract_token(request)
-            #
-            # decoded_token = AuthService.decode_token(token)
-            #
-            # if not AuthService.is_token_valid(decoded_token):
-            #     return self.__unauthorized_response("Token has expired")
-            #
-            # request.state.user = decoded_token
+            if not token_valid:
+                return self.__unauthorized_response("Token has expired")
+            return await call_next(request)
 
-        return await call_next(request)
+        except TokenNotFound as e:
+            return self.__unauthorized_response(str(e))
+        except Exception as e:
+            print(str(e))
+            return self.__unauthorized_response("Invalid mechanism")
 
-        # except TokenNotFound as e:
-        #     return self.__unauthorized_response(str(e))
-        # except Exception as e:
-        #     return self.__unauthorized_response("Invalid token")
 
     def __extract_token(self, request: Request):
         token = request.headers.get("Authorization")
         clean_token = token.split(" ")[1]
-
         if not clean_token:
             raise TokenNotFound("Token doesn't exist")
         return clean_token
