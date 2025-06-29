@@ -1,3 +1,5 @@
+from pprint import pp
+
 from fastapi import Request
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
@@ -24,6 +26,15 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         path = request.url.path
         free_url = self.__is_free_url(path)
+
+        # we get an user ip using request.client or request.client.host
+        # real ip equal Header alias "X-Real-IP"
+        # X-Forwarded-For
+        forwarded_for = request.headers.get("x-forwarded-for")
+        real_ip = request.headers.get("x-real-ip")
+        forwarded = request.headers.get("x-forwarded")
+
+        print(forwarded_for, real_ip, forwarded)
 
         if free_url:
             return await call_next(request)

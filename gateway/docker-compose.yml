@@ -1,6 +1,7 @@
 version: '3.8'
 services:
 
+  # ============ CONSUL ============
   consul:
     image: hashicorp/consul:latest
     container_name: consul1
@@ -12,6 +13,52 @@ services:
     networks:
       - microservices-network
 
+  # ============ KONG STACK ============
+  kong:
+    image: kong/kong-gateway:3.4.0.0
+    container_name: kong-gateway
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: /kong/declarative/kong.yml
+
+      # Zmienione porty żeby nie kolidować
+      KONG_ADMIN_LISTEN: 0.0.0.0:7001
+      KONG_PROXY_LISTEN: 0.0.0.0:7000
+
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+
+      KONG_WORKER_PROCESSES: 2
+      KONG_WORKER_CONNECTIONS: 1024
+
+    ports:
+      - "7000:7000"  # Main proxy (główny port dla użytkowników)
+      - "7001:7001"  # Admin API
+    volumes:
+      - ./kong.yml:/kong/declarative/kong.yml:ro
+    networks:
+      - gateway-network
+    depends_on:
+      - kong-redis
+      - gateway-app
+    restart: unless-stopped
+
+  # Redis dla Kong (inny port)
+  kong-redis:
+    image: redis:7-alpine
+    container_name: kong-redis
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    ports:
+      - "6385:6379"  # Nie koliduje z twoim Redis na 6389
+    volumes:
+      - kong_redis_data:/data
+    networks:
+      - gateway-network
+    restart: unless-stopped
+
+  # <============= EXISTING STACK =============>
   gateway-app:
     build:
       context: ..
@@ -100,6 +147,7 @@ volumes:
   gateway_redis_data:
   gateway_rabbitmq_data:
   consul_data:  # dodaj volume dla consul
+  kong_redis_data:
 
 networks:
   gateway-network:

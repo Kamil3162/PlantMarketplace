@@ -1,0 +1,139 @@
+_format_version: "3.0"
+
+# Service - twój FastAPI gateway
+services:
+- name: api-gateway
+  url: http://api-gateway:8010
+  retries: 3
+  connect_timeout: 5000
+  read_timeout: 30000
+  write_timeout: 30000
+
+# Routes - JEDEN route na wszystko
+routes:
+- name: gateway-all
+  service: api-gateway
+  paths: ["/"]
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
+  strip_path: false
+  preserve_host: true
+
+# Consumers - różne poziomy użytkowników
+consumers:
+- username: premium_user
+  custom_id: "premium_001"
+
+- username: basic_user
+  custom_id: "basic_001"
+
+- username: admin_user
+  custom_id: "admin_001"
+
+- username: service_account
+  custom_id: "service_001"
+
+# API Keys
+keyauth_credentials:
+- consumer: premium_user
+  key: "premium-key-microservices-2024"
+
+- consumer: basic_user
+  key: "basic-key-microservices-2024"
+
+- consumer: admin_user
+  key: "admin-key-microservices-2024"
+
+- consumer: service_account
+  key: "service-account-key-2024"
+
+# Plugins
+plugins:
+# 1. Rate limiting per consumer (główna logika)
+- name: rate-limiting
+  consumer: basic_user
+  config:
+    second: 5
+    minute: 100
+    hour: 1000
+    day: 10000
+    policy: redis
+    redis_host: kong-redis
+    redis_port: 6379
+    redis_database: 0
+    fault_tolerant: true
+
+- name: rate-limiting
+  consumer: premium_user
+  config:
+    second: 20
+    minute: 600
+    hour: 6000
+    day: 60000
+    policy: redis
+    redis_host: kong-redis
+    redis_port: 6379
+    redis_database: 1
+
+- name: rate-limiting
+  consumer: admin_user
+  config:
+    second: 50
+    minute: 1000
+    hour: 10000
+    day: 100000
+    policy: redis
+    redis_host: kong-redis
+    redis_port: 6379
+    redis_database: 2
+
+- name: rate-limiting
+  consumer: service_account
+  config:
+    second: 100
+    minute: 5000
+    hour: 100000
+    policy: redis
+    redis_host: kong-redis
+    redis_port: 6379
+    redis_database: 3
+
+# 2. Fallback rate limiting dla użytkowników bez API key
+- name: rate-limiting
+  service: api-gateway
+  config:
+    second: 2
+    minute: 50
+    hour: 500
+    day: 2000
+    policy: redis
+    redis_host: kong-redis
+    redis_port: 6379
+    redis_database: 4
+    fault_tolerant: true
+
+# 3. CORS
+- name: cors
+  service: api-gateway
+  config:
+    origins: ["*"]
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    headers: ["Accept", "Accept-Version", "Content-Length", "Content-Type", "Authorization", "apikey"]
+    exposed_headers: ["X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset"]
+    credentials: true
+    max_age: 3600
+
+# 4. Proxy headers (dla docs)
+- name: request-transformer
+  service: api-gateway
+  config:
+    add:
+      headers:
+        - "X-Forwarded-For: $remote_addr"
+        - "X-Forwarded-Proto: http"
+        - "X-Forwarded-Host: localhost:7000"
+
+# 5. Logging
+- name: file-log
+  service: api-gateway
+  config:
+    path: /dev/stdout

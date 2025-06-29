@@ -65,6 +65,30 @@ app.include_router(users_route.router, tags=["Users"])
 app.include_router(example_routers.router, tags=["Example"])
 app.include_router(auth_route.router, tags=["Auth"])
 
+
+@app.middleware("http")
+async def kong_integration_middleware(request: Request, call_next):
+    kong_forwarded = request.headers.get("x-kong-forwarded")
+    rate_limited_by = request.headers.get("x-rate-limited-by")
+
+    if kong_forwarded and rate_limited_by == "kong":
+        real_ip = request.headers.get("x-real-ip") or request.client.host
+        rate_limit_remaining = request.headers.get("x-ratelimit-remaining")
+
+        request.state.real_ip = real_ip
+        request.state.via_kong = True
+        request.state.rate_limit_remaining = int(rate_limit_remaining) if rate_limit_remaining else None
+
+        request.state.skip_internal_rate_limiting = True
+
+    response = await call_next(request)
+
+    if hasattr(request.state, 'via_kong'):
+        response.headers["X-Gateway-Processed"] = "true"
+        response.headers["X-Available-Services"] = ",".join(ServiceName.get_service_names())
+
+    return response
+
 @app.get("/discover/{service_name}")
 async def discover_service(service_name: str):
     # Znajdź serwis w Consul
