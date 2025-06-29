@@ -15,10 +15,11 @@ from asgiref.sync import sync_to_async
 from microservices_provider import UserClient
 from data.models import BlackListedTokens
 from mechanism.redis_manager import RedisManager
+from broker_opps.manager import rabbit_producer
 
 redis_manager = RedisManager()
-
 user_client = UserClient()
+
 # consul - service discovery
 # hystrix pattern
 # jwt issui validation
@@ -55,8 +56,13 @@ async def login(request: HttpRequest):
         user_data = response['detail']
         user_id = user_data['id']
 
-        access_token = JWTManager.create_access_token(user_id)
+        access_token, user_payload = JWTManager.create_access_token(user_id)
         refresh_token = JWTManager.create_refresh_token(user_id)
+        print("views auth")
+        print(access_token, user_payload)
+        print("views auth")
+        rabbit_producer.publish_data(user_payload)
+
         # first we can try to fetch that this
         # this code create each time brand new refresh token for each login attemp
         refresh_object = await sync_to_async(RefreshToken.objects.create)(user_id=user_id, token=refresh_token)
@@ -106,11 +112,6 @@ def refresh_token(request: HttpRequest):
             'token': token.token
         }
     )
-
-
-def revoke(request: HttpRequest):
-    pass
-
 
 def temporary_url(request):
     print("random url")

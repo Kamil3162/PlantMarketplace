@@ -4,7 +4,6 @@ class Error(Exception):
         Base error for subclass errors
     """
 
-
 class PermissionGroupError(Error):
     """
         Exception raised when a permission group doesn't exist

@@ -130,5 +130,3 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
             'email': self.email
         }
 
-
-

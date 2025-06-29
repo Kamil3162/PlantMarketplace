@@ -40,7 +40,7 @@ class JWTManager(object):
             algorithm=cls.ALGORITHM,
         )
 
-        return access_token
+        return access_token, payload
 
     @classmethod
     def decode_token(cls, token: str) -> dict:
@@ -138,7 +138,8 @@ class JWTManager(object):
             if not user_id:
                 raise ValueError("Invalid token payload")
 
-            return cls.create_access_token(user_id)
+            access_token, user_payload = cls.create_access_token(user_id)
+            return access_token
 
         except jwt.ExpiredSignatureError:
             raise jwt.ExpiredSignatureError("Refresh token has expired")

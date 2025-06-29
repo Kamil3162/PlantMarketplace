@@ -4,7 +4,6 @@ import dotenv
 
 dotenv.load_dotenv()
 
-
 @dataclass
 class ConfigCelery:
     name: str = 'email-service'

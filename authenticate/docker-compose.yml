@@ -71,4 +71,3 @@ networks:
     driver: bridge
   microservices-network:
     external: true
-

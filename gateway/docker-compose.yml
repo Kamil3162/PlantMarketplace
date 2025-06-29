@@ -63,20 +63,43 @@ services:
       - RABBITMQ_DEFAULT_USER=gateway_user
       - RABBITMQ_DEFAULT_PASS=gateway_pass
     ports:
-      - "5672:5672"   # AMQP port (5672 + 10)
-      - "15672:15672" # Management UI port (15672 + 10)
+      - "5672:5672"
+      - "15672:15672"
     volumes:
       - gateway_rabbitmq_data:/var/lib/rabbitmq
     networks:
       - gateway-network
       - microservices-network
 
+  gateway-celery-worker:
+    build:
+      context: ..
+      dockerfile: gateway/DockerfileCelery
+    container_name: gateway-celery-worker
+    command: celery -A celery_worker worker --loglevel=INFO -P gevent -Q auth_queue
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=/app:/app/celery_worker
+      - DATABASE_URL=postgresql://gateway_user:gateway_pass@gateway-db:5432/gateway_db
+      - REDIS_URL=redis://gateway-redis:6379
+      - RABBITMQ_URL=amqp://gateway_user:gateway_pass@gateway-rabbitmq:5672
+      - CELERY_BROKER_URL=amqp://gateway_user:gateway_pass@gateway-rabbitmq:5672
+      - CELERY_RESULT_BACKEND=redis://gateway-redis:6379/0
+    depends_on:
+      - gateway-db
+      - gateway-redis
+      - gateway-rabbitmq
+    networks:
+      - gateway-network
+      - microservices-network
+    restart: unless-stopped
+
 volumes:
   gateway_postgres_data:
   gateway_redis_data:
   gateway_rabbitmq_data:
   consul_data:  # dodaj volume dla consul
-
 
 networks:
   gateway-network:

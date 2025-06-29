@@ -24,7 +24,6 @@ from .responses import CustomResponse
 
 PAGE_SIZE = 15
 
-
 async def send_email_async(email_data, method):
     """Helper function to send emails asynchronously"""
     try:
@@ -220,7 +219,6 @@ def reset_password(request):
                     'user_last_name': user.last_name,
                     'user_id': user.id,
                     'reset_link': f"http://yourdomain.com/reset-password/{user.id}/",
-                    # Dostosuj URL
                     'platform_name': 'PlantMarketplace',
                     'request_time': timezone.now().strftime(
                         '%Y-%m-%d %H:%M:%S'),
@@ -409,3 +407,5 @@ def user_by_email(request):
             status_code=e.status_code,
             type="error"
         )
+
+
