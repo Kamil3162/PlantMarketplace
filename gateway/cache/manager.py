@@ -19,7 +19,6 @@ class RedisManager:
         )
         print("inserted data into redis")
 
-
     def build_key(self, prefix: str, user_id: int):
         return f"{prefix}:{user_id}"
 
@@ -29,3 +28,5 @@ class RedisManager:
 
         print("output data from redis")
 
+    def get_client(self):
+        return self.client

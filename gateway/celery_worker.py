@@ -2,6 +2,7 @@ import json
 import ssl
 import smtplib
 import logging
+import time
 
 from celery import Celery
 from core.config import CeleryConfig
@@ -45,6 +46,19 @@ def set_auth_user_data(task_self, **task_data):
     user_id = task_data['user_id']
 
     logger.info(f"👤 Processing user ID: {user_id}")
+    print(task_data['exp'])
+
+    # redis current time
+    # current time - start
+    time_start = time.perf_counter_ns()
+    redis_time = redis_manager.get_client().time()
+    print(redis_time)
+    print(task_data['exp'])
+
+    # final exec time
+    final_time = time.perf_counter_ns()
+
+    print(f"exec time = {final_time - time_start}")
 
     logger.info("💾 Attempting to save data to Redis...")
     redis_manager.insert_data(task_data)
@@ -53,5 +67,11 @@ def set_auth_user_data(task_self, **task_data):
 """
      The full contents of the message body was: body: '{"task": "set_auth_user_data", "id": "65c91bd6-b22c-4faa-a53d-536edb0d2943", 
      "args": [], 
-     "kwargs": {"user_id": 5, "jti": "c77d75f8253f4492ac787667cd0b7733", "exp": 1751152908, "data_created": "2025-06-28 22:51:48.440509+00:00"}}' (228b)  
+     "kwargs": {
+     "user_id": 5,
+       "jti": "c77d75f8253f4492ac787667cd0b7733", 
+       "exp": 1751152908,
+         "data_created": "2025-06-28 22:51:48.440509+00:00"
+         }}'
+           (228b)  
 """

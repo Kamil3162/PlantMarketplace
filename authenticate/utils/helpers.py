@@ -13,11 +13,6 @@ from core.exceptions import (
     PermissionDenied
 )
 
-# from account.utils import get_user
-# from permissions.models import PermissionGroupAssigment
-# from account.exceptions import UserNotFound
-
-
 redis_instance = RedisManager()
 
 def get_token_from_request(request: HttpRequest):

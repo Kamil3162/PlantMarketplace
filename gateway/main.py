@@ -13,6 +13,11 @@ from routers import (
 
 from middleware.validator import CredentialsMiddleware
 import consul
+from celery import Task
+from celery.app.task import Context
+
+
+
 
 c = consul.Consul(host='consul1', port=8500)  # nazwa serwisu z docker-compose
 app = FastAPI(
@@ -64,7 +69,6 @@ app.include_router(universal_route.router, tags=["Universal"])
 app.include_router(users_route.router, tags=["Users"])
 app.include_router(example_routers.router, tags=["Example"])
 app.include_router(auth_route.router, tags=["Auth"])
-
 
 @app.middleware("http")
 async def kong_integration_middleware(request: Request, call_next):
