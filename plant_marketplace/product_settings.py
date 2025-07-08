@@ -11,7 +11,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account',  # Jeśli potrzebujesz modelu użytkownika
-    'redis_microservices',
+    'products.redis_microservices',
 ]
 
 # Konfiguracja bazy danych dla mikroserwisu produktowego

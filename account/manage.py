@@ -8,6 +8,7 @@ from pathlib import Path
 # Ścieżka do katalogu z komendami
 COMMANDS_DIR = Path(__file__).parent / 'management' / 'commands'
 
+class BaseExc(Exception)
 
 def main():
     """Uruchom zadania administracyjne lub dedykowane komendy mikroserwisu."""

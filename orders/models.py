@@ -1,8 +1,6 @@
-from enum import nonmember
-
 from django.db import models
 from account.models import CustomUser
-from products.models import Product
+from products.data.models import Product
 
 # Create your models here.
 class Order(models.Model):

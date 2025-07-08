@@ -5,17 +5,11 @@ services:
     build:
       context: ..
       dockerfile: products/Dockerfile
-    command: python product_manage.py runserver 0.0.0.0:8002
-    volumes:
-      - .:/app
+    command: python manage.py runserver 0.0.0.0:8002
     ports:
-      - "8005:8000"  # Mapuje port 8000 kontenera na 8002 hosta
-    depends_on:
-      - product-db
-      - product-redis
-      - product-rabbitmq
+      - "8002:8002"  # Mapuje port 8000 kontenera na 8002 hosta
     environment:
-      - DJANGO_SETTINGS_MODULE=settings
+      - DJANGO_SETTINGS_MODULE=config.settings
       - PRODUCT_DB_NAME=product_service
       - DB_HOST=product-db
       - DB_PORT=5432
@@ -25,11 +19,15 @@ services:
       - RABBITMQ_PORT=5673
       - RABBITMQ_DEFAULT_USER=myuser
       - RABBITMQ_DEFAULT_PASS=mypassword
+    depends_on:
+      - product-db
+      - product-redis
     networks:
       - product-network
+      - microservices-network
 
   product-db:
-    image: postgres:13
+    image: postgres:15
     volumes:
       - product_db_data:/var/lib/postgresql/data/
     environment:
@@ -42,30 +40,21 @@ services:
       - product-network
 
   product-redis:
-    image: redis:6
-    command: redis-server --port 6379
+    image: redis:7-alpine
     ports:
-      - "6385:6379"  # Mapuje port 6379 kontenera na 6381 hosta
-    networks:
-      - product-network
-
-  product-rabbitmq:
-    image: rabbitmq:3-management
-    ports:
-      - "5675:5672"  # Mapuje port AMQP 5672 kontenera na 5673 hosta
-      - "15675:15672"  # Mapuje port zarządzania 15672 kontenera na 15673 hosta
-    environment:
-      - RABBITMQ_DEFAULT_USER=myuser
-      - RABBITMQ_DEFAULT_PASS=mypassword
+      - "6379:6379"  # Twój niestandardowy port (6379 + 10)
+    volumes:
+      - product_redis_data:/data
     networks:
       - product-network
 
 networks:
   product-network:
     driver: bridge
-  main-network:
+  microservices-network:
     external: true  # Używa istniejącej sieci głównego projektu
     # Uwaga: Musisz najpierw utworzyć tę sieć używając: docker network create main-network
 
 volumes:
   product_db_data:
+  product_redis_data:
