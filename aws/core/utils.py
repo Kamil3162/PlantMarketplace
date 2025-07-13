@@ -1,6 +1,9 @@
 from typing import Callable
 from functools import wraps
 from time import perf_counter_ns
+from functools import cache
+from functools import lru_cache
+
 
 import logging
 

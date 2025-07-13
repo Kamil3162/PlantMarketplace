@@ -38,7 +38,6 @@ class Address(models.Model):
         verbose_name_plural = 'Addresses'
 
 
-
 class UserManager(BaseUserManager["CustomUser1"]):
     def create_user(
         self,

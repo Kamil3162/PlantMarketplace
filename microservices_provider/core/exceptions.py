@@ -1,8 +1,9 @@
 from typing import Optional, Dict, Any
 
+
 class BaseServiceException(Exception):
     """
-    Bazowa klasa dla wszystkich wyjątków serwisów
+        Bazowa klasa dla wszystkich wyjątków serwisów
     """
     def __init__(
         self,
@@ -17,9 +18,10 @@ class BaseServiceException(Exception):
         self.service_name = service_name
         self.headers = headers
 
+
 class ServiceNotFoundException(BaseServiceException):
     """
-    Gdy nie znajdziemy zasobu w serwisie Django
+        Gdy nie znajdziemy zasobu w serwisie Django
     """
     def __init__(self, service_name: str, resource: str):
         super().__init__(
@@ -28,9 +30,10 @@ class ServiceNotFoundException(BaseServiceException):
             service_name=service_name
         )
 
+
 class ServiceUnavailableException(BaseServiceException):
     """
-    Gdy serwis Django nie odpowiada
+        Gdy serwis Django nie odpowiada
     """
     def __init__(self, service_name: str, original_error: str, status_code: int = None):
         super().__init__(
@@ -39,9 +42,10 @@ class ServiceUnavailableException(BaseServiceException):
             service_name=service_name
         )
 
+
 class ServiceTimeoutException(BaseServiceException):
     """
-    Gdy serwis Django za długo odpowiada
+        Gdy serwis Django za długo odpowiada
     """
     def __init__(self, service_name: str, timeout: float):
         super().__init__(
@@ -49,6 +53,7 @@ class ServiceTimeoutException(BaseServiceException):
             detail=f"Service {service_name} timeout after {timeout}s",
             service_name=service_name
         )
+
 
 class TokenNotFound(BaseServiceException):
     """

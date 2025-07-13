@@ -13,6 +13,7 @@ with open("req.txt", "w") as file:
     file.write("\n".join(packages))
 
 load_dotenv()
+
 print(os.getenv("POSTGRES_DB"))
 print(os.getenv("GOOGLE_OAUTH_CLIENT_ID"))
 

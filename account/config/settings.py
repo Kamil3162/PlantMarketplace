@@ -26,6 +26,7 @@ ALLOWED_HOSTS = [
     '*',
     'gateway-gateway-app-1'# ← Tymczasowo dla debug
 ]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -52,7 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
-AUTH_USER_MODEL = 'data.CustomUser'  # ← DODAJ TO
+AUTH_USER_MODEL = 'data.CustomUser'
 
 TEMPLATES = [
     {
@@ -78,10 +79,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'mydatabase1'),     # ← ZMIEŃ z 'email_db'
+        'NAME': os.environ.get('POSTGRES_DB', 'mydatabase1'),
         'USER': os.environ.get('POSTGRES_USER', 'myuser'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'mypassword'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'db'),           # ← ZMIEŃ z 'email_db'
+        'HOST': os.environ.get('POSTGRES_HOST', 'db'),
         'PORT': os.environ.get('POSTGRES_PORT', '5432'),
         'OPTIONS': {
             'connect_timeout': 10,

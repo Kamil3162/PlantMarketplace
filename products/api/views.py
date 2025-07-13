@@ -9,17 +9,14 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import ProtectedError
 import dotenv
 
-from data.models import Product
-from redis_microservices import redis_product_client
+from data.models import Product, ProductImage, ProductEvent
+from redis_microservices import client
 from forms.product_forms import CreateProductForm
 from aws import S3Client
 
 dotenv.load_dotenv()
 
 log_path = Path(os.getcwd()).parent
-
-print("test")
-print(log_path)
 
 S3Instance = S3Client(
     access_key=os.environ.get("AWS_ACCESS"),
@@ -31,7 +28,6 @@ S3Instance = S3Client(
 
 bucket_name = os.environ.get("AWS_BUCKET_NAME")
 
-
 def product_create(request):
     submitted = False
     if request.method == "POST":
@@ -42,7 +38,6 @@ def product_create(request):
             if create_product.is_valid():
                 file = request.FILES
                 single_file = file['image']
-
                 product = create_product.save(commit=False)
 
                 generated_file_name = S3Instance.generate_file_name(
@@ -52,17 +47,30 @@ def product_create(request):
                 product.image = generated_file_name
                 product.save()
 
+                product_image = ProductImage.objects.create(
+                    product=product,
+                    file_name=generated_file_name,
+                )
+
                 s3_key = S3Instance.upload_image(
                     single_file,
                     file_name=generated_file_name
                 )
 
+                # dla testow wezmiemy generated file
+                product_event = ProductEvent.objects.create(
+                    product=product,
+                    created_by=generated_file_name.split(".")[0]
+                )
+
                 product_dict = model_to_dict(product)
                 product_uuid = product.id
-                prepared_product_data = redis_product_client()._prepare_product_for_redis(product_dict)
+                prepared_product_data = client()._prepare_product_for_redis(product_dict)
 
                 prepared_product_data['key'] = product_uuid
-                added_product = redis_product_client().add_product(**prepared_product_data)
+                added_product = client().add_product(
+                    **prepared_product_data
+                )
 
                 return render(request, 'create_product.html', {
                     'test_data': product_dict,
@@ -115,7 +123,7 @@ def product_list(request):
     )
 
 def product_detail(request, product_uuid):
-    cache_product = redis_product_client().get_product(product_uuid)
+    cache_product = client().get_product(product_uuid)
     image_url = S3Instance.get_presigned_url(cache_product['image'])
 
     if not cache_product:

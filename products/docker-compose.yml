@@ -5,7 +5,13 @@ services:
     build:
       context: ..
       dockerfile: products/Dockerfile
-    command: python manage.py runserver 0.0.0.0:8002
+    command:
+      bash -c "
+        python manage.py makemigrations &&
+        python manage.py migrate &&
+        python manage.py makemigrations data &&
+        python manage.py migrate data &&
+        python manage.py runserver 0.0.0.0:8002"
     ports:
       - "8002:8002"  # Mapuje port 8000 kontenera na 8002 hosta
     environment:
@@ -19,6 +25,10 @@ services:
       - RABBITMQ_PORT=5673
       - RABBITMQ_DEFAULT_USER=myuser
       - RABBITMQ_DEFAULT_PASS=mypassword
+      - CONSUL_PORT=8500
+      - CONSUL_HOST=consul  # we pass service name from our network
+      - SERVICE_NAME=product-service
+      - SERVICE_PORT=8002
     depends_on:
       - product-db
       - product-redis

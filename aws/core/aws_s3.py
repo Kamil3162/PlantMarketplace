@@ -57,7 +57,6 @@ class S3Client:
             Konfiguruje logging dla tej klasy, bez modyfikowania globalnego loggera.
         """
         path = Path(os.path.join(self.logs_path, "logs"))
-        print(path)
         path.mkdir(exist_ok=True)
 
         formatter = logging.Formatter(
@@ -78,7 +77,6 @@ class S3Client:
                 f"s3_client_{datetime.now().strftime('%Y_%m_%d')}.log"
             )
         )
-        print(log_filename)
 
         file_handler = logging.FileHandler(log_filename)
         file_handler.setFormatter(formatter)
@@ -143,7 +141,7 @@ class S3Client:
         Args:
             file_object: Ścieżka do pliku lub obiekt Django
             s3_key: Opcjonalny klucz S3 dla pliku
-            file_object - jest to plik który jest używany głownie w przyapdku django , mogą pojawic sie problemy w przypadku innych frameworków lub bibliotek
+            file_object - jest to plik który jest używany głownie w przyapdku django, mogą pojawic sie problemy w przypadku innych frameworków lub bibliotek
         Returns:
             str: Klucz S3 do wrzuconego pliku lub None w przypadku błędu
         """

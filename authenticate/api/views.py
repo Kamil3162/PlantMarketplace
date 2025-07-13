@@ -51,16 +51,12 @@ async def login(request: HttpRequest):
 
         # we can create refresh token during login but not every time or maybe yes
         # user_id
-        print(response)
 
         user_data = response['detail']
         user_id = user_data['id']
 
         access_token, user_payload = JWTManager.create_access_token(user_id)
         refresh_token = JWTManager.create_refresh_token(user_id)
-        print("views auth")
-        print(access_token, user_payload)
-        print("views auth")
         rabbit_producer.publish_data(user_payload)
 
         # first we can try to fetch that this
@@ -154,3 +150,15 @@ def render_csrf_token(request):
 
     json_data = json.dumps(data, indent=2)
     return HttpResponse(json_data, content_type="application/json")
+
+def ouath2uri(request):
+    print(request)
+    return {
+        'status': 'success',
+        'data': 'Test Data'
+    }
+
+@csrf_exempt
+def login_google(request):
+    return render(request, 'sign_in.html')
+

@@ -17,7 +17,9 @@ Including another URLconf
 
 from django.urls import path, include
 from api.urls import urlpatterns as product_url
+from api.service_discovery.urls import urlpatterns as health_url
 
 urlpatterns = [
-    path('products/', include(product_url))
+    path('products/', include(product_url)),
+    path('health/', include(health_url)),
 ]

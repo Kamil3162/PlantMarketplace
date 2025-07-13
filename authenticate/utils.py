@@ -23,6 +23,7 @@ def get_token_from_request(request):
     except KeyError:
         raise UnauthorizedAccess('Request mechanism is missing')
 
+
 def black_token_validation(func):
     """
         Function use to validate does mechanism exists in blacklisted tokens.
@@ -51,6 +52,7 @@ def black_token_validation(func):
         except Exception as e:
             raise BaseError(str(e))
     return wrapper
+
 
 def remove_access_token(func):
     """

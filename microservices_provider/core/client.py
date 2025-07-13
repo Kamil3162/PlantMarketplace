@@ -9,6 +9,7 @@ from httpx import Response
 from .services import SERVICE_URLS, ServiceName
 import json
 
+
 class BaseServiceClient:
     def __init__(self, service_name: str):
         self.service_name = service_name
@@ -43,9 +44,6 @@ class BaseServiceClient:
                         original_error="Internal server error"
                     )
                 elif response.status_code >= 400:
-                    print(response.status_code)
-                    print(response.headers)
-                    print("test wyjebane w to gówno pierdolone")
                     raise ServiceUnavailableException(
                         service_name=self.service_name,
                         original_error=response.json(),
@@ -100,4 +98,4 @@ class AuthClient(BaseServiceClient):
 
 class ProductClient(BaseServiceClient):
     def __init__(self):
-        super().__init__(ServiceName.PRODUCT_SERVICE.value)  # Pass the service name
+        super().__init__(ServiceName.PRODUCT_SERVICE.value)

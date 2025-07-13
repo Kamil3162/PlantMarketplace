@@ -83,3 +83,4 @@ wcwidth
 yarl
 minio
 boto3
+python-consul

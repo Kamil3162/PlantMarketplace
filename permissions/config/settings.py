@@ -23,6 +23,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '*',
 ]
+
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -121,3 +123,6 @@ if not DEBUG:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_BROWSER_XSS_FILTER = True
     X_FRAME_OPTIONS = 'DENY'
+
+CONSUL_NAME = 'consul_client'
+CONSUL_PORT = os.getenv('CONSUL_PORT', '8500')

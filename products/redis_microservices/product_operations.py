@@ -26,6 +26,12 @@ class RedisProductOperations:
     retry logic, and performance optimizations for managing product data.
     """
     _performance_log = PerformanceLogger()
+    __singleton = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls.__singleton is None:
+            cls.__singleton = super().__new__(cls, *args, **kwargs)
+        return cls.__singleton
 
     def __init__(self):
         self.config = RedisConfig()

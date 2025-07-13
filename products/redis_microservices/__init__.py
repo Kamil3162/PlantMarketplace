@@ -1,6 +1,7 @@
 
-def redis_product_client():
+
+def client():
     from .product_operations import RedisProductOperations
     return RedisProductOperations()
 
-__all__ = ['redis_product_client']
+__all__ = ['client']

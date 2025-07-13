@@ -108,6 +108,7 @@ class ProductEvent(models.Model):
     EVENT_BLOOM_CHANGED = "bloom_changed"
     EVENT_FLOWER_CHANGED = "flower_changed"
     EVENT_IMAGE_CHANGED = "image_changed"
+    EVENT_PRODUCT_CREATED = "product_created"
 
     PRODUCT_EVENTS = [
         (EVENT_SUNLIGHT_CHANGED, "Changed Sunlight"),
@@ -121,16 +122,37 @@ class ProductEvent(models.Model):
         (EVENT_BLOOM_CHANGED, "Changed Bloom Information"),
         (EVENT_FLOWER_CHANGED, "Changed Flower Details"),
         (EVENT_IMAGE_CHANGED, "Changed Image"),
+        (EVENT_PRODUCT_CREATED, "Created Product"),
     ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='events')
-    event_type = models.CharField(max_length=50, choices=PRODUCT_EVENTS)
-    old_value = models.JSONField(null=True, blank=True, help_text="Previous value(s) before change")
-    new_value = models.JSONField(null=True, blank=True, help_text="New value(s) after change")
+    product = models.ForeignKey(
+        'Product',
+        on_delete=models.CASCADE,
+        related_name='events'
+    )
+    event_type = models.CharField(
+        max_length=50,
+        choices=PRODUCT_EVENTS,
+        default=EVENT_PRODUCT_CREATED
+    )
+    old_value = models.JSONField(
+        null=True,
+        blank=True,
+        help_text="Previous value(s) before change"
+    )
+    new_value = models.JSONField(
+        null=True,
+        blank=True,
+        help_text="New value(s) after change"
+    )
     created_by = models.UUIDField(blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    reason = models.TextField(blank=True, help_text="Optional reason for the change")
+    reason = models.TextField(
+        blank=True,
+        help_text="Optional reason for the change",
+        default="Create brand new Product"
+    )
 
     class Meta:
         ordering = ['-created_at']  # Newest first is typically more useful

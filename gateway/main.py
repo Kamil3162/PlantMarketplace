@@ -17,8 +17,6 @@ from celery import Task
 from celery.app.task import Context
 
 
-
-
 c = consul.Consul(host='consul1', port=8500)  # nazwa serwisu z docker-compose
 app = FastAPI(
     title="FastAPI"
@@ -116,17 +114,14 @@ async def call_service(service_name: str):
     import requests
     import random
 
-    # Znajdź serwis
     services = c.health.service(service_name, passing=True)[1]
     if not services:
         return {"error": "Service not found"}
 
-    # Wybierz losową instancję
     service = random.choice(services)
     host = service['Service']['Address']
     port = service['Service']['Port']
 
-    # Zrób request (przykład)
     try:
         url = f"http://{host}:{port}/health"
         response = requests.get(url)

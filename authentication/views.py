@@ -24,11 +24,13 @@ from .utils import auth_decorator
 load_dotenv()
 redis_manager = RedisManager()
 
+
 @csrf_exempt
 def sign_in(request):
     print(request.session.get('user_data'))
     form = LoginForm()
     return render(request, 'sign_in.html', {'form': form})
+
 
 def login(request):
     if request.method == 'POST':
@@ -50,6 +52,7 @@ def login(request):
 
         return response
 
+
 @csrf_exempt
 def auth_receiver(request):
     """
@@ -70,6 +73,7 @@ def auth_receiver(request):
 
     return redirect('sign_in')
 
+
 @remove_access_token
 def sign_out(request):
     print('sign out request')
@@ -84,8 +88,6 @@ def sign_out(request):
     return response
 
 
-
-# @authenticated(api_response=True)
 @auth_decorator(redirect_url='sign_in', api_response=False)
 def url_test(request):
     return HttpResponse({
@@ -93,6 +95,7 @@ def url_test(request):
         'user_email': request.session.get('user_data'),
         'status': 'authenticated'
     })
+
 
 @black_token_validation
 def get_cookie_value(request):

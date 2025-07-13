@@ -8,7 +8,7 @@ from core.services import NotAuthUrl, ServiceConfig, SERVICE_URLS
 from core.exceptions import TokenNotFound, ServiceUnavailableException
 from microservices_provider import AuthClient
 from dependencies.auth import AuthService
-
+from fastapi import BackgroundTasks
 
 auth_client = AuthClient()
 prefix = "/authenticate/token"
@@ -33,8 +33,6 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
         forwarded_for = request.headers.get("x-forwarded-for")
         real_ip = request.headers.get("x-real-ip")
         forwarded = request.headers.get("x-forwarded")
-
-        print(forwarded_for, real_ip, forwarded)
 
         if free_url:
             return await call_next(request)
@@ -64,7 +62,6 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
             print(str(e))
             return self.__unauthorized_response("Invalid mechanism")
 
-
     def __extract_token(self, request: Request):
         token = request.headers.get("Authorization")
         clean_token = token.split(" ")[1]
@@ -74,7 +71,6 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
 
     def __is_free_url(self, path):
         return any(element in path for element in self.__free_token_urls)
-
 
     def __unauthorized_response(self, message: str):
         return JSONResponse(
