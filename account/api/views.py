@@ -17,7 +17,7 @@ from django.http import HttpRequest
 from data.models import CustomUser
 from forms import UserModify, RegisterForm  # Dodaj RegisterForm import
 from utils import get_user, get_user_by_email
-from exceptions import UserPermissionDenied
+from exceptions import UserPermissionDenied, UserNotFound, UserDataFormat
 from microservices_provider import EmailClient, SericeURLS
 from .responses import CustomResponse
 
@@ -408,4 +408,30 @@ def user_by_email(request):
             type="error"
         )
 
+@csrf_exempt
+def reset_link(request):
+
+    print(request)
+
+    if request.method == 'GET':
+        raise MethodException('Following endpoint doesnt handle get method')
+
+    user_email = request.POST.get('email')
+
+    if not user_email:
+        raise UserDataFormat('Following user doesnt exists')
+
+    # we have to make orm
+    user = CustomUser.objects.filter(email=user_email)
+
+    if not user:
+        raise UserNotFound('User with following email doesnt exists')
+
+    # if yes
+    # we have to generate temp token to reset our password
+    return JsonResponse(
+        data={
+            'status': 'esa'
+        }
+    )
 

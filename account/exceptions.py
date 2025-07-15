@@ -17,3 +17,8 @@ class MethodException(Exception):
     """
         Raise when we use improper request method during request
     """
+
+class UserDataFormat(Exception):
+    """
+        Raise when user send empty user_email
+    """

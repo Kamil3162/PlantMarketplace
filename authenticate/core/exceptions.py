@@ -23,3 +23,4 @@ class PermissionDenied(BaseError):
     """
         Custom exception for permission denied
     """
+

@@ -10,6 +10,7 @@ from core.exceptions import TokenExpiredError
 class JWTManager(object):
     ALGORITHM = 'HS256'
     DEFAULT_EXPIRY_SECONDS = 1800
+    RESET_EXPIRY_SECONDS = 900
     SECRET_KEY = "$+#hqc5(f0#y84^!$a!suex3(k@3dlzphefh42ls=(bk)jrctr"
 
     @classmethod
@@ -145,3 +146,28 @@ class JWTManager(object):
             raise jwt.ExpiredSignatureError("Refresh token has expired")
         except jwt.InvalidTokenError:
             raise jwt.InvalidTokenError("Invalid refresh token")
+
+    @classmethod
+    def generate_reset_token(cls, user_uuid):
+        try:
+            now = timezone.now()
+            expire_time = now + timedelta(seconds=cls.RESET_EXPIRY_SECONDS)
+
+            payload = {
+                "token_type": "access",
+                "exp": int(expire_time.timestamp()),
+                "iat": int(now.timestamp()),
+                "jti": str(uuid.uuid4().hex),
+                "user_id": user_uuid
+            }
+
+            temp_token = jwt.encode(
+                payload,
+                cls.SECRET_KEY,
+                algorithm=cls.ALGORITHM,
+            )
+
+            return temp_token, payload
+        except jwt.InvalidSignatureError:
+            raise jwt.InvalidSignatureError("Following encyrption key is not valid")
+

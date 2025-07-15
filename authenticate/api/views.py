@@ -162,3 +162,6 @@ def ouath2uri(request):
 def login_google(request):
     return render(request, 'sign_in.html')
 
+
+
+
