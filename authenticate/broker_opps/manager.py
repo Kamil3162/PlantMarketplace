@@ -67,6 +67,7 @@ class ProducerQueue:
             user_payload['jti'] = informations.get('jti')
             user_payload['exp'] = informations.get('exp')
             user_payload['data_created'] = str(timezone.now())
+
             return user_payload
         except TypeError as exc:
             print(exc)
@@ -82,6 +83,7 @@ class ProducerQueue:
             'args': celery_args,
             'kwargs': celery_body
         }
+
         return json.dumps(celery_task)
 
     def publish_data(self, body: dict):

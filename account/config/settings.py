@@ -5,10 +5,6 @@ from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-print("execute settings email service")
-print(BASE_DIR)
-print("execute settings email service")
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-production')
 
@@ -21,10 +17,10 @@ CORS_ALLOW_ALL_ORIGINS = True  # TYLKO DO TESTÓW!
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'email-service',    # ← DODAJ container name!
-    '0.0.0.0',         # ← DODAJ dla Docker
+    'email-service',
+    '0.0.0.0',
     '*',
-    'gateway-gateway-app-1'# ← Tymczasowo dla debug
+    'gateway-gateway-app-1',
 ]
 
 # Application definition
@@ -35,10 +31,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Third-party apps
-    # 'django_celery_beat',  # For scheduled tasks
-    # 'django_celery_results',  # For storing task results in database
-    # Local apps
     'data'
 ]
 

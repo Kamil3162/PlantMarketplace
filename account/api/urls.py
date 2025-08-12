@@ -7,7 +7,8 @@ from .views import (
     user_delete,
     user_by_email,
     register,
-    reset_link
+    reset_link,
+    reset_url
 )
 
 urlpatterns = [
@@ -19,4 +20,5 @@ urlpatterns = [
     path('<int:user_id>/delete/', user_delete, name='user_delete'),
     path('register/', register, name='register'),
     path('reset/', reset_link, name='reset'),
+    path('reset/password/', reset_url, name='reset_url'),
 ]

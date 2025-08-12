@@ -151,7 +151,7 @@ class JWTManager(object):
     def generate_reset_token(cls, user_uuid):
         try:
             now = timezone.now()
-            expire_time = now + timedelta(seconds=cls.RESET_EXPIRY_SECONDS)
+            expire_time = now + timedelta(days=getattr(settings, "TOKEN_LIFETIME_DAYS"))
 
             payload = {
                 "token_type": "access",

@@ -24,3 +24,7 @@ class PermissionDenied(BaseError):
         Custom exception for permission denied
     """
 
+class TokenDoesNotExistError(BaseError):
+    """
+        Custom exception for non existing token
+    """

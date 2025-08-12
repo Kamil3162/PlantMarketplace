@@ -51,3 +51,34 @@ class UserModify(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+
+class UserResetPassword(forms.ModelForm):
+    # Opcjonalne pole hasła - jeśli puste, hasło nie będzie zmieniane
+    password = forms.CharField(
+        widget=forms.PasswordInput(),
+        required=False,
+        help_text="Zostaw puste, jeśli nie chcesz zmieniać hasła"
+    )
+
+    class Meta:
+        model = User
+        fields = ('password', )
+
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+        if password and len(password) < 8:
+            raise forms.ValidationError("Hasło musi mieć co najmniej 8 znaków")
+        return password
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+
+        # Zmień hasło tylko jeśli zostało podane
+        password = self.cleaned_data.get('password')
+        if password:
+            user.set_password(password)
+
+        if commit:
+            user.save()
+        return user

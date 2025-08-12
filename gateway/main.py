@@ -1,3 +1,4 @@
+import httpx
 import pydantic
 from fastapi import Request, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,7 +20,7 @@ from celery.app.task import Context
 
 c = consul.Consul(host='consul1', port=8500)  # nazwa serwisu z docker-compose
 app = FastAPI(
-    title="FastAPI"
+    title="FastAPI",
 )
 
 @app.on_event("startup")
@@ -47,11 +48,6 @@ app.add_middleware(
     CredentialsMiddleware
 )
 
-# app.add_middleware(
-#     TrustedHostMiddleware,
-#     allowed_hosts=["xyz.com", "localhost", "127.0.0.1", ]
-#     # allowed_hosts=["xyz.com", "localhost", "127.0.0.1", ]
-# )
 
 app.add_middleware(
     CORSMiddleware,
@@ -65,7 +61,6 @@ app.include_router(email_route.router, tags=["Email"])
 app.include_router(sample_route.router, tags=["Sample"])
 app.include_router(universal_route.router, tags=["Universal"])
 app.include_router(users_route.router, tags=["Users"])
-app.include_router(example_routers.router, tags=["Example"])
 app.include_router(auth_route.router, tags=["Auth"])
 
 @app.middleware("http")
@@ -93,12 +88,11 @@ async def kong_integration_middleware(request: Request, call_next):
 
 @app.get("/discover/{service_name}")
 async def discover_service(service_name: str):
-    # Znajdź serwis w Consul
     services = c.health.service(service_name, passing=True)[1]
+
     if not services:
         return {"error": "Service not found"}
 
-    # Zwróć wszystkie healthy instancje
     instances = []
     for service in services:
         instances.append({
@@ -106,6 +100,7 @@ async def discover_service(service_name: str):
             "port": service['Service']['Port'],
             "id": service['Service']['ID']
         })
+
     return {"instances": instances}
 
 
@@ -128,3 +123,8 @@ async def call_service(service_name: str):
         return {"called": f"{host}:{port}", "response": response.json()}
     except Exception as e:
         return {"error": str(e)}
+
+
+
+
+

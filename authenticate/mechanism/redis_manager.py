@@ -128,7 +128,7 @@ class RedisManager(object):
         """
         key = f'{self.user_prefix}{token}'
         user_data = self.redInst.hgetall(key)
-        print(user_data)
+
         return user_data
 
     def remove_access_token(self, token):
@@ -141,7 +141,6 @@ class RedisManager(object):
         """
         try:
             key = f'{self.user_prefix}{token}'
-            print(key)
             self.redInst.delete(key)
         except RedisError as e:
             raise RedisError(f"Failed to store user data: {str(e)}")
@@ -158,3 +157,4 @@ class RedisManager(object):
             )
         except RedisError as e:
             raise RedisError(f'Failed to store user data: {str(e)}')
+

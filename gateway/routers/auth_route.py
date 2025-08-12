@@ -32,9 +32,10 @@ async def auth_proxy(request: Request, path:str):
 
 @router.api_route("/authenticate/render-csrf/", methods=["GET"])
 async def csrf_token_generate(request: Request):
-    # path = request.url.path
 
     path = "/authenticate/render-csrf/"
     response = await auth_client.make_request(path)
 
     return response
+
+

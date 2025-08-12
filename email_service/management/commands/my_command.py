@@ -13,10 +13,8 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         """Dodawanie argumentów i opcji do komendy"""
 
-        # Argument pozycyjny (wymagany)
         parser.add_argument('user_id', type=int, help='ID użytkownika')
 
-        # Argumenty opcjonalne
         parser.add_argument(
             '--email',
             type=str,
@@ -24,14 +22,12 @@ class Command(BaseCommand):
             default=None
         )
 
-        # Flagi boolean
         parser.add_argument(
             '--force',
             action='store_true',
             help='Wymuś wykonanie bez potwierdzenia',
         )
 
-        # Argumenty z wyborem
         parser.add_argument(
             '--format',
             choices=['json', 'csv', 'xml'],
@@ -39,7 +35,6 @@ class Command(BaseCommand):
             help='Format eksportu danych'
         )
 
-        # Argumenty z wieloma wartościami
         parser.add_argument(
             '--tags',
             nargs='+',  # + oznacza jeden lub więcej
@@ -76,7 +71,6 @@ class Command(BaseCommand):
     def process_user(self, user_id, email, force, format_type, tags):
         """Przetwarzanie użytkownika"""
 
-        # Wyświetl informacje o przetwarzaniu
         self.stdout.write(f'Przetwarzam użytkownika ID: {user_id}')
 
         if email:
@@ -90,8 +84,7 @@ class Command(BaseCommand):
         if tags:
             self.stdout.write(f'Tagi: {", ".join(tags)}')
 
-        # Symulacja przetwarzania
         import time
-        time.sleep(1)  # Symulacja pracy
+        time.sleep(1)
 
         return f'processed_user_{user_id}_{format_type}'

@@ -158,3 +158,14 @@ def admin_access_required(function):
     return wrapper
 
 
+def create_response_token(type:str, valid:bool):
+    response = {
+        "type": type,
+        "valid": valid
+    }
+    return response
+
+def create_success_token_response(type:str, valid:bool, user_id:int):
+    response = create_response_token(type, valid)
+    response["user_id"] = user_id
+    return response

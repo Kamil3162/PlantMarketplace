@@ -5,10 +5,6 @@ from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-print("execute settings email service")
-print(BASE_DIR)
-print("execute settings email service")
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-production')
 
@@ -21,10 +17,10 @@ CORS_ALLOW_ALL_ORIGINS = True  # TYLKO DO TESTÓW!
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'email-service',    # ← DODAJ container name!
-    '0.0.0.0',         # ← DODAJ dla Docker
+    'email-service',
+    '0.0.0.0',
     '*',
-    'gateway-gateway-app-1'# ← Tymczasowo dla debug
+    'gateway-gateway-app-1'
 ]
 # Application definition
 INSTALLED_APPS = [
@@ -34,10 +30,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Third-party apps
-    # 'django_celery_beat',  # For scheduled tasks
-    # 'django_celery_results',  # For storing task results in database
-    # Local apps
 ]
 
 MIDDLEWARE = [
@@ -70,33 +62,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'email_db'),
-        'USER': os.environ.get('POSTGRES_USER', 'myuser'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'mypassword'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'email_db'),
-        'PORT': os.environ.get('POSTGRES_PORT', '5432'),
-        'OPTIONS': {
-            'connect_timeout': 10,
-        },
-    }
-}
-
-# Cache configuration (useful for rate limiting and other features)
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django_redis.cache.RedisCache',
-#         'LOCATION': os.environ.get('REDIS_URL', 'redis://redis:6379/1'),
-#         'OPTIONS': {
-#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-#         }
-#     }
-# }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -120,14 +85,12 @@ TIME_ZONE = 'Europe/Warsaw'  # Match your ConfigCelery timezone
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email configuration
 EMAIL_BACKEND = 'django.authenticate.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
@@ -136,15 +99,12 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'youremail@gmail.com')
 EMAIL_HOST_PASSWORD = os.environ.get('APP_PASSWORD', '')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'youremail@gmail.com')
 
-# Celery Configuration
-# RabbitMQ as broker
 RABBITMQ_USER = os.environ.get('RABBITMQ_DEFAULT_USER', 'myuser')
 RABBITMQ_PASSWORD = os.environ.get('RABBITMQ_DEFAULT_PASS', 'mypassword')
 RABBITMQ_HOST = os.environ.get('RABBITMQ_HOST', 'rabbitmq')
 RABBITMQ_PORT = os.environ.get('RABBITMQ_PORT', '5672')
 CELERY_BROKER_URL = f'amqp://{RABBITMQ_USER}:{RABBITMQ_PASSWORD}@{RABBITMQ_HOST}:{RABBITMQ_PORT}//'
 
-# Redis as result backend (stores task results)
 CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND', 'django-db')
 
 # Serialization format
@@ -156,7 +116,6 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
 CELERY_ENABLE_UTC = True
 
-# Task-specific settings
 CELERY_TASK_ACKS_LATE = True  # Tasks are acknowledged after execution
 CELERY_TASK_REJECT_ON_WORKER_LOST = True  # Tasks are re-queued if worker dies
 CELERY_TASK_DEFAULT_RETRY_DELAY = 60  # Retry after 1 minute by default
@@ -192,7 +151,6 @@ CELERY_BEAT_SCHEDULE = {
     # Add other scheduled email tasks here
 }
 
-# Logging configuration
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

@@ -46,3 +46,12 @@ class EmailConfig:
     email_password: str = os.getenv('APP_PASSWORD')
     email_subject: str = 'PlantMarketplace Email Test'
     email_body: str = """I've test my email appi"""
+
+
+@dataclass
+class GoogleConfig:
+    default_sender:str = 'kamilholb@gmail.com'
+    smtp_server:str = 'smtp.gmail.com'
+    smtp_port:int = 465
+    smtp_username:str = 'kamilholb@gmail.com'
+    smtp_password:str = 'iwyj juvk dees ctcx'

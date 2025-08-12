@@ -101,13 +101,13 @@ class EmailProducer(object):
                     'sender' :'kamilholb@gmail.com',
                     'receiver' : email_data.get('to_email', 'kamilholb@gmail.com'),
                     'subject' : email_data.get('subject', 'subject'),
+                    'body_text': email_data.get('body_text', 'test text')
                 }
             }
 
-            # Convert the email data to JSON
             message_body = json.dumps(message)
+            print(message_body)
 
-            # Set message properties
             properties = pika.BasicProperties(
                 delivery_mode=2,  # Make message persistent
                 content_type='application/json',
@@ -121,7 +121,7 @@ class EmailProducer(object):
                 body=message_body,
                 properties=properties
             )
-
+            print(message_body)
             logger.info(f"Email to {email_data.get('receiver')} added to queue")
             return True
 

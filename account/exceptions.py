@@ -22,3 +22,9 @@ class UserDataFormat(Exception):
     """
         Raise when user send empty user_email
     """
+
+
+class PageNumberException(Exception):
+    """
+        Raise when someone send a page with negative page number
+    """

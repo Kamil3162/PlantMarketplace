@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="reset-container">
+        <form action="{% url 'reset_url' %}" method="post">
+            {{ reset_form }}
+            <input type="hidden" name="token" value="{{ token }}">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

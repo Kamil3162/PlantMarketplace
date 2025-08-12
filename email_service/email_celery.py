@@ -1,9 +1,13 @@
-from celery import Celery
-from celery_conf import ConfigCelery
-from email.message import EmailMessage
+import json
 import ssl
 import smtplib
 import logging
+
+from celery import Celery
+from celery_conf import ConfigCelery, GoogleConfig
+
+from email.message import EmailMessage
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -32,29 +36,24 @@ app.conf.update(
 def send_email_function(email_data):
     """The actual email sending function"""
     try:
-        # Email settings
-        default_sender = 'kamilholb@gmail.com'
-        smtp_server = 'smtp.gmail.com'
-        smtp_port = 465
-        smtp_username = 'kamilholb@gmail.com'
-        smtp_password = '### ### ###'
+        logger.info(email_data)
 
-        # Create email message
         msg = EmailMessage()
-        msg['From'] = email_data.get('sender', default_sender)
-        # msg['To'] = mail_data.get('receiver', default_sender)
-        msg['To'] = 'kamilholb@gmail.com'
+        msg['From'] = email_data.get('sender', GoogleConfig.default_sender)
+        msg['To'] = email_data.get('sender', GoogleConfig.default_sender)
         msg['Subject'] = email_data.get('subject', 'test message')
 
         if 'body_html' in email_data and email_data['body_html']:
             msg.add_alternative(email_data['body_html'], subtype='html')
 
-        body_text = email_data.get('body_text', email_data.get('body', ''))
+        body_text = json.dumps(email_data.get('body_text', email_data.get('body', '')))
+
         msg.set_content(body_text)
 
         context = ssl.create_default_context()
-        with smtplib.SMTP_SSL(smtp_server, smtp_port, context=context) as server:
-            server.login(smtp_username, smtp_password)
+        with smtplib.SMTP_SSL(GoogleConfig.smtp_server, GoogleConfig.smtp_port, context=context) as server:
+            logger.info(GoogleConfig.smtp_username, GoogleConfig.smtp_password)
+            server.login(GoogleConfig.smtp_username, GoogleConfig.smtp_password)
             server.send_message(msg)
 
         logger.info(f"Email successfully sent to {email_data.get('receiver')}")
@@ -67,6 +66,7 @@ def send_email_function(email_data):
 
 @app.task(bind=True, name='send_email')
 def send_email(task_self, **email_data):
+    print(email_data)
     """Task that processes and sends an email"""
     try:
         logger.info(f"Processing email for: {email_data.get('receiver', 'unknown')}")

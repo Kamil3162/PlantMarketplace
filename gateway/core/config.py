@@ -11,10 +11,9 @@ SECRET_KEY = "$+#hqc5(f0#y84^!$a!suex3(k@3dlzphefh42ls=(bk)jrctr"
 class CeleryConfig:
     name: str = 'gateway-auth-handler'
 
-    # RabbitMQ configuration
     broker_user: str = os.getenv('RABBITMQ_DEFAULT_USER', 'gateway_user')
     broker_password: str = os.getenv('RABBITMQ_DEFAULT_PASS', 'gateway_pass')
-    broker_host: str = os.getenv('RABBITMQ_HOST', 'gateway-rabbitmq')  # Use service name in docker
+    broker_host: str = os.getenv('RABBITMQ_HOST', 'gateway-rabbitmq')
     broker_port: int = os.getenv('RABBITMQ_PORT', '5672')
     broker_url: str = f'amqp://{broker_user}:{broker_password}@{broker_host}:{broker_port}//'
 

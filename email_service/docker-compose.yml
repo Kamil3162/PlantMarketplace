@@ -39,14 +39,13 @@ services:
       - POSTGRES_USER=myuser
       - POSTGRES_PASSWORD=mypassword
       - POSTGRES_HOST=db
-      - POSTGRES_PORT=5432
+      - POSTGRES_PORT=5445
       - RABBITMQ_DEFAULT_USER=gateway_user
       - RABBITMQ_DEFAULT_PASS=gateway_pass
       - RABBITMQ_HOST=gateway-rabbitmq
       - RABBITMQ_PORT=5672
-      - REDIS_URL=redis://redis:6379/1
+      - REDIS_URL=redis://redis:6371/1
     depends_on:
-      - db
       - redis
 #      - rabbitmq
     networks:
@@ -79,29 +78,29 @@ services:
 #      - app-network
 #    restart: unless-stopped
 #
-  db:
-    image: postgres:15
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_DB=email_db
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=mypassword
-    ports:
-      - "5432:5432"
-    networks:
-      - app-network
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U myuser -d email_db"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 20s  # Daj RabbitMQ czas na inicjalizację
+#  db:
+#    image: postgres:15
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data/
+#    environment:
+#      - POSTGRES_DB=email_db
+#      - POSTGRES_USER=myuser
+#      - POSTGRES_PASSWORD=mypassword
+#    ports:
+#      - "5432:5432"
+#    networks:
+#      - app-network
+#    healthcheck:
+#      test: ["CMD-SHELL", "pg_isready -U myuser -d email_db"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#      start_period: 20s  # Daj RabbitMQ czas na inicjalizację
 
   redis:
     image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - "6371:6371"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes
@@ -128,15 +127,14 @@ services:
       - POSTGRES_USER=myuser
       - POSTGRES_PASSWORD=mypassword
       - POSTGRES_HOST=db
-      - POSTGRES_PORT=5432
+      - POSTGRES_PORT=5445
       - RABBITMQ_DEFAULT_USER=gateway_user
       - RABBITMQ_DEFAULT_PASS=gateway_pass
       - RABBITMQ_HOST=gateway-rabbitmq
       - RABBITMQ_PORT=5672
-      - REDIS_URL=redis://redis:6379/1
+      - REDIS_URL=redis://redis:6371/1
     depends_on:
 #        - rabbitmq
-        - db
         - redis
         - web
     networks:

@@ -40,20 +40,14 @@ logger = logging.getLogger(__name__)
 @app.task(bind=True, name='set_auth_user_data')
 def set_auth_user_data(task_self, **task_data):
     logger.info("🚀 Task 'set_auth_user_data' started")
-
     logger.info("✅ JSON data parsed successfully")
 
     user_id = task_data['user_id']
 
     logger.info(f"👤 Processing user ID: {user_id}")
-    print(task_data['exp'])
 
-    # redis current time
-    # current time - start
     time_start = time.perf_counter_ns()
     redis_time = redis_manager.get_client().time()
-    print(redis_time)
-    print(task_data['exp'])
 
     # final exec time
     final_time = time.perf_counter_ns()
@@ -64,14 +58,3 @@ def set_auth_user_data(task_self, **task_data):
     redis_manager.insert_data(task_data)
     logger.info("✅ Task 'set_auth_user_data' completed successfully")
 
-"""
-     The full contents of the message body was: body: '{"task": "set_auth_user_data", "id": "65c91bd6-b22c-4faa-a53d-536edb0d2943", 
-     "args": [], 
-     "kwargs": {
-     "user_id": 5,
-       "jti": "c77d75f8253f4492ac787667cd0b7733", 
-       "exp": 1751152908,
-         "data_created": "2025-06-28 22:51:48.440509+00:00"
-         }}'
-           (228b)  
-"""

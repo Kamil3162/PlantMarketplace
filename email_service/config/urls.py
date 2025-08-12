@@ -18,8 +18,8 @@ Including another URLconf
 from django.urls import path, include
 # from views import create_brand_new_email_query
 
-from api import urls
+from api.urls import urlpatterns as email_urls
 
 urlpatterns = [
-    path('email/', include(urls))
+    path('email/', include(email_urls))
 ]

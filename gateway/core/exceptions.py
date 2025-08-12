@@ -1,5 +1,6 @@
-from fastapi import HTTPException
 from typing import Optional, Dict, Any
+
+from fastapi import HTTPException
 
 class BaseServiceException(HTTPException):
     """
@@ -15,6 +16,7 @@ class BaseServiceException(HTTPException):
         super().__init__(status_code=status_code, detail=detail, headers=headers)
         self.service_name = service_name
 
+
 class ServiceNotFoundException(BaseServiceException):
     """
     Gdy nie znajdziemy zasobu w serwisie Django
@@ -25,6 +27,7 @@ class ServiceNotFoundException(BaseServiceException):
             detail=f"{resource} not found in {service_name}",
             service_name=service_name
         )
+
 
 class ServiceUnavailableException(BaseServiceException):
     """
@@ -37,6 +40,7 @@ class ServiceUnavailableException(BaseServiceException):
             service_name=service_name
         )
 
+
 class ServiceTimeoutException(BaseServiceException):
     """
     Gdy serwis Django za długo odpowiada
@@ -47,6 +51,7 @@ class ServiceTimeoutException(BaseServiceException):
             detail=f"Service {service_name} timeout after {timeout}s",
             service_name=service_name
         )
+
 
 class TokenNotFound(BaseServiceException):
     """

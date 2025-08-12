@@ -50,6 +50,7 @@ class ServiceClient:
                         service_name="email-service",
                         original_error=f"HTTP {response.status_code}: {response.text}"
                     )
+
                 print(response)
                 print(response.json())
                 # Sukces - zwracamy dane

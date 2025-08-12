@@ -27,9 +27,6 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
         path = request.url.path
         free_url = self.__is_free_url(path)
 
-        # we get an user ip using request.client or request.client.host
-        # real ip equal Header alias "X-Real-IP"
-        # X-Forwarded-For
         forwarded_for = request.headers.get("x-forwarded-for")
         real_ip = request.headers.get("x-real-ip")
         forwarded = request.headers.get("x-forwarded")
@@ -40,6 +37,7 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
         try:
             service_name = self.__extract_prefix(path)
             service_name_v1 = self.__check_service_name(service_name)
+
         except ServiceUnavailableException as e:
             return JSONResponse(
                 status_code=404,
@@ -81,7 +79,6 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
     def __extract_prefix(self, path: str):
         parts = path.split("/")
         service_name = parts[1]
-        print(f"service_name: '{service_name}'")
         return service_name.lower()
 
     def __check_service_name(self, service_name: str):
