@@ -1,6 +1,17 @@
 import httpx
 import json
 
+from microservices_provider.core.exceptions import (
+    ServiceUnauthorizedException,
+    ServiceForbiddenException,
+    ServiceNotFoundException,
+    ServiceTooManyRequestsException,
+    ServiceInternalErrorException,
+    ServiceNotImplementedException,
+    ServiceGatewayException,
+    ServiceGatewayTimeOutException,
+    ServiceLoopException
+)
 
 class ErrorFactory:
     """Factory for mapping errors to your custom exceptions"""
@@ -44,8 +55,8 @@ class ErrorFactory:
             401:ServiceUnauthorizedException,
             403:ServiceForbiddenException,
             404:ServiceNotFoundException,
-            500:ServiceTooManyRequestsException,
-            501:ServiceInternalErrorException,
+            429:ServiceTooManyRequestsException,
+            500:ServiceInternalErrorException,
             502:ServiceNotImplementedException,
             503:ServiceGatewayException,
             504:ServiceGatewayTimeOutException,
@@ -59,7 +70,3 @@ class ErrorFactory:
 
         return exception_class(service_name=service_name, detail=response_text)
 
-    @staticmethod
-    def from_generic_error(error: Exception, service_name: str):
-        """Handle any other unexpected errors"""
-        return ServiceInternalErrorException(service_name, f"Unexpected error: {str(error)}")

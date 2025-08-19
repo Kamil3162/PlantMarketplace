@@ -99,6 +99,7 @@ class S3Client:
         """
         try:
             self.logger.info("Inicjalizacja klienta S3...")
+            self.logger.info(self.bucket_name, self.access_key)
 
             client = boto3.client(
                 's3',

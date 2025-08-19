@@ -1,7 +1,6 @@
-from django.db import models
 import uuid
-
-
+from django.db import models
+from django.utils.translation import gettext as _
 class InventoryManager(models.Manager):
     """
         Custom manager for Inventory model providing inventory-specific operations.
@@ -78,7 +77,6 @@ class Inventory(models.Model):
     product = models.UUIDField(
         default=uuid.uuid4,
         editable=False,
-        related_name='inventories',
         verbose_name=_("Product"),
         null=False,
     )
@@ -272,14 +270,9 @@ class InventoryEvent(models.Model):
         verbose_name=_("Event ID")
     )
     inventory = models.UUIDField(
-        Inventory,
-        on_delete=models.CASCADE,
-        related_name='events',
         verbose_name=_("Inventory")
     )
-    user = models.ForeignKey(
-        CustomUser,  # Using string to avoid circular imports
-        on_delete=models.CASCADE,
+    user = models.UUIDField(
         verbose_name=_("User")
     )
     event = models.CharField(

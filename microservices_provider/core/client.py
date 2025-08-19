@@ -2,7 +2,7 @@ from httpx import Limits, Timeout, AsyncClient
 import json
 import asyncio
 from contextlib import asynccontextmanager
-
+import httpx
 from typing import Optional, Dict, Any
 from .exceptions import (
     ServiceNotFoundException,
@@ -62,24 +62,19 @@ class BaseServiceClient:
 
             except Exception as exc:
                 last_exception = exc
+
                 if attempt == self.retries:
-                    break
+                    return Response(
+                        status_code=500,
+                        content=str(exc)
+                    )
 
                 await asyncio.sleep(0.5 ** attempt)
 
-        raise ErrorFactory.from_generic_error(last_exception, self.service_name)
-
 
 class EmailClient(BaseServiceClient):
-    _instance: EmailClient = None
-
     def __init__(self):
         super().__init__(ServiceName.EMAIL_SERVICE.value)
-
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
 
 class UserClient(BaseServiceClient):
     def __init__(self):

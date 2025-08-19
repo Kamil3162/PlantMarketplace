@@ -2,15 +2,15 @@
 # docker-compose.yml
 version: '3.8'
 services:
-  web:
-    build: .
+  inventory_service:
+    build:
+      context: ..
+      dockerfile: inventory/Dockerfile
     command: >
       bash -c " 
       python manage.py makemigrations &&
       python manage.py migrate &&
-      python manage.py runserver 0.0.0.0:8000"
-    volumes:
-      - .:/app
+      python manage.py runserver 0.0.0.0:8100"
     ports:
       - "8100:8100"
     environment:
@@ -21,8 +21,10 @@ services:
       - POSTGRES_PORT=5432
     depends_on:
       - db
+      - redis
     networks:
       - app-network
+      - microservices-network
 
   db:
     image: postgres:15
@@ -33,7 +35,7 @@ services:
       - POSTGRES_USER=myuser
       - POSTGRES_PASSWORD=mypassword
     ports:
-      - "5445:5445"
+      - "5445:5432"
     networks:
       - app-network
     healthcheck:
@@ -46,7 +48,7 @@ services:
   redis:
     image: redis:7-alpine
     ports:
-      - "6385:6385"
+      - "6390:6379"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes  # Enable persistence

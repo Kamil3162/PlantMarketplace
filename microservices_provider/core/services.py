@@ -14,7 +14,7 @@ class ServiceName(enum.Enum):
 
 class SericeURLS(enum.Enum):
     USER_SERVICE = "http://user-service:8001/users"
-    PRODUCT_SERVICE = "http://product-service:8000/"
+    PRODUCT_SERVICE = "http://products-product-service-1:8002/product/"
     AUTH_SERVICE = "http://auth-service1:8100/"
     EMAIL_SERVICE = "http://email-service:8000/"
 

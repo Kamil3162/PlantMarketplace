@@ -10,12 +10,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Najpierw skopiuj requirements i zainstaluj
 COPY products/requirements.txt .
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-# Skopiuj microservices_provider z root
 COPY microservices_provider /app/microservices_provider
 RUN pip install -e /app/microservices_provider
 
