@@ -1,8 +1,6 @@
-import enum
 import uuid
 
 from django.core.exceptions import ValidationError
-from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -192,17 +190,11 @@ class InventoryManager(models.Manager):
         Returns:
             The newly created Inventory instance
         """
+
         inventory = self.create(
             product=product,
             quantity=quantity,
             low_stock_threshold=low_stock_threshold
-        )
-
-        # Create the associated inventory event
-        InventoryEvent.objects.create(
-            inventory=inventory,
-            user=product.user,  # Assuming product has a user association
-            event=InventoryEvent.EVENT_CREATED
         )
 
         return inventory

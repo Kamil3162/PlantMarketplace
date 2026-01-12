@@ -1,6 +1,9 @@
 import uuid
 from django.db import models
+from django.http import HttpResponse
 from django.utils.translation import gettext as _
+from django.core.validators import ValidationError
+
 class InventoryManager(models.Manager):
     """
         Custom manager for Inventory model providing inventory-specific operations.
@@ -143,6 +146,47 @@ class Inventory(models.Model):
         self.clean()
         super().save(*args, **kwargs)
 
+class ReservedInventoryManager(models.Manager):
+
+    def create(
+        self,
+        user_uuid: uuid.uuid4,
+        inventory: Inventory,
+        quantity: int,
+        reference: str = None,
+        **kwargs
+    ):
+        reservations = self.filter_by_user(user=user_uuid)
+
+        if reservations:
+            raise ValidationError(
+                "Reservations already exists"
+            )
+
+        inventory_free = inventory.get_available_quantity()
+        inventory_threshold = not inventory.is_low_stock()
+
+        if quantity in range(1, inventory_threshold) and inventory_threshold:
+            reserve_inventory = self.model(
+                inventory=inventory,
+                quantity=quantity,
+                user=user_uuid,
+                reference=reference,
+            )
+
+            reserve_inventory.save()
+
+            return reserve_inventory
+
+    def update(self):
+        pass
+
+    def delete(self):pass
+
+    def filter_by_user(self, user: uuid.uuid4):
+        reservation = self.model.objects.filter(user__id=user)
+        return reservation
+
 
 class ReservedInventory(models.Model):
     """
@@ -165,6 +209,13 @@ class ReservedInventory(models.Model):
         default=0,
         verbose_name=_("Reserved Quantity")
     )
+    user = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+        verbose_name=_("User Id")
+    )
+
     reference = models.CharField(
         max_length=255,
         blank=True,
@@ -269,7 +320,9 @@ class InventoryEvent(models.Model):
         editable=False,
         verbose_name=_("Event ID")
     )
-    inventory = models.UUIDField(
+    inventory = models.ForeignKey(
+        on_delete=models.CASCADE,
+        related_name='events',
         verbose_name=_("Inventory")
     )
     user = models.UUIDField(
@@ -308,3 +361,182 @@ class InventoryEvent(models.Model):
     def __str__(self):
         """String representation of the event"""
         return f"{self.get_event_display()} - {self.inventory.product} ({self.created_at.strftime('%Y-%m-%d %H:%M')})"
+
+# # learning
+# from django.db import models
+#
+# class Question(models.Model):
+#     question = models.CharField(max_length=250, verbose_name=_("Question"))
+#     product = models.ForeignKey(
+#         Inventory,
+#         on_delete=models.CASCADE,
+#     )
+#
+#     published_at = models.DateTimeField(
+#
+#     )
+#     objects = models.Manager()
+#     objects.bulk_update()
+#     def __str__(self):
+#         pass
+#
+#     class Meta:
+#         verbose_name = _("Question")
+#         verbose_name_plural = _("Questions")
+#
+# question = Question("data")
+# question.save()
+#
+# print(question.objects)
+#
+#
+# from django.utils import timezone
+# current_year = timezone.now()
+#
+# from django.contrib import admin
+#
+# admin.register(Question)
+#
+# from django.urls import include, path
+#
+# Question.object.filter
+#
+# urlpatterns = [
+#     path('<int:question_id>/', detail, name="detail"),
+# ]
+# def detail(request, question_id):
+#     return HttpResponse(f"<h1>{question_id}</h1>")
+#
+# # tworzac template w django dodajemy directory template
+# # wewnatrz nazwe apki jezeli to jest globalna i w srokdu nazwa tempalte
+#
+# from django.template import loader
+# from django.shortcuts import render
+#
+# def render_elements(request, question_id):
+#     template = loader.get_template('pools/index.html')
+#     context = {
+#         'latest_question_list': [1, 2, 3]
+#     }
+#     return HttpResponse(template.render(context, request))
+#
+#
+#
+# # zamiana
+#     return render(request=request, template_name='esa', context={})
+#
+#
+# """
+# {% if latest_question_list %}
+#     <ul>
+#     {% for question in latest_question_list %}
+#         <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+#     {% endfor %}
+#     </ul>
+# {% else %}
+#     <p>No polls are available.</p>
+# {% endif %}
+# """
+#
+# from django.shortcuts import render, get_object_or_404
+# from django.http import Http404
+#
+# from django.core.exceptions import PermissionDenied
+#
+# def response_error_handler(request, excpetion=None):
+#     return HttpResponse("error", status=403)
+#
+# from django.views.decorators.http import require_POST, require_safe
+#
+# require_safe - tylko bierze get i head method jako cos co wyciagamy dane
+#
+# @require_POST
+# def my_post(request):
+#     pass
+#
+# # <a href="/pools"/{{question.id}}/> {{content}}
+# # <a href={% url 'name' argument}> name
+#
+# # namepsace in urls patterms
+# from django.urls import path, include
+# app_name = "data"
+# urlpatters = [
+#     path, name='esa'
+# ]
+#
+# # url data:esa
+# # from action="{% 'data:esa' argument}" method="post">
+# # {% csrf_token %} in form
+#
+# while True:
+#     try:
+#         value = int(input(" Enter a valid number"))
+#     except ValueError:
+#         print("esa")
+#     else:
+#         "esa"
+#     finally:
+#         "esa"
+#
+#
+# def f():
+#     exxc = [OSError("operating system error"), SystemError("operating system error")]
+#     raise ExceptionGroup("group exception", exxc)
+#
+#
+# def f():
+#     try:
+#         raise TypeError("type error")
+#     except Exception as e:
+#         e.add_note("Rnadom note")
+#         e.add_note("Rnadom note")
+#         raise
+#
+# excs = []
+# for i in range(3):
+#     try:
+#         f()
+#     except Exception as e:
+#         e.add_note(f'Happened in Iteration {i+1}')
+#         excs.append(e)
+#
+# raise ExceptionGroup('We have some problems', excs)
+#
+# i = 5
+# def f(args=i):
+#     print(args)
+#
+# i = 6
+# f() # it will print a 5
+# list(range(0, 32, 5))
+# list(range(-10, -100, -30))
+# # for loop with else will not execute else block when we make a break or return
+# match value:
+#     case (0,0):
+#         print
+#
+#     case _:
+#         raise ValueError("esa")
+#
+# class Point:
+#     __match_args = ("x", "y")
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     # musimy opdawac tak jak jest podane w match args x=1 y=1 jezeli nie to mzinnie nigy nie beda przypiosane
+#     from enum import Enum
+#     class Color(Enum):
+#         N1 = "f1"
+#         N2 = "esa"
+#
+#
+#
+# class LowerCaseTuple(tuple):
+#     def __new__(cls, *args):
+#         new_elements = (x.lower() for x in args)
+#         return super().__new__(cls, new_elements)
+#
+# variable = 1
+# print(variable.__class__)
+# int

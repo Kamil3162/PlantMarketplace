@@ -52,6 +52,11 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
 
             if not token_valid:
                 return self.__unauthorized_response("Token has expired")
+
+            # assing user uuid during request
+            user_uuid = AuthService.decode_token(token)
+            request.headers["Marketplace-User"] = user_uuid
+
             return await call_next(request)
 
         except TokenNotFound as e:
@@ -61,11 +66,16 @@ class CredentialsMiddleware(BaseHTTPMiddleware):
             return self.__unauthorized_response("Invalid mechanism")
 
     def __extract_token(self, request: Request):
-        token = request.headers.get("Authorization")
-        clean_token = token.split(" ")[1]
-        if not clean_token:
-            raise TokenNotFound("Token doesn't exist")
-        return clean_token
+        try:
+            token = request.headers.get("Authorization")
+            clean_token = token.split(" ")[1]
+
+            if not clean_token:
+                raise TokenNotFound("Token doesn't exist")
+
+            return clean_token
+        except Exception as e:
+            print(str(e))
 
     def __is_free_url(self, path):
         return any(element in path for element in self.__free_token_urls)

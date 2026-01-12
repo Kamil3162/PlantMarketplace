@@ -3,7 +3,7 @@ from data.models import CustomUser
 
 
 def generate_reset_email(email:str, instance: CustomUser) -> dict:
-    if not isinstance(user, CustomUser):
+    if not isinstance(instance, CustomUser):
         raise TypeError(f"variable user type: {type(instance)} is not a CustomUser")
 
     email_data = {
@@ -66,7 +66,7 @@ def generate_register_email(email:str, instance: CustomUser) -> dict:
 
 def get_dict_model(instance: CustomUser):
     if not isinstance(instance, CustomUser):
-        raise TypeError(f"variable user type: {user} is not a CustomUser")
+        raise TypeError(f"variable user type: {instance} is not a CustomUser")
 
     return instance.__dict__
 

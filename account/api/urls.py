@@ -8,7 +8,9 @@ from .views import (
     user_by_email,
     register,
     reset_link,
-    reset_url
+    reset_url,
+    consul_health,
+    temp_url
 )
 
 urlpatterns = [
@@ -21,4 +23,9 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('reset/', reset_link, name='reset'),
     path('reset/password/', reset_url, name='reset_url'),
+    path('display/url', temp_url, name='testform')
+]
+
+consul_pattern = [
+    path('', consul_health, name='consul_health'),
 ]

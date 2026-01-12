@@ -7,29 +7,24 @@ import random
 
 from django.core.management.base import BaseCommand
 from faker import Faker
+
 from data.models import CustomUser
 
 User = CustomUser
-
 class Command(BaseCommand):
     def handle(self, *args, **options):
         fake = Faker()
         try:
-            for _ in range(100):
-                User.objects.create_user(  # Use User.objects instead of user_manager
+            for i in range(5):
+                User.objects.create_superuser(  # Use User.objects instead of user_manager
                     # username=fake.email(),
-                    first_name=fake.first_name(),
-                    last_name=fake.last_name(),
-                    email=fake.email(),
+                    first_name=f"kamision{i}",
+                    last_name=f"kamision{i}",
+                    email=f"kamision{i}@gmail.com",
                     password="test"
                 )
         except Exception as e:
             self.stdout.write(f"Error creating user: {e}")
             return
 
-        self.stdout.write(self.style.SUCCESS("Successfully created users"))
-
-    def execute(self, *args, **options):
-        print(self.style.SUCCESS("Successfully created users"))
-        super().execute(*args, **options)
-
+        self.stdout.write(self.style.SUCCESS("Successfully created admin users"))

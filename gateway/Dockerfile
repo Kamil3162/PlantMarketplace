@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy requirements file
 COPY gateway/req.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r req.txt
 
 # Skopiuj microservices_provider z root
 COPY microservices_provider /app/microservices_provider

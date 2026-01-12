@@ -9,7 +9,7 @@ services:
     ports:
       - "8500:8500"
     volumes:
-      - consul_data:/consul/data  # dodaj persistence
+      - consul_datas:/consul/datas
     networks:
       - microservices-network
 
@@ -81,7 +81,7 @@ services:
     networks:
       - gateway-network
       - microservices-network
-
+# http://69.30.85.9:22056/duel_info
   gateway-db:
     image: postgres:15
     environment:
@@ -146,7 +146,7 @@ volumes:
   gateway_postgres_data:
   gateway_redis_data:
   gateway_rabbitmq_data:
-  consul_data:  # dodaj volume dla consul
+  consul_datas:  # dodaj volume dla consul
   kong_redis_data:
 
 networks:

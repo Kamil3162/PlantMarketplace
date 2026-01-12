@@ -8,7 +8,8 @@ class CacheData:
             db=0
         )
         self.blocked_user = "blocked-"
-        self.bann
+
+
     def assign_blocked_token(self, token):
         name = f"{self.blocked_user}{token}"
         self.redis_client.hset(name=name, value=token)

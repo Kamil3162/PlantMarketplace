@@ -21,6 +21,7 @@ class Address(models.Model):
     apartment_number = models.CharField(max_length=10, blank=True)
     house_number = models.CharField(max_length=6, blank=True)
     mobile_phone = PhoneNumberField(blank=True)
+    objects = models.Manager()
 
     def __str__(self):
         return (f'Address '
@@ -37,8 +38,10 @@ class Address(models.Model):
         verbose_name = 'Address'
         verbose_name_plural = 'Addresses'
 
+Address.objects.get_queryset()
 
-class UserManager(BaseUserManager["CustomUser1"]):
+
+class UserManager(BaseUserManager["CustomUser"]):
     def create_user(
         self,
             #username,
@@ -56,6 +59,7 @@ class UserManager(BaseUserManager["CustomUser1"]):
             raise ValueError('User email cannot be empty')
 
         email = self.normalize_email(email)
+
         # Google OAuth2 backend send unnecessary username field
         extra_fields.pop("username", None)
 
@@ -64,9 +68,14 @@ class UserManager(BaseUserManager["CustomUser1"]):
             is_active=is_active, is_staff=is_staff, **extra_fields
         )
 
+        print(self.model)
+
         if password:
             user.set_password(password)
         user.save()
+
+        print(self.get_by_natural_key(email))
+
         return user
 
     def create_superuser(
@@ -121,11 +130,17 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return f'CustomUser email={self.email}'
 
-    def to_json(self):
-        return {
+    def to_dict(self, **kwargs):
+        user_data = {
             'id': self.pk,
             'first_name': self.first_name,
             'last_name': self.last_name,
             'email': self.email
         }
+
+        for key in kwargs.keys():
+            if hasattr(self, key):
+                user_data[key] = kwargs[key]
+
+        return user_data
 

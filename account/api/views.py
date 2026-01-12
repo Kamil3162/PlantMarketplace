@@ -8,13 +8,13 @@ from django.forms.models import model_to_dict
 from django.core.exceptions import ValidationError
 from django.core.paginator import Paginator
 from django.apps import apps
-from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 from django.contrib.auth import authenticate, login
 from django.http import HttpRequest
 from asgiref.sync import sync_to_async
 
 from data.models import CustomUser
+from django.views.decorators.csrf import csrf_exempt
 from forms import UserModify, RegisterForm, UserResetPassword
 from utils import (
     get_user,
@@ -35,28 +35,25 @@ from microservices_provider import EmailClient, SericeURLS
 from .responses import ApiResponse
 from microservices_provider import AuthClient, EmailClient
 
-
 PAGE_SIZE = 15
 AuthCLIENT = AuthClient()
 EMAILCLIENT = EmailClient()
 
 
-def users_list(request:HttpRequest):
+def users_list(request: HttpRequest):
     try:
         page = request.GET.get('page', default=1)
 
         page_number = validate_page_number(page)
         start, end = get_objects_range(page_number, PAGE_SIZE)
 
-        users = CustomUser.objects.all()[start:end]
+        users = CustomUser.objects.all()
         users = serializers.serialize('json', users, indent=2)
 
-        return ApiResponse(
-            type='success',
-            detail=users,
-            status_code=201,
-            headers={
-                'content_type': 'application/json'
+        return JsonResponse(
+            data={
+                'users': users,
+                'page_number': page_number,
             }
         )
     except PageNumberException as e:
@@ -67,7 +64,7 @@ def users_list(request:HttpRequest):
         )
 
 @csrf_exempt
-def user_modify(request:HttpRequest, user_data=None):
+def user_modify(request: HttpRequest, user_data=None):
     if request.method == 'POST':
 
         if request.content_type == 'application/json':
@@ -113,7 +110,7 @@ def user_modify(request:HttpRequest, user_data=None):
 
 
 @csrf_exempt
-def user_detail(request:HttpRequest):
+def user_detail(request: HttpRequest):
     if request.method == 'GET':
         user_id = request.GET.get('user_id')
         if user_id:
@@ -163,7 +160,7 @@ def user_detail(request:HttpRequest):
 
 
 @csrf_exempt
-def reset_password(request:HttpRequest):
+def reset_password(request: HttpRequest):
     if request.method == 'POST':
         email = request.POST.get('email')
 
@@ -203,7 +200,7 @@ def reset_password(request:HttpRequest):
 
 
 @csrf_exempt
-def register(request:HttpRequest):
+def register(request: HttpRequest):
     """
     Function responsible for registering a new user
     """
@@ -400,13 +397,15 @@ async def reset_url(request: HttpRequest):
             'token': token
         })
 
-
     if request.method == "POST":
         token = request.POST.get("token")
         new_password = request.POST.get("password")
 
         if not token or not new_password:
-            return ApiResponse({'error': 'Token and password required'}, status=400)
+            return ApiResponse(
+                {'error': 'Token and password required'},
+                status=400
+            )
 
         validation_response = await AuthCLIENT.make_request(
             "/authenticate/validate/",
@@ -438,3 +437,46 @@ async def reset_url(request: HttpRequest):
         detail='Method not allowed',
         status_code=405
     )
+
+
+def consul_health(request: HttpRequest):
+    print(request)
+    return ApiResponse(
+        detail='healthy',
+        status_code=200,
+        type='healthy',
+    )
+
+from django.shortcuts import render
+
+
+def temp_url(request: HttpRequest):
+    from forms import CustomUserForm
+
+    users_queryset = CustomUser.objects.all()
+
+    print(users_queryset)
+
+    if request.method == "GET":
+        print(dict(request))
+        print(request.accepted_types)
+        form = CustomUserForm()
+        return render(request, "temp_template.html", {"form": form})
+
+    else:
+        form = CustomUserForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            print(form.fields)
+            print(form.base_fields)
+            print(form.inform())
+            form.get_context()
+            print("wszuystko jest gitr")
+            form.save()
+            users_queryset = CustomUser.objects.all()
+
+            print(users_queryset)
+
+            return JsonResponse(
+                data={"esa": "ewasa"},
+            )

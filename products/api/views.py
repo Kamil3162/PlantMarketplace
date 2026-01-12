@@ -30,7 +30,8 @@ S3Instance = S3Client(
 )
 
 bucket_name = os.environ.get("AWS_BUCKET_NAME")
-print(bucket_name)
+
+
 async def product_create(request):
     submitted = False
     if request.method == "POST":

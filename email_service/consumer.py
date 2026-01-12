@@ -32,7 +32,7 @@ class EmailConsumer:
 
     def connect(self):
         """Establish connection to RabbitMQ"""
-        max_retries = 30  # Zwiększamy liczbę prób
+        max_retries = 30
         retry = 0
 
         while retry < max_retries:
@@ -48,12 +48,11 @@ class EmailConsumer:
                         ),
                         heartbeat=600,
                         blocked_connection_timeout=300,
-                        connection_attempts=3  # Dodajemy wewnętrzne próby
+                        connection_attempts=3
                     )
                 )
                 self.channel = self.connection.channel()
 
-                # Declare the exchange
                 self.channel.exchange_declare(
                     exchange=self.exchange_name,
                     exchange_type='direct',
@@ -67,7 +66,6 @@ class EmailConsumer:
                     durable=True
                 )
 
-                # Bind the queue to the exchange
                 self.channel.queue_bind(
                     queue=self.queue_name,
                     exchange=self.exchange_name,
@@ -75,7 +73,7 @@ class EmailConsumer:
                 )
 
                 logger.info(f"Connected to RabbitMQ and set up queue '{self.queue_name}'")
-                return True  # Zwróć True, jeśli połączenie się powiodło
+                return True
 
             except AMQPConnectionError as e:
                 logger.error(f"Próba {retry + 1}/{max_retries}: Błąd połączenia z RabbitMQ: {e}")
@@ -83,9 +81,9 @@ class EmailConsumer:
                 if retry >= max_retries:
                     logger.error("Osiągnięto maksymalną liczbę prób połączenia z RabbitMQ")
                     return False
-                time.sleep(5)  # Poczekaj 5 sekund przed kolejną próbą
+                time.sleep(5)
 
-        return False  # Zwróć False, jeśli wszystkie próby zawiodły
+        return False
 
     def process_email(self, email_data):
         """Process and send an email"""
@@ -120,29 +118,23 @@ class EmailConsumer:
     def callback(self, ch, method, properties, body):
         """Callback function for message processing"""
         try:
-            # Parse message
-            print(body)
             email_data = json.loads(body)
 
             # Process email
             success = self.process_email(email_data)
 
             if success:
-                # Acknowledge message
                 ch.basic_ack(delivery_tag=method.delivery_tag)
                 logger.info("Message acknowledged")
             else:
-                # Negative acknowledgment - requeue
                 ch.basic_nack(delivery_tag=method.delivery_tag, requeue=True)
                 logger.warning("Message not acknowledged, will be requeued")
 
         except json.JSONDecodeError:
             logger.error("Invalid JSON in message")
-            # Reject message without requeuing
             ch.basic_reject(delivery_tag=method.delivery_tag, requeue=False)
         except Exception as e:
             logger.error(f"Error in callback: {e}")
-            # Reject message, requeue it
             ch.basic_nack(delivery_tag=method.delivery_tag, requeue=True)
 
     def start_consuming(self):

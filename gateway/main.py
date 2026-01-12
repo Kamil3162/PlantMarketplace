@@ -8,7 +8,6 @@ from routers import (
     sample_route,
     universal_route,
     users_route,
-    example_routers,
     auth_route
 )
 

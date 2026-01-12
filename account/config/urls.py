@@ -18,8 +18,10 @@ Including another URLconf
 from django.urls import path, include
 # from views import create_brand_new_email_query
 
-from api import urls
+from api.urls import urlpatterns, consul_pattern
 
 urlpatterns = [
-    path('users/', include(urls))
+    path('users/', include(urlpatterns)),
+    path('health/', include(consul_pattern)),
+
 ]

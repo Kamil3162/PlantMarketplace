@@ -13,7 +13,6 @@ async def get_user_emails(user_id: int):
     Pobierz emaile użytkownika
     """
     try:
-        # Wywołujemy Django serwis
         print(user_id)
 
         emails = await email_client.call_email_service(

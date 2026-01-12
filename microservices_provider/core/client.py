@@ -13,7 +13,6 @@ from .exceptions import (
 )
 from httpx import Response
 from .services import SERVICE_URLS, ServiceName
-from utils.error_factory import ErrorFactory
 
 
 class BaseServiceClient:
@@ -27,6 +26,7 @@ class BaseServiceClient:
         self.timeout = 1
         self.retries = 3
         self.current_try = 1
+        self.load_client = httpx.AsyncClient()
 
     async def make_request(
         self,
@@ -71,6 +71,10 @@ class BaseServiceClient:
 
                 await asyncio.sleep(0.5 ** attempt)
 
+    async def load_services(self):
+        # url we pass into our consul instance
+        pass
+
 
 class EmailClient(BaseServiceClient):
     def __init__(self):
@@ -91,42 +95,7 @@ class ProductClient(BaseServiceClient):
         super().__init__(ServiceName.PRODUCT_SERVICE.value)
 
 
-class EmailClientPool:
-    _connection_pool: list[BaseServiceClient] = []
-    _connection_limit: int = 10
-    _initialized: bool = False
-    _lock:asyncio.Lock = asyncio.Lock()
 
-    def __new__(cls):
-        if not cls._initialized:
-            cls._initialized = super().__new__(cls)
-        return cls._initialized
 
-    def __init__(self, connection_limit: int):
-        pass
-
-    def add_connection(self, connection_client: BaseServiceClient):
-        if len(self._connection_pool) < 10:
-            self._connection_pool.append(connection_client)
-
-class EmailService:
-    @staticmethod
-    def create_client() -> AsyncClient:
-        return AsyncClient(
-            timeout=Timeout(10),
-            limits=Limits(
-                max_keepalive_connections=3,
-                keepalive_expiry=5
-            )
-        )
-
-    @staticmethod
-    @asynccontextmanager
-    def client():
-        client = EmailService.create_client()
-        try:
-            yield client
-        finally:
-            client.aclose()
 
 

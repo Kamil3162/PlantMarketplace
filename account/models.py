@@ -2,7 +2,7 @@ import enum
 from typing import Optional, Any
 
 from django.db import models
-from django.db.models import Q
+from django.db.models import Q, Manager
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
     PermissionsMixin, UserManager, Group, Permission, ContentType
 
